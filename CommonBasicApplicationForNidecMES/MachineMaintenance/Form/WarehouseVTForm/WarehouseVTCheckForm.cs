@@ -406,7 +406,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
 
             }
-
+         
             //code phan search copy qua
             {
                 warehouse_vt_dgv.DataSource = null;
@@ -443,8 +443,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 TimeCheck = int.Parse(checktime_cmb.Text),
                             };
                             outVo2 = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new Cbm.UpdateCheckTimeVTCbm(), inVo2);
-                            machine_serial_cmb.Text = "";
-                            rfid_txt.Text = "";
+                          
 
                         }
                         catch
@@ -461,7 +460,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     {
                         string textduplicate = "Data bi trung, da check roi";
                         exporttxtfile_mesger(textduplicate);
-
                     }
                     ///////////////////////////////
                     else if (warehouse_vt_dgv.Rows.Count == 0)
@@ -484,6 +482,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
             }
             File.Delete(@"D:\VT CP\received.txt");
+            machine_serial_cmb.Text = "";
+            rfid_txt.Text = "";
         }
         void exporttxtfile()
         {

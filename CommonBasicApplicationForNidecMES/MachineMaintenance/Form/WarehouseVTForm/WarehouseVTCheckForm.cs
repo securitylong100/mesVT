@@ -386,7 +386,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     AutoCheck_btn.Text = "Stop Auto";
                     MessageBox.Show("Dừng chế độ tư động ");
                     timer1.Enabled = false;
-
                 }
             }
             else
@@ -395,17 +394,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 return;
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (File.Exists(@"D:\VT CP\received.txt"))
             {
                 string text = System.IO.File.ReadAllText(@"D:\VT CP\received.txt");
                 rfid_txt.Text = text;
-
-
             }
-         
+            {
+                machine_serial_cmb.Text = "";
+                rfid_txt.Text = "";
+            }
             //code phan search copy qua
             {
                 warehouse_vt_dgv.DataSource = null;
@@ -442,16 +441,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 TimeCheck = int.Parse(checktime_cmb.Text),
                             };
                             outVo2 = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new Cbm.UpdateCheckTimeVTCbm(), inVo2);
-                          
-
                         }
                         catch
                         {
-
                             string textdatafaile = "May chu bi su co, kiem tra lai chuong trinh may chu";
                             exporttxtfile_mesger(textdatafaile);
                         }
-
                         warehouse_list_dgv.Visible = true;
                     }
                     //update
@@ -471,18 +466,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         string textdatafaile = "database sai cau truc, kiem tra lai database"; //sua lai
                         exporttxtfile_mesger(textdatafaile);
                     }
-
                 }
                 else
                 {
                     string textdatafaile = "Hệ thông có dữ liệu mới, hệ thống đang online";
                     exporttxtfile_mesger(textdatafaile);
-
                 }
             }
             File.Delete(@"D:\VT CP\received.txt");
-            machine_serial_cmb.Text = "";
-            rfid_txt.Text = "";
         }
         void exporttxtfile()
         {
@@ -509,7 +500,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             //{
             //    return;             
             //}
-
             if (!Directory.Exists(@"D:\VT CP"))
             {
                 Directory.CreateDirectory(@"D:\VT CP");
@@ -524,9 +514,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                          + "- DateTime: " + DateTime.Now.ToString() + "<EOF>"
                           );
             sw.Close();
-
         }
-
-
     }
 }

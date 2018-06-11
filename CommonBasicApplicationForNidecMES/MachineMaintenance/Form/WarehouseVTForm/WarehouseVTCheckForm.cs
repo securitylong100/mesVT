@@ -380,7 +380,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     MessageBox.Show("Bắt đầu chạy tư động ");
                     timer1.Interval = 3000;
                     timer1.Enabled = true;
-
                 }
                 else
                 {

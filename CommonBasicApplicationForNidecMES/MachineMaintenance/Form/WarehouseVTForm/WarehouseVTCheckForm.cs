@@ -400,80 +400,81 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 string text = System.IO.File.ReadAllText(@"D:\VT CP\received.txt");
                 rfid_txt.Text = text;
+
+                //code phan search copy qua
+                {
+                    warehouse_vt_dgv.DataSource = null;
+                    warehouse_list_dgv.Visible = true;
+                    warehouse_vt_dgv.Visible = false;
+                    datalost_dgv.Visible = false;
+                    if (checktime_cmb.SelectedItem != null && (rfid_txt.Text.Length == 10 || machine_serial_cmb.Text != ""))
+                    {
+                        Countrow();
+                        warehouse_vt_dgv.DataSource = null;
+                        GridBind();
+                        if ((warehouse_vt_dgv.Rows.Count == 1) && (insert_update == "Insert"))
+                        {
+                            warehouse_vt_dgv.Visible = false;
+                            WarehouseVTListVo outVo = new WarehouseVTListVo();
+                            WarehouseVTListVo inVo = new WarehouseVTListVo()
+                            {
+                                MachineSerial = warehouse_vt_dgv.Rows[0].Cells[7].Value.ToString(),
+                                ValueCheck = true,
+                                CheckTime = int.Parse(checktime_cmb.Text),
+                                RegistrationUserCode = UserData.GetUserData().UserName,
+                                RegistrationDateTime = DateTime.Now
+                            };
+                            try
+                            {
+                                outVo = (WarehouseVTListVo)DefaultCbmInvoker.Invoke(new Cbm.AddNewListCheckVTCbm(), inVo);
+                                warehouse_list_dgv.DataSource = null;
+                                GridBindList();
+                                exporttxtfile();
+                                WarehouseVTVo outVo2 = new WarehouseVTVo();
+                                WarehouseVTVo inVo2 = new WarehouseVTVo
+                                {
+                                    MachineSerial = warehouse_vt_dgv.Rows[0].Cells[7].Value.ToString(),
+                                    TimeCheck = int.Parse(checktime_cmb.Text),
+                                };
+                                outVo2 = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new Cbm.UpdateCheckTimeVTCbm(), inVo2);
+                            }
+                            catch
+                            {
+                                string textdatafaile = "May chu bi su co, kiem tra lai chuong trinh may chu";
+                                exporttxtfile_mesger(textdatafaile);
+                            }
+                            warehouse_list_dgv.Visible = true;
+                        }
+                        //update
+                        else if ((warehouse_vt_dgv.Rows.Count == 1) && (insert_update == "Update"))
+                        {
+                            string textduplicate = "Data bi trung, da check roi";
+                            exporttxtfile_mesger(textduplicate);
+                        }
+                        ///////////////////////////////
+                        else if (warehouse_vt_dgv.Rows.Count == 0)
+                        {
+                            string textdatalost = "May nay khong có trong danh sach database";
+                            exporttxtfile_mesger(textdatalost);
+                        }
+                        else if (warehouse_vt_dgv.Rows.Count > 2)
+                        {
+                            string textdatafaile = "database sai cau truc, kiem tra lai database"; //sua lai
+                            exporttxtfile_mesger(textdatafaile);
+                        }
+                    }
+                    else
+                    {
+                        string textdatafaile = "Hệ thông có dữ liệu mới, hệ thống đang online";
+                        exporttxtfile_mesger(textdatafaile);
+                    }
+                }
+                File.Delete(@"D:\VT CP\received.txt");
             }
             {
                 machine_serial_cmb.Text = "";
                 rfid_txt.Text = "";
             }
-            //code phan search copy qua
-            {
-                warehouse_vt_dgv.DataSource = null;
-                warehouse_list_dgv.Visible = true;
-                warehouse_vt_dgv.Visible = false;
-                datalost_dgv.Visible = false;
-                if (checktime_cmb.SelectedItem != null && (rfid_txt.Text.Length == 10 || machine_serial_cmb.Text != ""))
-                {
-                    Countrow();
-                    warehouse_vt_dgv.DataSource = null;
-                    GridBind();
-                    if ((warehouse_vt_dgv.Rows.Count == 1) && (insert_update == "Insert"))
-                    {
-                        warehouse_vt_dgv.Visible = false;
-                        WarehouseVTListVo outVo = new WarehouseVTListVo();
-                        WarehouseVTListVo inVo = new WarehouseVTListVo()
-                        {
-                            MachineSerial = warehouse_vt_dgv.Rows[0].Cells[7].Value.ToString(),
-                            ValueCheck = true,
-                            CheckTime = int.Parse(checktime_cmb.Text),
-                            RegistrationUserCode = UserData.GetUserData().UserName,
-                            RegistrationDateTime = DateTime.Now
-                        };
-                        try
-                        {
-                            outVo = (WarehouseVTListVo)DefaultCbmInvoker.Invoke(new Cbm.AddNewListCheckVTCbm(), inVo);
-                            warehouse_list_dgv.DataSource = null;
-                            GridBindList();
-                            exporttxtfile();
-                            WarehouseVTVo outVo2 = new WarehouseVTVo();
-                            WarehouseVTVo inVo2 = new WarehouseVTVo
-                            {
-                                MachineSerial = warehouse_vt_dgv.Rows[0].Cells[7].Value.ToString(),
-                                TimeCheck = int.Parse(checktime_cmb.Text),
-                            };
-                            outVo2 = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new Cbm.UpdateCheckTimeVTCbm(), inVo2);
-                        }
-                        catch
-                        {
-                            string textdatafaile = "May chu bi su co, kiem tra lai chuong trinh may chu";
-                            exporttxtfile_mesger(textdatafaile);
-                        }
-                        warehouse_list_dgv.Visible = true;
-                    }
-                    //update
-                    else if ((warehouse_vt_dgv.Rows.Count == 1) && (insert_update == "Update"))
-                    {
-                        string textduplicate = "Data bi trung, da check roi";
-                        exporttxtfile_mesger(textduplicate);
-                    }
-                    ///////////////////////////////
-                    else if (warehouse_vt_dgv.Rows.Count == 0)
-                    {
-                        string textdatalost = "May nay khong có trong danh sach database";
-                        exporttxtfile_mesger(textdatalost);
-                    }
-                    else if (warehouse_vt_dgv.Rows.Count > 2)
-                    {
-                        string textdatafaile = "database sai cau truc, kiem tra lai database"; //sua lai
-                        exporttxtfile_mesger(textdatafaile);
-                    }
-                }
-                else
-                {
-                    string textdatafaile = "Hệ thông có dữ liệu mới, hệ thống đang online";
-                    exporttxtfile_mesger(textdatafaile);
-                }
-            }
-            File.Delete(@"D:\VT CP\received.txt");
         }
         void exporttxtfile()
         {

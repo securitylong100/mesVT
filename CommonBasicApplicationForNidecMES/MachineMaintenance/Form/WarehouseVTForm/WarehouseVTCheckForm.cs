@@ -13,6 +13,7 @@ using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
 using System.Security.Cryptography;
 using System.Threading;
 using System.IO;
+using System.Threading;
 
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {//WarehouseVTCheckForm
@@ -378,7 +379,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     AutoCheck_btn.Text = "Starting Auto";
                     MessageBox.Show("Bắt đầu chạy tư động ");
-                    timer1.Interval = 3000;
+                    timer1.Interval = 2000;
                     timer1.Enabled = true;
                 }
                 else
@@ -397,7 +398,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (File.Exists(@"D:\VT CP\received.txt"))
-            {
+            {             
                 string text = System.IO.File.ReadAllText(@"D:\VT CP\received.txt");
                 rfid_txt.Text = text;
 

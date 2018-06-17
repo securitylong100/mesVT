@@ -52,22 +52,20 @@
             this.col_machineinvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckTime_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serialmachine_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.serialmachine_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.factory_received_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_after = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.factory_received_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.factory_tranfer_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_before = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.bg_cbox = new Com.Nidec.Mes.Framework.CheckBoxCommon();
-            this.t_cbox = new Com.Nidec.Mes.Framework.CheckBoxCommon();
-            this.th_cbox = new Com.Nidec.Mes.Framework.CheckBoxCommon();
-            this.m_cbox = new Com.Nidec.Mes.Framework.CheckBoxCommon();
-            this.codename_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.codename_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.factory_tranfer_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.code_name_cmb = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.code_name_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.code_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.code_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).BeginInit();
-            this.groupBoxCommon1.SuspendLayout();
             this.SuspendLayout();
             // 
             // setting_gbc
@@ -78,7 +76,7 @@
             this.setting_gbc.Controls.Add(this.delete_btn);
             this.setting_gbc.Controls.Add(this.search_btn);
             this.setting_gbc.Font = new System.Drawing.Font("Arial", 9F);
-            this.setting_gbc.Location = new System.Drawing.Point(14, 215);
+            this.setting_gbc.Location = new System.Drawing.Point(45, 193);
             this.setting_gbc.Name = "setting_gbc";
             this.setting_gbc.Size = new System.Drawing.Size(421, 64);
             this.setting_gbc.TabIndex = 60;
@@ -190,7 +188,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.warehouse_vt_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.warehouse_vt_dgv.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.warehouse_vt_dgv.Size = new System.Drawing.Size(770, 340);
+            this.warehouse_vt_dgv.Size = new System.Drawing.Size(946, 340);
             this.warehouse_vt_dgv.TabIndex = 75;
             // 
             // col_machineid
@@ -299,15 +297,15 @@
             this.colCheckTime_final.Name = "colCheckTime_final";
             this.colCheckTime_final.Width = 98;
             // 
-            // serialmachine_cmb
+            // machine_serial_cmb
             // 
-            this.serialmachine_cmb.ControlId = null;
-            this.serialmachine_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.serialmachine_cmb.FormattingEnabled = true;
-            this.serialmachine_cmb.Location = new System.Drawing.Point(12, 165);
-            this.serialmachine_cmb.Name = "serialmachine_cmb";
-            this.serialmachine_cmb.Size = new System.Drawing.Size(121, 23);
-            this.serialmachine_cmb.TabIndex = 80;
+            this.machine_serial_cmb.ControlId = null;
+            this.machine_serial_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machine_serial_cmb.FormattingEnabled = true;
+            this.machine_serial_cmb.Location = new System.Drawing.Point(202, 163);
+            this.machine_serial_cmb.Name = "machine_serial_cmb";
+            this.machine_serial_cmb.Size = new System.Drawing.Size(121, 23);
+            this.machine_serial_cmb.TabIndex = 80;
             // 
             // serialmachine_lbl
             // 
@@ -315,7 +313,7 @@
             this.serialmachine_lbl.ControlId = null;
             this.serialmachine_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.serialmachine_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.serialmachine_lbl.Location = new System.Drawing.Point(9, 147);
+            this.serialmachine_lbl.Location = new System.Drawing.Point(199, 145);
             this.serialmachine_lbl.Name = "serialmachine_lbl";
             this.serialmachine_lbl.Size = new System.Drawing.Size(88, 15);
             this.serialmachine_lbl.TabIndex = 81;
@@ -327,21 +325,21 @@
             this.factory_received_lbl.ControlId = null;
             this.factory_received_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.factory_received_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.factory_received_lbl.Location = new System.Drawing.Point(311, 151);
+            this.factory_received_lbl.Location = new System.Drawing.Point(506, 149);
             this.factory_received_lbl.Name = "factory_received_lbl";
             this.factory_received_lbl.Size = new System.Drawing.Size(100, 15);
             this.factory_received_lbl.TabIndex = 85;
             this.factory_received_lbl.Text = "Factory Received";
             // 
-            // factory_after
+            // factory_received_cmb
             // 
-            this.factory_after.ControlId = null;
-            this.factory_after.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.factory_after.FormattingEnabled = true;
-            this.factory_after.Location = new System.Drawing.Point(314, 169);
-            this.factory_after.Name = "factory_after";
-            this.factory_after.Size = new System.Drawing.Size(121, 23);
-            this.factory_after.TabIndex = 84;
+            this.factory_received_cmb.ControlId = null;
+            this.factory_received_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.factory_received_cmb.FormattingEnabled = true;
+            this.factory_received_cmb.Location = new System.Drawing.Point(509, 167);
+            this.factory_received_cmb.Name = "factory_received_cmb";
+            this.factory_received_cmb.Size = new System.Drawing.Size(121, 23);
+            this.factory_received_cmb.TabIndex = 84;
             // 
             // factory_tranfer_lbl
             // 
@@ -349,119 +347,113 @@
             this.factory_tranfer_lbl.ControlId = null;
             this.factory_tranfer_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.factory_tranfer_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.factory_tranfer_lbl.Location = new System.Drawing.Point(161, 149);
+            this.factory_tranfer_lbl.Location = new System.Drawing.Point(356, 147);
             this.factory_tranfer_lbl.Name = "factory_tranfer_lbl";
             this.factory_tranfer_lbl.Size = new System.Drawing.Size(88, 15);
             this.factory_tranfer_lbl.TabIndex = 87;
             this.factory_tranfer_lbl.Text = "Factory Tranfer";
             // 
-            // factory_before
+            // factory_tranfer_cmb
             // 
-            this.factory_before.ControlId = null;
-            this.factory_before.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.factory_before.FormattingEnabled = true;
-            this.factory_before.Location = new System.Drawing.Point(164, 167);
-            this.factory_before.Name = "factory_before";
-            this.factory_before.Size = new System.Drawing.Size(121, 23);
-            this.factory_before.TabIndex = 86;
+            this.factory_tranfer_cmb.ControlId = null;
+            this.factory_tranfer_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.factory_tranfer_cmb.FormattingEnabled = true;
+            this.factory_tranfer_cmb.Location = new System.Drawing.Point(359, 165);
+            this.factory_tranfer_cmb.Name = "factory_tranfer_cmb";
+            this.factory_tranfer_cmb.Size = new System.Drawing.Size(121, 23);
+            this.factory_tranfer_cmb.TabIndex = 86;
             // 
-            // bg_cbox
+            // rfid_txt
             // 
-            this.bg_cbox.AutoSize = true;
-            this.bg_cbox.ControlId = null;
-            this.bg_cbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bg_cbox.Location = new System.Drawing.Point(20, 16);
-            this.bg_cbox.Name = "bg_cbox";
-            this.bg_cbox.Size = new System.Drawing.Size(43, 19);
-            this.bg_cbox.TabIndex = 92;
-            this.bg_cbox.Text = "BG";
-            this.bg_cbox.UseVisualStyleBackColor = true;
+            this.rfid_txt.ControlId = null;
+            this.rfid_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rfid_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.rfid_txt.Location = new System.Drawing.Point(45, 163);
+            this.rfid_txt.Multiline = true;
+            this.rfid_txt.Name = "rfid_txt";
+            this.rfid_txt.Size = new System.Drawing.Size(120, 24);
+            this.rfid_txt.TabIndex = 99;
+            this.rfid_txt.TextChanged += new System.EventHandler(this.rfid_txt_TextChanged);
             // 
-            // t_cbox
+            // rfid_lbl
             // 
-            this.t_cbox.AutoSize = true;
-            this.t_cbox.ControlId = null;
-            this.t_cbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.t_cbox.Location = new System.Drawing.Point(74, 16);
-            this.t_cbox.Name = "t_cbox";
-            this.t_cbox.Size = new System.Drawing.Size(33, 19);
-            this.t_cbox.TabIndex = 93;
-            this.t_cbox.Text = "T";
-            this.t_cbox.UseVisualStyleBackColor = true;
+            this.rfid_lbl.AutoSize = true;
+            this.rfid_lbl.ControlId = null;
+            this.rfid_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.rfid_lbl.Location = new System.Drawing.Point(61, 145);
+            this.rfid_lbl.Name = "rfid_lbl";
+            this.rfid_lbl.Size = new System.Drawing.Size(83, 15);
+            this.rfid_lbl.TabIndex = 101;
+            this.rfid_lbl.Text = "RFID Number";
             // 
-            // th_cbox
+            // code_name_cmb
             // 
-            this.th_cbox.AutoSize = true;
-            this.th_cbox.ControlId = null;
-            this.th_cbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.th_cbox.Location = new System.Drawing.Point(167, 16);
-            this.th_cbox.Name = "th_cbox";
-            this.th_cbox.Size = new System.Drawing.Size(42, 19);
-            this.th_cbox.TabIndex = 95;
-            this.th_cbox.Text = "TH";
-            this.th_cbox.UseVisualStyleBackColor = true;
+            this.code_name_cmb.ControlId = null;
+            this.code_name_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.code_name_cmb.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.code_name_cmb.Location = new System.Drawing.Point(802, 167);
+            this.code_name_cmb.Multiline = true;
+            this.code_name_cmb.Name = "code_name_cmb";
+            this.code_name_cmb.Size = new System.Drawing.Size(106, 23);
+            this.code_name_cmb.TabIndex = 102;
             // 
-            // m_cbox
+            // code_name_lbl
             // 
-            this.m_cbox.AutoSize = true;
-            this.m_cbox.ControlId = null;
-            this.m_cbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_cbox.Location = new System.Drawing.Point(120, 16);
-            this.m_cbox.Name = "m_cbox";
-            this.m_cbox.Size = new System.Drawing.Size(35, 19);
-            this.m_cbox.TabIndex = 94;
-            this.m_cbox.Text = "M";
-            this.m_cbox.UseVisualStyleBackColor = true;
+            this.code_name_lbl.AutoSize = true;
+            this.code_name_lbl.ControlId = null;
+            this.code_name_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.code_name_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.code_name_lbl.Location = new System.Drawing.Point(809, 149);
+            this.code_name_lbl.Name = "code_name_lbl";
+            this.code_name_lbl.Size = new System.Drawing.Size(77, 15);
+            this.code_name_lbl.TabIndex = 103;
+            this.code_name_lbl.Text = "Code Name:";
             // 
-            // codename_txt
+            // code_status_cmb
             // 
-            this.codename_txt.ControlId = null;
-            this.codename_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codename_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.codename_txt.Location = new System.Drawing.Point(100, 43);
-            this.codename_txt.Name = "codename_txt";
-            this.codename_txt.Size = new System.Drawing.Size(106, 21);
-            this.codename_txt.TabIndex = 96;
+            this.code_status_cmb.ControlId = null;
+            this.code_status_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.code_status_cmb.FormattingEnabled = true;
+            this.code_status_cmb.Items.AddRange(new object[] {
+            "Bàn Giao",
+            "Mượn",
+            "Trả",
+            "Thuê"});
+            this.code_status_cmb.Location = new System.Drawing.Point(660, 167);
+            this.code_status_cmb.Name = "code_status_cmb";
+            this.code_status_cmb.Size = new System.Drawing.Size(121, 23);
+            this.code_status_cmb.TabIndex = 84;
+            this.code_status_cmb.SelectedIndexChanged += new System.EventHandler(this.code_status_cmb_SelectedIndexChanged);
             // 
-            // codename_lbl
+            // code_status_lbl
             // 
-            this.codename_lbl.AutoSize = true;
-            this.codename_lbl.ControlId = null;
-            this.codename_lbl.Font = new System.Drawing.Font("Arial", 9F);
-            this.codename_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.codename_lbl.Location = new System.Drawing.Point(17, 46);
-            this.codename_lbl.Name = "codename_lbl";
-            this.codename_lbl.Size = new System.Drawing.Size(77, 15);
-            this.codename_lbl.TabIndex = 97;
-            this.codename_lbl.Text = "Code Name:";
-            // 
-            // groupBoxCommon1
-            // 
-            this.groupBoxCommon1.ControlId = null;
-            this.groupBoxCommon1.Controls.Add(this.codename_txt);
-            this.groupBoxCommon1.Controls.Add(this.codename_lbl);
-            this.groupBoxCommon1.Controls.Add(this.bg_cbox);
-            this.groupBoxCommon1.Controls.Add(this.t_cbox);
-            this.groupBoxCommon1.Controls.Add(this.th_cbox);
-            this.groupBoxCommon1.Controls.Add(this.m_cbox);
-            this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCommon1.Location = new System.Drawing.Point(529, 142);
-            this.groupBoxCommon1.Name = "groupBoxCommon1";
-            this.groupBoxCommon1.Size = new System.Drawing.Size(236, 82);
-            this.groupBoxCommon1.TabIndex = 98;
-            this.groupBoxCommon1.TabStop = false;
+            this.code_status_lbl.AutoSize = true;
+            this.code_status_lbl.ControlId = null;
+            this.code_status_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.code_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.code_status_lbl.Location = new System.Drawing.Point(657, 149);
+            this.code_status_lbl.Name = "code_status_lbl";
+            this.code_status_lbl.Size = new System.Drawing.Size(75, 15);
+            this.code_status_lbl.TabIndex = 85;
+            this.code_status_lbl.Text = "Code Status";
             // 
             // AddMovingMachineVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(777, 699);
-            this.Controls.Add(this.groupBoxCommon1);
+            this.ClientSize = new System.Drawing.Size(953, 699);
+            this.Controls.Add(this.code_name_cmb);
+            this.Controls.Add(this.code_name_lbl);
+            this.Controls.Add(this.rfid_lbl);
+            this.Controls.Add(this.rfid_txt);
             this.Controls.Add(this.factory_tranfer_lbl);
-            this.Controls.Add(this.factory_before);
+            this.Controls.Add(this.factory_tranfer_cmb);
+            this.Controls.Add(this.code_status_lbl);
             this.Controls.Add(this.factory_received_lbl);
-            this.Controls.Add(this.factory_after);
+            this.Controls.Add(this.code_status_cmb);
+            this.Controls.Add(this.factory_received_cmb);
             this.Controls.Add(this.serialmachine_lbl);
-            this.Controls.Add(this.serialmachine_cmb);
+            this.Controls.Add(this.machine_serial_cmb);
             this.Controls.Add(this.setting_gbc);
             this.Controls.Add(this.warehouse_vt_dgv);
             this.Name = "AddMovingMachineVTForm";
@@ -470,17 +462,20 @@
             this.Load += new System.EventHandler(this.AddMovingMachineVTForm_Load);
             this.Controls.SetChildIndex(this.warehouse_vt_dgv, 0);
             this.Controls.SetChildIndex(this.setting_gbc, 0);
-            this.Controls.SetChildIndex(this.serialmachine_cmb, 0);
+            this.Controls.SetChildIndex(this.machine_serial_cmb, 0);
             this.Controls.SetChildIndex(this.serialmachine_lbl, 0);
-            this.Controls.SetChildIndex(this.factory_after, 0);
+            this.Controls.SetChildIndex(this.factory_received_cmb, 0);
+            this.Controls.SetChildIndex(this.code_status_cmb, 0);
             this.Controls.SetChildIndex(this.factory_received_lbl, 0);
-            this.Controls.SetChildIndex(this.factory_before, 0);
+            this.Controls.SetChildIndex(this.code_status_lbl, 0);
+            this.Controls.SetChildIndex(this.factory_tranfer_cmb, 0);
             this.Controls.SetChildIndex(this.factory_tranfer_lbl, 0);
-            this.Controls.SetChildIndex(this.groupBoxCommon1, 0);
+            this.Controls.SetChildIndex(this.rfid_txt, 0);
+            this.Controls.SetChildIndex(this.rfid_lbl, 0);
+            this.Controls.SetChildIndex(this.code_name_lbl, 0);
+            this.Controls.SetChildIndex(this.code_name_cmb, 0);
             this.setting_gbc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).EndInit();
-            this.groupBoxCommon1.ResumeLayout(false);
-            this.groupBoxCommon1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,13 +487,13 @@
         private Framework.ButtonCommon delete_btn;
         private Framework.ButtonCommon search_btn;
         private Framework.DataGridViewCommon warehouse_vt_dgv;
-        private Framework.ComboBoxCommon serialmachine_cmb;
+        private Framework.ComboBoxCommon machine_serial_cmb;
         private Framework.LabelCommon serialmachine_lbl;
         private Framework.ButtonCommon add_btn;
         private Framework.LabelCommon factory_received_lbl;
-        private Framework.ComboBoxCommon factory_after;
+        private Framework.ComboBoxCommon factory_received_cmb;
         private Framework.LabelCommon factory_tranfer_lbl;
-        private Framework.ComboBoxCommon factory_before;
+        private Framework.ComboBoxCommon factory_tranfer_cmb;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rfid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecode;
@@ -514,12 +509,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineinvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecostvalue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckTime_final;
-        private Framework.CheckBoxCommon bg_cbox;
-        private Framework.CheckBoxCommon t_cbox;
-        private Framework.CheckBoxCommon th_cbox;
-        private Framework.CheckBoxCommon m_cbox;
-        private Framework.TextBoxCommon codename_txt;
-        private Framework.LabelCommon codename_lbl;
-        private Framework.GroupBoxCommon groupBoxCommon1;
+        private Framework.TextBoxCommon rfid_txt;
+        private Framework.LabelCommon rfid_lbl;
+        private Framework.TextBoxCommon code_name_cmb;
+        private Framework.LabelCommon code_name_lbl;
+        private Framework.ComboBoxCommon code_status_cmb;
+        private Framework.LabelCommon code_status_lbl;
     }
 }

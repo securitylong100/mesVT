@@ -246,6 +246,7 @@
     <Compile Include="Dao\Account-WhDao\RankMasterDao\DeleteRankDao.cs" />
     <Compile Include="Dao\Account-WhDao\RankMasterDao\GetRankDao.cs" />
     <Compile Include="Dao\Account-WhDao\RankMasterDao\UpdateRankDao.cs" />
+    <Compile Include="Dao\MovingMachineVTDao\GetCodeStatusMovingVTDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\DayTotalPCDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\AddReportDownTimeDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetActicAndContentDao.cs" />
@@ -541,6 +542,7 @@
     <Compile Include="Vo\Account-WhVo\AccountMainVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
     <Compile Include="Vo\WarehouseVTListVo.cs" />
+    <Compile Include="Vo\MovingMachineVTVo.cs" />
     <Compile Include="Vo\WarehouseVTVo.cs" />
     <Compile Include="Vo\ProductionCotrollerVo.cs" />
     <Compile Include="Vo\SeachMachineWorkingStatusVo.cs" />

@@ -135,6 +135,7 @@
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\DeleteRankCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\GetRankCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\UpdateAssetCbm.cs" />
+    <Compile Include="Cbm\MovingMachineVTCbm\UpdateBGMovingVTCbm.cs" />
     <Compile Include="Cbm\MovingMachineVTCbm\AddMovingVTCbm.cs" />
     <Compile Include="Cbm\MovingMachineVTCbm\GetCodeStatusMovingVTCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\DayTotalPCCbm.cs" />
@@ -250,6 +251,7 @@
     <Compile Include="Dao\Account-WhDao\RankMasterDao\UpdateRankDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\AddMovingVTDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\GetCodeStatusMovingVTDao.cs" />
+    <Compile Include="Dao\MovingMachineVTDao\UpdateBGMovingVTDao.cs" />
     <Compile Include="Dao\ProductionControllerDao\DayTotalPCDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\AddReportDownTimeDao.cs" />
     <Compile Include="Dao\ReportDownTimeDao\GetActicAndContentDao.cs" />

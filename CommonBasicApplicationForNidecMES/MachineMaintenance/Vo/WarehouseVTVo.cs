@@ -23,7 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string MachineInvoice { get; set; }
         public string MachineCostValue { get; set; }
 
-
+        public string MachineStatus { get; set; }
 
         /// </summary>
         //common

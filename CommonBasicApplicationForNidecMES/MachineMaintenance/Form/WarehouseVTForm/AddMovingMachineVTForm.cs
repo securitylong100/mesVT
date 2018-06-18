@@ -71,6 +71,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ValueObjectList<WarehouseVTVo> machinename = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new SearchMachineCbm(), new WarehouseVTVo { MachineSerial = machine_serial_cmb.Text });
                 machine_name_cmb.DisplayMember = "MachineName";
                 machine_name_cmb.DataSource = machinename.GetList();
+                factory_tranfer_cmb.DisplayMember = "MachineSupplier";
+                factory_tranfer_cmb.DataSource = machinename.GetList();
 
             }
         }
@@ -169,7 +171,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 try
                 {
                     outVo = (MovingMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.AddMovingVTCbm(), inVo);
+                    if (code_status_cmb.Text == "Bàn Giao")
+                    {
+                        WarehouseVTVo updateBG = new WarehouseVTVo();
+                        updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() {MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Bàn Giao",  RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
+                    }
                 }
+               
                 catch (Framework.ApplicationException exception)
                 {
                     popUpMessage.ApplicationError(exception.GetMessageData(), Text);

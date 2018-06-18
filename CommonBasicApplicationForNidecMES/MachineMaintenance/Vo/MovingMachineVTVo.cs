@@ -14,8 +14,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string TranferFactoryCode { get; set; }
         public string ReceivedFactoryCode { get; set; }
         public string BGCode { get; set; }
+        public string MCode { get; set; }
         public string TCode { get; set; }
-        public string TRCode { get; set; }
         public string THCode { get; set; }
         public string StatusMachine { get; set; }
         public string CommentsMachine { get; set; }
@@ -32,6 +32,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         /// </summary>
 
 
-        public List<MovingMachineVTVo> MovingMachineVTVo = new List<MovingMachineVTVo>();
+        public List<MovingMachineVTVo> movingmachinevtVo = new List<MovingMachineVTVo>();
     }
 }

@@ -135,6 +135,7 @@
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\DeleteRankCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\GetRankCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\UpdateAssetCbm.cs" />
+    <Compile Include="Cbm\MovingMachineVTCbm\GetCodeStatusMovingVTCbm.cs" />
     <Compile Include="Cbm\ProductionControllerCbm\DayTotalPCCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\AddReportDownTimeCbm.cs" />
     <Compile Include="Cbm\ReportDownTimeCbm\GetActicAndContentCbm.cs" />

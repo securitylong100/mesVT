@@ -22,7 +22,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sql.Append(@"select max(bg_cd) as bg_cd_max, max(t_cd) as t_cd_max, max(th_cd) as th_cd_max, max(tr_cd) as tr_cd_max from t_vt_moving");
+            sql.Append(@"select max(bg_cd) as bg_cd_max, max(m_cd) as m_cd_max, max(t_cd) as t_cd_max , max(th_cd) as th_cd_max from t_vt_moving");
 
 
 
@@ -37,9 +37,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 {
                   
                     BGCode  = dataReader["bg_cd_max"].ToString(),
+                    MCode = dataReader["m_cd_max"].ToString(),
                     TCode = dataReader["t_cd_max"].ToString(),
-                    THCode = dataReader["th_cd"].ToString(),
-                    TRCode = dataReader["tr_cd"].ToString(),
+                    THCode = dataReader["th_cd_max"].ToString(),
 
                 };
                 voList.add(outVo);

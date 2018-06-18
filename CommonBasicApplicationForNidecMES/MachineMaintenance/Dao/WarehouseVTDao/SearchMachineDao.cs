@@ -56,7 +56,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and machine_location  =:machine_location");
                 sqlParameter.AddParameterString("machine_location", inVo.MachineLocation);
             }
-
+           
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //execute SQL

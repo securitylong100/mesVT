@@ -76,6 +76,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         public string codeselect = ""; //dung de goi update value to database
         public string codestatus = ""; //not using
+        public string BG_code_value = null;
+        public string Th_code_value = null;
+        public string T_code_value = null;
+        public string M_code_value = null;
+
         private void code_status_cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -90,7 +95,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     codeselect = "1";
                 }
                 codestatus = "BG/CĐ";
-
+                BG_code_value = codeselect;
 
             }
             else if (code_status_cmb.Text == "Mượn")
@@ -104,6 +109,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     codeselect = "1";
                 }
                 codestatus = "M/CĐ";
+                M_code_value = codeselect;
             }
             else if (code_status_cmb.Text == "Trả")
             {
@@ -116,6 +122,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     codeselect = "1";
                 }
                 codestatus = "T/CĐ";
+                T_code_value = codeselect;
             }
             else if (code_status_cmb.Text == "Thuê")
             {
@@ -128,6 +135,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     codeselect = "1";
                 }
                 codestatus = "TH/CĐ";
+                Th_code_value = codeselect;
             }
             else
             {
@@ -140,10 +148,42 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void Ok_btn_Click(object sender, EventArgs e)
         {
-         //   MovingMachineVTVo outVo =
+            if (checkdata())
+            {
+                MovingMachineVTVo outVo = new MovingMachineVTVo();
+                MovingMachineVTVo inVo = new MovingMachineVTVo
+                {
+                    MachineSerial = machine_serial_cmb.Text,
+                    TranferFactoryCode = factory_tranfer_cmb.Text,
+                    ReceivedFactoryCode = factory_received_cmb.Text,
+                    StatusMachine = status_machine_cmb.Text,
+                    CommentsMachine = comments_txt.Text,
+                    ReasonTranfer = reason_tranfer_txt.Text,
+                    ConfirmReceived = confirm_received_txt.Text,
+                    BGCode = BG_code_value,
+                    TCode = T_code_value,
+                    THCode = Th_code_value,
+                    MCode = M_code_value,
 
+                };
+                try
+                {
+                    outVo = (MovingMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.AddMovingVTCbm(), inVo);
+                }
+                catch (Framework.ApplicationException exception)
+                {
+                    popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                    logger.Error(exception.GetMessageData());
+                }
+                if (outVo.AffectedCount > 0)
+                {
+                    messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, machine_serial_cmb.Text + " : " + machine_serial_cmb.Text);
+                    logger.Info(messageData);
+                    popUpMessage.Information(messageData, Text);
+
+                }
+            }
         }
-
         bool checkdata()
         {
             if (machine_serial_cmb.SelectedItem == null)

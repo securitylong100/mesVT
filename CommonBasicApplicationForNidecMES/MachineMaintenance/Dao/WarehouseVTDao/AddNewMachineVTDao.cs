@@ -58,7 +58,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("machine_suppiler", inVo.MachineSupplier);
             sqlParameter.AddParameter("machine_invoice", inVo.MachineInvoice);
             sqlParameter.AddParameter("machine_costvalue", double.Parse(inVo.MachineCostValue));
-            sqlParameter.AddParameter("registration_user_cd", UserData.GetUserData().UserName);
+            sqlParameter.AddParameter("registration_user_cd", UserData.GetUserData().UserCode);
             sqlParameter.AddParameter("factory_cd", UserData.GetUserData().FactoryCode);
             sqlParameter.AddParameterInteger("time_check_fi", inVo.TimeCheck);
            

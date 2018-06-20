@@ -179,6 +179,23 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     if ((code_status_cmb.Text == "Mượn")&& (UserData.GetUserData().FactoryCode ==inVo.ReceivedFactoryCode))//minh di muon thì add thêm
                     {
 
+                        WarehouseVTVo addnewmachine = new WarehouseVTVo();
+                        addnewmachine = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new AddNewMachineVTCbm(), new WarehouseVTVo()
+                        {
+                            RFId = rfid_txt.Text,
+                            MachineCode = "",
+                            MachineName = machine_name_cmb.Text,
+                            MachineQty = 1,
+                            MachineModel = "",
+                            MachineSerial = machine_serial_cmb.Text,
+                            MachineLocation = "",
+                            MachineSupplier = factory_tranfer_cmb.Text,
+                            MachineInvoice = "",
+                            MachineCostValue = "0",
+                            RegistrationUserCode = UserData.GetUserData().UserName,
+                            RegistrationDateTime = DateTime.Now,
+                            TimeCheck = 1,
+                             });
 
                     }
                     if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//minh cho ngta muon, thì update statust

@@ -174,7 +174,33 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     if (code_status_cmb.Text == "Bàn Giao")
                     {
                         WarehouseVTVo updateBG = new WarehouseVTVo();
-                        updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() {MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Bàn Giao",  RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
+                        updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() {MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Đã Bàn Giao",  RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
+                    }
+                    if ((code_status_cmb.Text == "Mượn")&& (UserData.GetUserData().FactoryCode ==inVo.ReceivedFactoryCode))//minh di muon thì add thêm
+                    {
+
+
+                    }
+                    if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//minh cho ngta muon, thì update statust
+                    {
+
+
+                    }
+                    if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//mình trả cho ngta, thì xóa dòng đó.
+                    {
+
+
+                    }
+
+                    if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryCode == inVo.ReceivedFactoryCode))//nguoi ta tra mình, update status
+                    {
+
+
+                    }
+                    if ((code_status_cmb.Text == "Thuê") && (UserData.GetUserData().FactoryCode == inVo.ReceivedFactoryCode))//mình đi thuê thì add thêm
+                    {
+
+
                     }
                 }
                

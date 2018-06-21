@@ -20,14 +20,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             sql.Append("Delete From t_vt_machine");
             sql.Append(" Where	");
-            sql.Append(" machine_id = :machine_id ;");
+            sql.Append(" machine_serial = :machine_serial ;");
 
 
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
-            sqlParameter.AddParameterInteger("machine_id", inVo.MachineId);
+            sqlParameter.AddParameter("machine_serial", inVo.MachineSerial);
 
             WarehouseVTVo outVo = new WarehouseVTVo { AffectedCount = sqlCommandAdapter.ExecuteNonQuery(sqlParameter) };
 

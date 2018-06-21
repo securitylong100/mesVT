@@ -108,7 +108,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     }
                 }
                 else if (intcheckid > 0)
-                { MessageBox.Show("RFId hoặc Machine Code đã tồn tại trong danh sách !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                { MessageBox.Show("RFId hoặc Machine serial đã tồn tại trong danh sách !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             }
         }
         public int intcheckid;
@@ -145,11 +145,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         bool checkdata()
         {
-            if (machine_cd_txt.Text == "")
+            if (serial_txt.Text == "")
             {
-                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, machine_cd_lbl.Text);
+                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, serial_lbl.Text);
                 popUpMessage.Warning(messageData, Text);
-                machine_cd_txt.Focus();
+                serial_txt.Focus();
                 return false;
             }
             if (machine_name_cmb.Text == "")
@@ -164,6 +164,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, checktime_lbl.Text);
                 popUpMessage.Warning(messageData, Text);
                 checktime_txt.Focus();
+                return false;
+            }
+            if (qty_txt.Text == "")
+            {
+                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, qty_lbl.Text);
+                popUpMessage.Warning(messageData, Text);
+                qty_txt.Focus();
                 return false;
             }
 

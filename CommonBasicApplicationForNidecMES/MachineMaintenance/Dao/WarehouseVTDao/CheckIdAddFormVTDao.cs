@@ -25,20 +25,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sql.Append(@"select Count(*) as count
               from t_vt_machine
               where 1=1 ");
+
+
+            sql.Append(" and machine_serial  =:machine_serial");
+            sqlParameter.AddParameter("machine_serial", inVo.MachineSerial);
             if (!String.IsNullOrEmpty(inVo.RFId))
             {
-                sql.Append(@" and   rfid_cd  =:rfid_cd");
+                sql.Append(@" or   rfid_cd  =:rfid_cd");
                 sqlParameter.AddParameter("rfid_cd", inVo.RFId);
+
             }
-            sql.Append("  or ");
-           
-            if (!String.IsNullOrEmpty(inVo.MachineSerial))
-            {
-                sql.Append(" machine_serial  =:machine_serial");
-                sqlParameter.AddParameter("machine_serial", inVo.MachineSerial);
-            }
-    
-                sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
+
+
+            sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //execute SQL
             IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);

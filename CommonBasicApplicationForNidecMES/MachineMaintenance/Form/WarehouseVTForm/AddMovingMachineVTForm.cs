@@ -27,7 +27,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void AddMovingMachineVTForm_Load(object sender, EventArgs e)
         {
             code_name_txt.ReadOnly = true;
-            machine_name_cmb.Enabled = false;
             dgv_maxcode.ReadOnly = true;
 
             ValueObjectList<WarehouseVTVo> machineserial = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new GetMachineSerialCbm(), new WarehouseVTVo());
@@ -150,6 +149,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void Ok_btn_Click(object sender, EventArgs e)
         {
+            code_status_cmb_SelectedIndexChanged(sender, e);
+
             if (checkdata())
             {
                 MovingMachineVTVo outVo = new MovingMachineVTVo();
@@ -195,18 +196,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             RegistrationUserCode = UserData.GetUserData().UserName,
                             RegistrationDateTime = DateTime.Now,
                             TimeCheck = 1,
+                            MachineStatus = "Đã Mượn",
                         });
                     }
                     if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//minh cho ngta muon, thì update statust
                     {
                         WarehouseVTVo updateBG = new WarehouseVTVo();
                         updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Đã Cho Mượn", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
-
                     }
                     if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//mình trả cho ngta, thì xóa dòng đó.
                     {
 
-
+                  
                     }
 
                     if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryCode == inVo.ReceivedFactoryCode))//nguoi ta tra mình, update status
@@ -237,7 +238,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         bool checkdata()
         {
-            if (machine_serial_cmb.SelectedItem == null)
+            if (machine_serial_cmb.Text == null)
             {
                 messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, serialmachine_lbl.Text);
                 popUpMessage.Warning(messageData, Text);

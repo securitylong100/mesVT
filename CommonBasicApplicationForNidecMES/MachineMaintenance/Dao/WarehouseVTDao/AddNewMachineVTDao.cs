@@ -24,6 +24,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
           machine_suppiler,
           machine_invoice,
           machine_costvalue,
+            machine_status,
           registration_user_cd,
           registration_date_time,
             factory_cd,
@@ -38,6 +39,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
           :machine_suppiler,
           :machine_invoice,
           :machine_costvalue,
+            :machine_status,
           :registration_user_cd,
           now(),
             :factory_cd,
@@ -61,7 +63,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("registration_user_cd", UserData.GetUserData().UserCode);
             sqlParameter.AddParameter("factory_cd", UserData.GetUserData().FactoryCode);
             sqlParameter.AddParameterInteger("time_check_fi", inVo.TimeCheck);
-           
+            sqlParameter.AddParameter("machine_status", inVo.MachineStatus);
+
             //execute SQL
 
             WarehouseVTVo outVo = new WarehouseVTVo

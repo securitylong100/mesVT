@@ -362,6 +362,7 @@
             this.checkid_cmb.Name = "checkid_cmb";
             this.checkid_cmb.Size = new System.Drawing.Size(152, 23);
             this.checkid_cmb.TabIndex = 81;
+            this.checkid_cmb.Visible = false;
             // 
             // machine_name_cmb
             // 

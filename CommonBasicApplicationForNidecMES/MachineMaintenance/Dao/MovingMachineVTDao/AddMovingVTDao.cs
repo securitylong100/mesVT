@@ -22,7 +22,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
           m_cd,
           t_cd,
           th_cd,
-          status_machine,
+          status,
           comments_machine,
            reason_tranfer,
             confirm_received,
@@ -36,7 +36,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
           :m_cd,
           :t_cd,
           :th_cd,
-          :status_machine,
+          :status,
           :comments_machine,
           :reason_tranfer,
             :confirm_received,
@@ -56,7 +56,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("m_cd", inVo.MCode);
             sqlParameter.AddParameter("t_cd", inVo.TCode);
             sqlParameter.AddParameter("th_cd", inVo.THCode);
-            sqlParameter.AddParameter("status_machine", inVo.StatusMachine);
+            sqlParameter.AddParameter("status_machine", inVo.Status);
             sqlParameter.AddParameter("comments_machine", inVo.CommentsMachine);
             sqlParameter.AddParameter("reason_tranfer", inVo.ReasonTranfer);
             sqlParameter.AddParameter("confirm_received", inVo.ConfirmReceived);

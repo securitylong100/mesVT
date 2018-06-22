@@ -149,7 +149,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void Ok_btn_Click(object sender, EventArgs e)
         {
-            code_status_cmb_SelectedIndexChanged(sender, e);
+  //          code_status_cmb_SelectedIndexChanged(sender, e);
 
             if (checkdata())
             {
@@ -159,7 +159,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     MachineSerial = machine_serial_cmb.Text,
                     TranferFactoryCode = factory_tranfer_cmb.Text,
                     ReceivedFactoryCode = factory_received_cmb.Text,
-                    StatusMachine = status_machine_cmb.Text,
+                    Status = status_machine_cmb.Text,
                     CommentsMachine = comments_txt.Text,
                     ReasonTranfer = reason_tranfer_txt.Text,
                     ConfirmReceived = confirm_received_txt.Text,
@@ -206,7 +206,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     }
                     if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//mình trả cho ngta, thì xóa dòng đó.
                     {
-
                         WarehouseVTVo deletemachine = new WarehouseVTVo();
                         deletemachine = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new DeleteMachineVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial });
                     }
@@ -215,13 +214,27 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     {
                         WarehouseVTVo updateBG = new WarehouseVTVo();
                         updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Máy CTY", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
-
                     }
                     if ((code_status_cmb.Text == "Thuê") && (UserData.GetUserData().FactoryCode == inVo.ReceivedFactoryCode))//mình đi thuê thì add thêm
                     {
-                        WarehouseVTVo updateBG = new WarehouseVTVo();
-                        updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Máy Thuê", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
-
+                        WarehouseVTVo addnewmachine = new WarehouseVTVo();
+                        addnewmachine = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new AddNewMachineVTCbm(), new WarehouseVTVo()
+                        {
+                            RFId = rfid_txt.Text,
+                            MachineCode = "",
+                            MachineName = machine_name_cmb.Text,
+                            MachineQty = 1,
+                            MachineModel = "",
+                            MachineSerial = machine_serial_cmb.Text,
+                            MachineLocation = "",
+                            MachineSupplier = factory_tranfer_cmb.Text,
+                            MachineInvoice = "",
+                            MachineCostValue = "0",
+                            RegistrationUserCode = UserData.GetUserData().UserName,
+                            RegistrationDateTime = DateTime.Now,
+                            TimeCheck = 1,
+                            MachineStatus = "Máy Thuê",
+                        });
                     }
                 }
 

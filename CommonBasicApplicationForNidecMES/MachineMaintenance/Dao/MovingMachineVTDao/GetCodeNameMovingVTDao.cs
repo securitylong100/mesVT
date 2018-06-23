@@ -29,19 +29,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //Thuê
             if (inVo.CodeStatus == "Bàn Giao")
             {
-                sql.Append(@"select distinct bg_cd from t_vt_moving order by bg_cd ");
+                sql.Append(@"select distinct bg_cd from t_vt_moving order by bg_cd DESC ");
             }
             if (inVo.CodeStatus == "Mượn")
             {
-                sql.Append(@"select distinct m_cd from t_vt_moving order by m_cd ");
+                sql.Append(@"select distinct m_cd from t_vt_moving order by m_cd  DESC");
             }
             if (inVo.CodeStatus == "Trả")
             {
-                sql.Append(@"select distinct t_cd from t_vt_moving order by t_cd ");
+                sql.Append(@"select distinct t_cd from t_vt_moving order by t_cd DESC ");
             }
             if (inVo.CodeStatus == "Thuê")
             {
-                sql.Append(@"select distinct th_cd from t_vt_moving order by th_cd ");
+                sql.Append(@"select distinct th_cd from t_vt_moving order by th_cd DESC ");
             }
 
 

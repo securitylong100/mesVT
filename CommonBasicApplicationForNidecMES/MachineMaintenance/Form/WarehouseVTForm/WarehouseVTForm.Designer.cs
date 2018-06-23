@@ -51,6 +51,10 @@
             this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.machine_supplier_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.supplier_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.location_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.location_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.col_machineid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +66,11 @@
             this.col_machinemodel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinelocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinesupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_machinestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colfactorycd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machineinvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckTime_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.location_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.location_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -220,6 +223,7 @@
             this.col_machinemodel,
             this.col_machinelocation,
             this.col_machinesupplier,
+            this.col_machinestatus,
             this.colfactorycd,
             this.col_machineinvoice,
             this.col_machinecostvalue,
@@ -365,6 +369,50 @@
             this.supplier_lbl.TabIndex = 81;
             this.supplier_lbl.Text = "Suppiler:";
             // 
+            // location_lbl
+            // 
+            this.location_lbl.AutoSize = true;
+            this.location_lbl.ControlId = null;
+            this.location_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.location_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.location_lbl.Location = new System.Drawing.Point(609, 147);
+            this.location_lbl.Name = "location_lbl";
+            this.location_lbl.Size = new System.Drawing.Size(57, 15);
+            this.location_lbl.TabIndex = 83;
+            this.location_lbl.Text = "Location:";
+            // 
+            // location_cmb
+            // 
+            this.location_cmb.ControlId = null;
+            this.location_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.location_cmb.FormattingEnabled = true;
+            this.location_cmb.Location = new System.Drawing.Point(612, 165);
+            this.location_cmb.Name = "location_cmb";
+            this.location_cmb.Size = new System.Drawing.Size(121, 23);
+            this.location_cmb.TabIndex = 82;
+            // 
+            // machine_status_lbl
+            // 
+            this.machine_status_lbl.AutoSize = true;
+            this.machine_status_lbl.ControlId = null;
+            this.machine_status_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.machine_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.machine_status_lbl.Location = new System.Drawing.Point(754, 147);
+            this.machine_status_lbl.Name = "machine_status_lbl";
+            this.machine_status_lbl.Size = new System.Drawing.Size(91, 15);
+            this.machine_status_lbl.TabIndex = 85;
+            this.machine_status_lbl.Text = "Machine Status";
+            // 
+            // machine_status_cmb
+            // 
+            this.machine_status_cmb.ControlId = null;
+            this.machine_status_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machine_status_cmb.FormattingEnabled = true;
+            this.machine_status_cmb.Location = new System.Drawing.Point(757, 165);
+            this.machine_status_cmb.Name = "machine_status_cmb";
+            this.machine_status_cmb.Size = new System.Drawing.Size(121, 23);
+            this.machine_status_cmb.TabIndex = 84;
+            // 
             // col_machineid
             // 
             this.col_machineid.DataPropertyName = "MachineId";
@@ -443,6 +491,13 @@
             this.col_machinesupplier.Name = "col_machinesupplier";
             this.col_machinesupplier.Width = 127;
             // 
+            // col_machinestatus
+            // 
+            this.col_machinestatus.DataPropertyName = "MachineStatus";
+            this.col_machinestatus.HeaderText = "Status";
+            this.col_machinestatus.Name = "col_machinestatus";
+            this.col_machinestatus.Width = 67;
+            // 
             // colfactorycd
             // 
             this.colfactorycd.DataPropertyName = "FactoryCode";
@@ -471,32 +526,12 @@
             this.colCheckTime_final.Name = "colCheckTime_final";
             this.colCheckTime_final.Width = 98;
             // 
-            // location_lbl
-            // 
-            this.location_lbl.AutoSize = true;
-            this.location_lbl.ControlId = null;
-            this.location_lbl.Font = new System.Drawing.Font("Arial", 9F);
-            this.location_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.location_lbl.Location = new System.Drawing.Point(609, 147);
-            this.location_lbl.Name = "location_lbl";
-            this.location_lbl.Size = new System.Drawing.Size(57, 15);
-            this.location_lbl.TabIndex = 83;
-            this.location_lbl.Text = "Location:";
-            // 
-            // location_cmb
-            // 
-            this.location_cmb.ControlId = null;
-            this.location_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.location_cmb.FormattingEnabled = true;
-            this.location_cmb.Location = new System.Drawing.Point(612, 165);
-            this.location_cmb.Name = "location_cmb";
-            this.location_cmb.Size = new System.Drawing.Size(121, 23);
-            this.location_cmb.TabIndex = 82;
-            // 
             // WarehouseVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1182, 699);
+            this.Controls.Add(this.machine_status_lbl);
+            this.Controls.Add(this.machine_status_cmb);
             this.Controls.Add(this.location_lbl);
             this.Controls.Add(this.location_cmb);
             this.Controls.Add(this.supplier_lbl);
@@ -529,6 +564,8 @@
             this.Controls.SetChildIndex(this.supplier_lbl, 0);
             this.Controls.SetChildIndex(this.location_cmb, 0);
             this.Controls.SetChildIndex(this.location_lbl, 0);
+            this.Controls.SetChildIndex(this.machine_status_cmb, 0);
+            this.Controls.SetChildIndex(this.machine_status_lbl, 0);
             this.setting_gbc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).EndInit();
             this.groupBoxCommon2.ResumeLayout(false);
@@ -559,6 +596,10 @@
         private Framework.ComboBoxCommon machine_supplier_cmb;
         private Framework.LabelCommon supplier_lbl;
         private Framework.ButtonCommon exportcsv_btn;
+        private Framework.LabelCommon location_lbl;
+        private Framework.ComboBoxCommon location_cmb;
+        private Framework.LabelCommon machine_status_lbl;
+        private Framework.ComboBoxCommon machine_status_cmb;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rfid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecode;
@@ -570,11 +611,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinemodel;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinelocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinesupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_machinestatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colfactorycd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineinvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecostvalue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckTime_final;
-        private Framework.LabelCommon location_lbl;
-        private Framework.ComboBoxCommon location_cmb;
     }
 }

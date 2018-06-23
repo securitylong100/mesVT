@@ -16,7 +16,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {//WarehouseVTCheckForm
     public partial class AddMovingMachineVTForm : FormCommonNCVP
     {
-
+        public MovingMachineVTVo movingmachineVo = new MovingMachineVTVo();
 
         public AddMovingMachineVTForm()
         {
@@ -97,7 +97,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 codestatus = "BG/CĐ";
                 BG_code_value = codeselect;
-
+                Th_code_value = null;
+                T_code_value = null;
+                M_code_value = null;
             }
             else if (code_status_cmb.Text == "Mượn")
             {
@@ -111,6 +113,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 codestatus = "M/CĐ";
                 M_code_value = codeselect;
+                BG_code_value = null;
+                T_code_value = null;
+                Th_code_value = null;
             }
             else if (code_status_cmb.Text == "Trả")
             {
@@ -124,6 +129,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 codestatus = "T/CĐ";
                 T_code_value = codeselect;
+                Th_code_value = null;
+                M_code_value = null;
+                BG_code_value = null;
             }
             else if (code_status_cmb.Text == "Thuê")
             {
@@ -137,7 +145,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
                 codestatus = "TH/CĐ";
                 Th_code_value = codeselect;
-            }
+                T_code_value = null;
+                M_code_value = null;
+                BG_code_value = null;
+                            }
             else
             {
                 codeselect = "";

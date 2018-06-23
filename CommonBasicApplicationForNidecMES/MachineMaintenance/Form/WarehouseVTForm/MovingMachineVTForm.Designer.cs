@@ -59,7 +59,6 @@
             this.col_machine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_factory_tranfer_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_factory_received_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_code_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_code_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_status_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_comments_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -212,7 +211,6 @@
             this.col_machine_name,
             this.col_factory_tranfer_cd,
             this.col_factory_received_cd,
-            this.col_code_status,
             this.col_code_name,
             this.col_status_machine,
             this.col_comments_machine,
@@ -439,12 +437,6 @@
             this.col_factory_received_cd.Name = "col_factory_received_cd";
             this.col_factory_received_cd.Width = 125;
             // 
-            // col_code_status
-            // 
-            this.col_code_status.DataPropertyName = "CodeStatus";
-            this.col_code_status.HeaderText = "Code Status";
-            this.col_code_status.Name = "col_code_status";
-            // 
             // col_code_name
             // 
             this.col_code_name.DataPropertyName = "CodeName";
@@ -577,7 +569,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machine_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factory_tranfer_cd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factory_received_cd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_code_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_code_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_status_machine;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_comments_machine;

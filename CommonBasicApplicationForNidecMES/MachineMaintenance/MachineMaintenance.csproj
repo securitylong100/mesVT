@@ -163,6 +163,7 @@
     <Compile Include="Cbm\Account-WhCbm\WareHouseCbm\SearchListWareHouseCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\WareHouseCbm\UpdateWareHouseUserCbm.cs" />
     <Compile Include="Cbm\WarehouseVTCbm\CheckIdAddFormVTCbm.cs" />
+    <Compile Include="Cbm\WarehouseVTCbm\GetMachineStatusCbm.cs" />
     <Compile Include="Cbm\WarehouseVTCbm\GetMachineModelVTCbm.cs" />
     <Compile Include="Cbm\WarehouseVTCbm\GetMachineSupplierCbm.cs" />
     <Compile Include="Cbm\WarehouseVTCbm\GetMachineSerialCbm.cs" />
@@ -287,6 +288,7 @@
     <Compile Include="Dao\WarehouseVTCheckDao\SearchResuftCheckVTDao.cs" />
     <Compile Include="Dao\WarehouseVTCheckDao\UpdateCheckTimeVTDao.cs" />
     <Compile Include="Dao\WarehouseVTDao\AddNewMachineVTDao.cs" />
+    <Compile Include="Dao\WarehouseVTDao\GetMachineStatusDao.cs" />
     <Compile Include="Dao\WarehouseVTDao\GetMachineModelVTDao.cs" />
     <Compile Include="Dao\WarehouseVTDao\GetMachineSupplierDao.cs" />
     <Compile Include="Dao\WarehouseVTDao\GetMachineSerialDao.cs" />

@@ -19,22 +19,83 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             ValueObjectList<MovingMachineVTVo> voList = new ValueObjectList<MovingMachineVTVo>();
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
-
+            //Bàn Giao
+            //Mượn
+            //Trả
+            //Thuê
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
 
-            sql.Append(@"select a.moving_id, a.machine_serial, a.factory_tranfer_cd, a.factory_received_cd, a.bg_cd, a.m_cd, a.t_cd, a.th_cd  a.status, 
+            sql.Append(@"select a.moving_id, a.machine_serial, a.factory_tranfer_cd, a.factory_received_cd, a.bg_cd, a.m_cd, a.t_cd, a.th_cd,  a.status, 
             a.comments_machine, a.reason_tranfer, a.confirm_received, a.registration_user_cd, a.registration_date_time, a.factory_cd, b.machine_name
             from t_vt_moving a
             left join t_vt_machine b on a.machine_serial = b.machine_serial
               where 1=1 ");
 
+
             if (!String.IsNullOrEmpty(inVo.MachineSerial))
             {
-                sql.Append(" and machine_serial  =:machine_serial");
+                sql.Append(" and a.machine_serial  =:machine_serial");
                 sqlParameter.AddParameterString("machine_serial", inVo.MachineSerial);
             }
-
+            if (!String.IsNullOrEmpty(inVo.TranferFactoryCode))
+            {
+                sql.Append(" and a.factory_tranfer_cd  =:factory_tranfer_cd");
+                sqlParameter.AddParameterString("factory_tranfer_cd", inVo.TranferFactoryCode);
+            }
+            if (!String.IsNullOrEmpty(inVo.ReceivedFactoryCode))
+            {
+                sql.Append(" and a.factory_received_cd  =:factory_received_cd");
+                sqlParameter.AddParameterString("factory_received_cd", inVo.ReceivedFactoryCode);
+            }
+            if (inVo.CodeStatus == "Bàn Giao")
+            {
+                if (!String.IsNullOrEmpty(inVo.CodeName))
+                {
+                    sql.Append(" and a.bg_cd  =:bg_cd");
+                    sqlParameter.AddParameterString("bg_cd", inVo.CodeName);
+                }
+                else
+                {
+                    sql.Append(" and a.bg_cd  >'0'");
+                }
+            }
+            if (inVo.CodeStatus == "Mượn")
+            {
+                if (!String.IsNullOrEmpty(inVo.CodeName))
+                {
+                    sql.Append(" and a.m_cd  =:m_cd");
+                    sqlParameter.AddParameterString("m_cd", inVo.CodeName);
+                }
+                else
+                {
+                    sql.Append(" and a.m_cd  >'0'");
+                }
+            }
+            if (inVo.CodeStatus == "Trả")
+            {
+                if (!String.IsNullOrEmpty(inVo.CodeName))
+                {
+                    sql.Append(" and a.t_cd  =:t_cd");
+                    sqlParameter.AddParameterString("t_cd", inVo.CodeName);
+                }
+                else
+                {
+                    sql.Append(" and a.t_cd  >'0'");
+                }
+            }
+            if (inVo.CodeStatus == "Thuê")
+            {
+                if (!String.IsNullOrEmpty(inVo.CodeName))
+                {
+                    sql.Append(" and a.th_cd  =:th_cd");
+                    sqlParameter.AddParameterString("th_cd", inVo.CodeName);
+                }
+                else
+                {
+                    sql.Append(" and a.th_cd  >'0'");
+                }
+            }
 
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
@@ -43,26 +104,86 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
 
             while (dataReader.Read())
             {
-                MovingMachineVTVo outVo = new MovingMachineVTVo
+                if (inVo.CodeStatus == "Bàn Giao")
                 {
-                    //MachineId = int.Parse(dataReader["machine_id"].ToString()),
-                    //RFId = dataReader["rfid_cd"].ToString(),
-                    //MachineCode = dataReader["machine_cd"].ToString(),
-                    //MachineName = dataReader["machine_name"].ToString(),
-                    //MachineQty = int.Parse(dataReader["machine_qty"].ToString()),
-                    //MachineSerial = dataReader["machine_serial"].ToString(),
-                    //MachineModel = dataReader["machine_model"].ToString(),
-                    //MachineLocation = dataReader["machine_location"].ToString(),
-                    //MachineSupplier = dataReader["machine_suppiler"].ToString(),
-                    //MachineInvoice = dataReader["machine_invoice"].ToString(),
-                    //MachineCostValue = (dataReader["machine_costvalue"].ToString()),
-                    //RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
-                    //RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
-                    //TimeCheck = int.Parse(dataReader["time_check_fi"].ToString()),
-                    //FactoryCode = dataReader["factory_cd"].ToString(),
-
-                };
-                voList.add(outVo);
+                    MovingMachineVTVo outVo = new MovingMachineVTVo
+                    {
+                        MovingId = int.Parse(dataReader["moving_id"].ToString()),
+                        MachineSerial = dataReader["machine_serial"].ToString(),
+                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        CodeName = dataReader["bg_cd"].ToString(), //only change
+                        Status = dataReader["status"].ToString(),
+                        CommentsMachine = dataReader["comments_machine"].ToString(),
+                        ReasonTranfer = dataReader["reason_tranfer"].ToString(),
+                        ConfirmReceived = dataReader["confirm_received"].ToString(),
+                        MachineName = (dataReader["machine_name"].ToString()),
+                        RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
+                        RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
+                        FactoryCode = dataReader["factory_cd"].ToString(),
+                    };
+                    voList.add(outVo);
+                }
+                if (inVo.CodeStatus == "Mượn")
+                {
+                    MovingMachineVTVo outVo = new MovingMachineVTVo
+                    {
+                        MovingId = int.Parse(dataReader["moving_id"].ToString()),
+                        MachineSerial = dataReader["machine_serial"].ToString(),
+                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        CodeName = dataReader["m_cd"].ToString(),//only change
+                        Status = dataReader["status"].ToString(),
+                        CommentsMachine = dataReader["comments_machine"].ToString(),
+                        ReasonTranfer = dataReader["reason_tranfer"].ToString(),
+                        ConfirmReceived = dataReader["confirm_received"].ToString(),
+                        MachineName = (dataReader["machine_name"].ToString()),
+                        RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
+                        RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
+                        FactoryCode = dataReader["factory_cd"].ToString(),
+                    };
+                    voList.add(outVo);
+                }
+                if (inVo.CodeStatus == "Trả")
+                {
+                    MovingMachineVTVo outVo = new MovingMachineVTVo
+                    {
+                        MovingId = int.Parse(dataReader["moving_id"].ToString()),
+                        MachineSerial = dataReader["machine_serial"].ToString(),
+                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        CodeName = dataReader["t_cd"].ToString(),//only change
+                        Status = dataReader["status"].ToString(),
+                        CommentsMachine = dataReader["comments_machine"].ToString(),
+                        ReasonTranfer = dataReader["reason_tranfer"].ToString(),
+                        ConfirmReceived = dataReader["confirm_received"].ToString(),
+                        MachineName = (dataReader["machine_name"].ToString()),
+                        RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
+                        RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
+                        FactoryCode = dataReader["factory_cd"].ToString(),
+                    };
+                    voList.add(outVo);
+                }
+                if (inVo.CodeStatus == "Thuê")
+                {
+                    MovingMachineVTVo outVo = new MovingMachineVTVo
+                    {
+                        MovingId = int.Parse(dataReader["moving_id"].ToString()),
+                        MachineSerial = dataReader["machine_serial"].ToString(),
+                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        CodeName = dataReader["th_cd"].ToString(),//only change
+                        Status = dataReader["status"].ToString(),
+                        CommentsMachine = dataReader["comments_machine"].ToString(),
+                        ReasonTranfer = dataReader["reason_tranfer"].ToString(),
+                        ConfirmReceived = dataReader["confirm_received"].ToString(),
+                        MachineName = (dataReader["machine_name"].ToString()),
+                        RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
+                        RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
+                        FactoryCode = dataReader["factory_cd"].ToString(),
+                    };
+                    voList.add(outVo);
+                }
             }
             dataReader.Close();
             return voList;

@@ -59,10 +59,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         }
         private void search_btn_Click(object sender, EventArgs e)
         {
-            GindBind();
+            GridBind();
 
         }
-        void GindBind()
+        void GridBind()
         {
             try
             {
@@ -74,7 +74,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     CodeStatus = code_status_cmb.Text,
                     CodeName = code_name_cmb.Text,
                 };
-                ValueObjectList<WarehouseVTVo> listvo = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchMovingVTCbm(), inVo);
+                ValueObjectList<MovingMachineVTVo> listvo = (ValueObjectList<MovingMachineVTVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchMovingVTCbm(), inVo);
                 vt_search_moving_dgv.DataSource = listvo.GetList();
             }
             catch (Framework.ApplicationException exception)
@@ -91,7 +91,23 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void update_btn_Click(object sender, EventArgs e)
         {
+            string applyupdate = "";
+            for (int i = 0; i < vt_search_moving_dgv.RowCount - 1; i++)
+            {
+                if (vt_search_moving_dgv.Rows[i].Cells["col_code_name"] == vt_search_moving_dgv.Rows[i + 1].Cells["col_code_name"])
+                {
+                    applyupdate = "0";
+                }
 
+            }
+
+            if (vt_search_moving_dgv.SelectedCells.Count > 0 && applyupdate == "0") //khong che cung 1 loai codename moi cho update
+            {
+                MovingMachineVTVo selectedvo = (MovingMachineVTVo)vt_search_moving_dgv.CurrentRow.DataBoundItem;
+
+                if (new AddMovingMachineVTForm { movingmachineVo = selectedvo, }.ShowDialog() == DialogResult.OK)
+                { GridBind(); }
+            }
         }
 
         private void delete_btn_Click(object sender, EventArgs e)

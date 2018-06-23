@@ -27,7 +27,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //from t_vt_machine a
             //left join t_vt_list_check b on b.machine_cd = a.machine_cd
             //where 1=1 and b.check_time = a.time_check_fi ");
-            sql.Append(@"select machine_id, rfid_cd, machine_cd,  machine_name, machine_qty,  machine_serial, machine_model,  machine_location, machine_suppiler, machine_invoice, machine_costvalue, registration_user_cd ,registration_date_time,time_check_fi,factory_cd
+            sql.Append(@"select machine_id, rfid_cd, machine_cd,  machine_name, machine_qty,  machine_serial, machine_model,  machine_location, machine_suppiler, machine_invoice, machine_status, machine_costvalue, registration_user_cd ,registration_date_time,time_check_fi,factory_cd
               from t_vt_machine
               where 1=1 ");
             if (!String.IsNullOrEmpty(inVo.RFId))
@@ -56,7 +56,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and machine_location  =:machine_location");
                 sqlParameter.AddParameterString("machine_location", inVo.MachineLocation);
             }
-           
+            if (!String.IsNullOrEmpty(inVo.MachineStatus))
+            {
+                sql.Append(" and machine_status  =:machine_status");
+                sqlParameter.AddParameterString("machine_status", inVo.MachineStatus);
+            }
+
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //execute SQL
@@ -76,7 +81,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     MachineLocation = dataReader["machine_location"].ToString(),
                     MachineSupplier = dataReader["machine_suppiler"].ToString(),
                     MachineInvoice = dataReader["machine_invoice"].ToString(),
-                   
+                    MachineStatus = dataReader["machine_status"].ToString(),
 
                     MachineCostValue = (dataReader["machine_costvalue"].ToString()),
                     RegistrationUserCode = dataReader["registration_user_cd"].ToString(),

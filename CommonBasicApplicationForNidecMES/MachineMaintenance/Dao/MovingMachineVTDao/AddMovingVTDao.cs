@@ -56,7 +56,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("m_cd", inVo.MCode);
             sqlParameter.AddParameter("t_cd", inVo.TCode);
             sqlParameter.AddParameter("th_cd", inVo.THCode);
-            sqlParameter.AddParameter("status_machine", inVo.Status);
+            sqlParameter.AddParameter("status", inVo.Status);
             sqlParameter.AddParameter("comments_machine", inVo.CommentsMachine);
             sqlParameter.AddParameter("reason_tranfer", inVo.ReasonTranfer);
             sqlParameter.AddParameter("confirm_received", inVo.ConfirmReceived);

@@ -42,7 +42,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                   MachineLocation = location_cmb.Text,
                     RFId = rfid_txt.Text,
                     MachineModel = machine_model_cmb.Text,
-                    MachineSupplier = machine_supplier_cmb.Text
+                    MachineSupplier = machine_supplier_cmb.Text,
+                    MachineStatus = machine_status_cmb.Text
                 };
 
 
@@ -104,7 +105,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                location_cmb.DisplayMember = "MachineLocation";
                 location_cmb.DataSource = machinelocation.GetList();
                 location_cmb.Text = "";
-
+                ValueObjectList<WarehouseVTVo> machinestatus = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new GetMachineStatusCbm(), new WarehouseVTVo());
+                machine_status_cmb.DisplayMember = "MachineStatus";
+                machine_status_cmb.DataSource = machinestatus.GetList();
+                machine_status_cmb.Text = "";
             }
             //else
             //{

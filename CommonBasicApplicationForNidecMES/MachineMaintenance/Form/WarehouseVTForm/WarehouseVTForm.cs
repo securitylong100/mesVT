@@ -39,7 +39,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 WarehouseVTVo whvos = new WarehouseVTVo()
                 {
                     MachineSerial = machine_serial_cmb.Text,
-                  MachineLocation = location_cmb.Text,
+                    MachineLocation = location_cmb.Text,
                     RFId = rfid_txt.Text,
                     MachineModel = machine_model_cmb.Text,
                     MachineSupplier = machine_supplier_cmb.Text,
@@ -49,7 +49,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 ValueObjectList<WarehouseVTVo> listvo = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchMachineCbm(), whvos);
                 warehouse_vt_dgv.DataSource = listvo.GetList();
-           
+
                 machine_serial_cmb.Text = "";
                 rfid_txt.Text = "";
 
@@ -102,7 +102,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 machine_supplier_cmb.DataSource = machinesuppiler.GetList();
                 machine_supplier_cmb.Text = "";
                 ValueObjectList<WarehouseVTVo> machinelocation = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new GetMachineLocationCbm(), new WarehouseVTVo());
-               location_cmb.DisplayMember = "MachineLocation";
+                location_cmb.DisplayMember = "MachineLocation";
                 location_cmb.DataSource = machinelocation.GetList();
                 location_cmb.Text = "";
                 ValueObjectList<WarehouseVTVo> machinestatus = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new GetMachineStatusCbm(), new WarehouseVTVo());
@@ -127,7 +127,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ValueObjectList<WarehouseVTVo> model = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new SearchMachineCbm(), new WarehouseVTVo { MachineModel = machine_model_cmb.Text });
                 machine_serial_cmb.DisplayMember = "MachineSerial";
                 machine_serial_cmb.DataSource = model.GetList();
-              
+
             }
             machine_serial_cmb.Text = "";
         }
@@ -241,7 +241,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             popUpMessage.Information(messageData, Text);
                         }
                     }
-
                 }
                 catch (Framework.ApplicationException exception)
                 {
@@ -251,10 +250,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 WarehouseVTForm_Load(sender, e);
                 search_btn_Click(sender, e);
             }
-
         }
-
-      
     }
-
 }

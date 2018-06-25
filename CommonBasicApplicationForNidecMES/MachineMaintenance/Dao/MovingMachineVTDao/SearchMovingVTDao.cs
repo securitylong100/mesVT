@@ -121,6 +121,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
+                        CodeStatus = inVo.CodeStatus,
                     };
                     voList.add(outVo);
                 }
@@ -141,6 +142,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
+                        CodeStatus = inVo.CodeStatus,
                     };
                     voList.add(outVo);
                 }
@@ -161,6 +163,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
+                        CodeStatus = inVo.CodeStatus,
                     };
                     voList.add(outVo);
                 }
@@ -181,6 +184,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationUserCode = dataReader["registration_user_cd"].ToString(),
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
+                        CodeStatus = inVo.CodeStatus,
                     };
                     voList.add(outVo);
                 }

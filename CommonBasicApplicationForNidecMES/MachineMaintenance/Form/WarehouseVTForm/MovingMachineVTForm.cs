@@ -60,6 +60,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void search_btn_Click(object sender, EventArgs e)
         {
             GridBind();
+            codecheckCODESTATUS();
 
         }
         void GridBind()
@@ -83,6 +84,22 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
+        public string applyupdate = "";
+        void codecheckCODESTATUS()
+        {
+            for (int i = 0; i < vt_search_moving_dgv.RowCount - 1; i++)
+            {
+                if (vt_search_moving_dgv.Rows[i].Cells["col_code_name"].Value.ToString() == vt_search_moving_dgv.Rows[i + 1].Cells["col_code_name"].Value.ToString())
+                {
+                    applyupdate = "0";
+                }
+                else
+                {
+                    applyupdate = "1";
+                    i = vt_search_moving_dgv.RowCount - 1;
+                }
+            }
+        }
         private void add_btn_Click(object sender, EventArgs e)
         {
             AddMovingMachineVTForm addmovingform = new AddMovingMachineVTForm();
@@ -91,16 +108,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void update_btn_Click(object sender, EventArgs e)
         {
-            string applyupdate = "";
-            for (int i = 0; i < vt_search_moving_dgv.RowCount - 1; i++)
-            {
-                if (vt_search_moving_dgv.Rows[i].Cells["col_code_name"] == vt_search_moving_dgv.Rows[i + 1].Cells["col_code_name"])
-                {
-                    applyupdate = "0";
-                }
-
-            }
-
             if (vt_search_moving_dgv.SelectedCells.Count > 0 && applyupdate == "0") //khong che cung 1 loai codename moi cho update
             {
                 MovingMachineVTVo selectedvo = (MovingMachineVTVo)vt_search_moving_dgv.CurrentRow.DataBoundItem;
@@ -109,13 +116,67 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 { GridBind(); }
             }
         }
-
         private void delete_btn_Click(object sender, EventArgs e)
         {
+            if (vt_search_moving_dgv.Rows.Count > 0 && vt_search_moving_dgv.DataSource != null)
+            {
+                try
+                {
+                    if (MessageBox.Show("Bạn có chắc xóa thiết bị này !", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 
+                    {
+                        MovingMachineVTVo selectedvo = (MovingMachineVTVo)vt_search_moving_dgv.CurrentRow.DataBoundItem;
+                        MovingMachineVTVo outVo = new MovingMachineVTVo();
+                        outVo = (MovingMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.DeleteMovingVTCbm(), selectedvo);
+
+                        if (outVo.AffectedCount > 0)
+                        {
+                            messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, machine_serial_lbl + " : " + machine_serial_cmb.Text);
+                            logger.Info(messageData);
+                            popUpMessage.Information(messageData, Text);
+                        }
+                    }
+                }
+                catch (Framework.ApplicationException exception)
+                {
+                    popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                    logger.Error(exception.GetMessageData());
+                }
+            }
         }
 
+        private void delete_all_btn_Click(object sender, EventArgs e)
+        {
+            if (vt_search_moving_dgv.Rows.Count > 0 && vt_search_moving_dgv.DataSource != null && applyupdate == "0")
+            {
+                try
+                {
+                    if (MessageBox.Show("Bạn có chắc xóa mã code: " + code_status_cmb.Text + ": " + code_name_cmb.Text + " này !", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 
+                    {
+                        MovingMachineVTVo inVo = new MovingMachineVTVo
+                        {
+                            CodeName = code_name_cmb.Text,
+                            CodeStatus = code_status_cmb.Text
+
+                        };
+                        MovingMachineVTVo outVo = new MovingMachineVTVo();
+                        outVo = (MovingMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.DeleteMovingVTCbm(), inVo);
+
+                        if (outVo.AffectedCount > 0)
+                        {
+                            messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, machine_serial_lbl + " : " + machine_serial_cmb.Text);
+                            logger.Info(messageData);
+                            popUpMessage.Information(messageData, Text);
+                        }
+                    }
+                }
+                catch (Framework.ApplicationException exception)
+                {
+                    popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                    logger.Error(exception.GetMessageData());
+                }
+            }
+        }
     }
-
 }

@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.setting_gbc = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.delete_all_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.add_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.update_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.delete_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -41,20 +42,6 @@
             this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.vt_search_moving_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.col_moving_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_machine_serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_machine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_factory_tranfer_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_factory_received_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_code_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_code_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_status_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_comments_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_reason_tranfer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_confirm_received = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_registration_user_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_registration_date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_factory_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
@@ -68,7 +55,22 @@
             this.code_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.code_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.code_name_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.delete_all_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.col_moving_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_machine_serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_machine_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_machine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_factory_tranfer_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_factory_received_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_code_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_code_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_status_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_comments_machine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_reason_tranfer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_confirm_received = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_machine_costvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_registration_user_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_registration_date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_factory_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vt_search_moving_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -88,6 +90,20 @@
             this.setting_gbc.Size = new System.Drawing.Size(539, 64);
             this.setting_gbc.TabIndex = 60;
             this.setting_gbc.TabStop = false;
+            // 
+            // delete_all_btn
+            // 
+            this.delete_all_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.delete_all_btn.ControlId = null;
+            this.delete_all_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.delete_all_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.delete_all_btn.Location = new System.Drawing.Point(425, 20);
+            this.delete_all_btn.Name = "delete_all_btn";
+            this.delete_all_btn.Size = new System.Drawing.Size(90, 33);
+            this.delete_all_btn.TabIndex = 12;
+            this.delete_all_btn.Text = "Delete All";
+            this.delete_all_btn.UseVisualStyleBackColor = false;
+            this.delete_all_btn.Click += new System.EventHandler(this.delete_all_btn_Click);
             // 
             // add_btn
             // 
@@ -167,6 +183,7 @@
             this.exportexcel_btn.TabIndex = 10;
             this.exportexcel_btn.Text = "Export Excel";
             this.exportexcel_btn.UseVisualStyleBackColor = false;
+            this.exportexcel_btn.Click += new System.EventHandler(this.exportexcel_btn_Click);
             // 
             // browser_btn
             // 
@@ -211,6 +228,7 @@
             this.vt_search_moving_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_moving_id,
             this.col_machine_serial,
+            this.col_machine_model,
             this.col_machine_name,
             this.col_factory_tranfer_cd,
             this.col_factory_received_cd,
@@ -220,6 +238,7 @@
             this.col_comments_machine,
             this.col_reason_tranfer,
             this.col_confirm_received,
+            this.col_machine_costvalue,
             this.col_registration_user_cd,
             this.col_registration_date_time,
             this.col_factory_cd});
@@ -245,103 +264,6 @@
             this.vt_search_moving_dgv.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.vt_search_moving_dgv.Size = new System.Drawing.Size(1270, 426);
             this.vt_search_moving_dgv.TabIndex = 75;
-            // 
-            // col_moving_id
-            // 
-            this.col_moving_id.DataPropertyName = "MovingId";
-            this.col_moving_id.HeaderText = "Moving ID";
-            this.col_moving_id.Name = "col_moving_id";
-            this.col_moving_id.Width = 85;
-            // 
-            // col_machine_serial
-            // 
-            this.col_machine_serial.DataPropertyName = "MachineSerial";
-            this.col_machine_serial.HeaderText = "Machine Serial";
-            this.col_machine_serial.Name = "col_machine_serial";
-            this.col_machine_serial.Width = 113;
-            // 
-            // col_machine_name
-            // 
-            this.col_machine_name.DataPropertyName = "MachineName";
-            this.col_machine_name.HeaderText = "Machine Name";
-            this.col_machine_name.Name = "col_machine_name";
-            this.col_machine_name.Width = 115;
-            // 
-            // col_factory_tranfer_cd
-            // 
-            this.col_factory_tranfer_cd.DataPropertyName = "TranferFactoryCode";
-            this.col_factory_tranfer_cd.HeaderText = "TranferFactoryCode";
-            this.col_factory_tranfer_cd.Name = "col_factory_tranfer_cd";
-            this.col_factory_tranfer_cd.Width = 140;
-            // 
-            // col_factory_received_cd
-            // 
-            this.col_factory_received_cd.DataPropertyName = "ReceivedFactoryCode";
-            this.col_factory_received_cd.HeaderText = "Received Factory";
-            this.col_factory_received_cd.Name = "col_factory_received_cd";
-            this.col_factory_received_cd.Width = 125;
-            // 
-            // col_code_status
-            // 
-            this.col_code_status.DataPropertyName = "CodeStatus";
-            this.col_code_status.HeaderText = "Code Status";
-            this.col_code_status.Name = "col_code_status";
-            // 
-            // col_code_name
-            // 
-            this.col_code_name.DataPropertyName = "CodeName";
-            this.col_code_name.HeaderText = "Code Name";
-            this.col_code_name.Name = "col_code_name";
-            this.col_code_name.Width = 99;
-            // 
-            // col_status_machine
-            // 
-            this.col_status_machine.DataPropertyName = "Status";
-            this.col_status_machine.HeaderText = "Status";
-            this.col_status_machine.Name = "col_status_machine";
-            this.col_status_machine.Width = 67;
-            // 
-            // col_comments_machine
-            // 
-            this.col_comments_machine.DataPropertyName = "CommentsMachine";
-            this.col_comments_machine.HeaderText = "Comments";
-            this.col_comments_machine.Name = "col_comments_machine";
-            this.col_comments_machine.Width = 94;
-            // 
-            // col_reason_tranfer
-            // 
-            this.col_reason_tranfer.DataPropertyName = "ReasonTranfer";
-            this.col_reason_tranfer.HeaderText = "Reason Tranfer";
-            this.col_reason_tranfer.Name = "col_reason_tranfer";
-            this.col_reason_tranfer.Width = 118;
-            // 
-            // col_confirm_received
-            // 
-            this.col_confirm_received.DataPropertyName = "ConfirmReceived";
-            this.col_confirm_received.HeaderText = "Confirm Received";
-            this.col_confirm_received.Name = "col_confirm_received";
-            this.col_confirm_received.Width = 130;
-            // 
-            // col_registration_user_cd
-            // 
-            this.col_registration_user_cd.DataPropertyName = "RegistrationUserCode";
-            this.col_registration_user_cd.HeaderText = "User Code";
-            this.col_registration_user_cd.Name = "col_registration_user_cd";
-            this.col_registration_user_cd.Width = 92;
-            // 
-            // col_registration_date_time
-            // 
-            this.col_registration_date_time.DataPropertyName = "RegistrationDateTime";
-            this.col_registration_date_time.HeaderText = "Date Time";
-            this.col_registration_date_time.Name = "col_registration_date_time";
-            this.col_registration_date_time.Width = 89;
-            // 
-            // col_factory_cd
-            // 
-            this.col_factory_cd.DataPropertyName = "FactoryCode";
-            this.col_factory_cd.HeaderText = "Factory Code";
-            this.col_factory_cd.Name = "col_factory_cd";
-            this.col_factory_cd.Width = 104;
             // 
             // groupBoxCommon2
             // 
@@ -503,19 +425,116 @@
             this.code_name_cmb.Size = new System.Drawing.Size(128, 23);
             this.code_name_cmb.TabIndex = 108;
             // 
-            // delete_all_btn
+            // col_moving_id
             // 
-            this.delete_all_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.delete_all_btn.ControlId = null;
-            this.delete_all_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.delete_all_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.delete_all_btn.Location = new System.Drawing.Point(425, 20);
-            this.delete_all_btn.Name = "delete_all_btn";
-            this.delete_all_btn.Size = new System.Drawing.Size(90, 33);
-            this.delete_all_btn.TabIndex = 12;
-            this.delete_all_btn.Text = "Delete All";
-            this.delete_all_btn.UseVisualStyleBackColor = false;
-            this.delete_all_btn.Click += new System.EventHandler(this.delete_all_btn_Click);
+            this.col_moving_id.DataPropertyName = "MovingId";
+            this.col_moving_id.HeaderText = "Moving ID";
+            this.col_moving_id.Name = "col_moving_id";
+            this.col_moving_id.Width = 85;
+            // 
+            // col_machine_serial
+            // 
+            this.col_machine_serial.DataPropertyName = "MachineSerial";
+            this.col_machine_serial.HeaderText = "Machine Serial";
+            this.col_machine_serial.Name = "col_machine_serial";
+            this.col_machine_serial.Width = 113;
+            // 
+            // col_machine_model
+            // 
+            this.col_machine_model.DataPropertyName = "MachineModel";
+            this.col_machine_model.HeaderText = "Model";
+            this.col_machine_model.Name = "col_machine_model";
+            this.col_machine_model.Width = 65;
+            // 
+            // col_machine_name
+            // 
+            this.col_machine_name.DataPropertyName = "MachineName";
+            this.col_machine_name.HeaderText = "Machine Name";
+            this.col_machine_name.Name = "col_machine_name";
+            this.col_machine_name.Width = 115;
+            // 
+            // col_factory_tranfer_cd
+            // 
+            this.col_factory_tranfer_cd.DataPropertyName = "TranferFactoryCode";
+            this.col_factory_tranfer_cd.HeaderText = "TranferFactoryCode";
+            this.col_factory_tranfer_cd.Name = "col_factory_tranfer_cd";
+            this.col_factory_tranfer_cd.Width = 140;
+            // 
+            // col_factory_received_cd
+            // 
+            this.col_factory_received_cd.DataPropertyName = "ReceivedFactoryCode";
+            this.col_factory_received_cd.HeaderText = "Received Factory";
+            this.col_factory_received_cd.Name = "col_factory_received_cd";
+            this.col_factory_received_cd.Width = 125;
+            // 
+            // col_code_status
+            // 
+            this.col_code_status.DataPropertyName = "CodeStatus";
+            this.col_code_status.HeaderText = "Code Status";
+            this.col_code_status.Name = "col_code_status";
+            // 
+            // col_code_name
+            // 
+            this.col_code_name.DataPropertyName = "CodeName";
+            this.col_code_name.HeaderText = "Code Name";
+            this.col_code_name.Name = "col_code_name";
+            this.col_code_name.Width = 99;
+            // 
+            // col_status_machine
+            // 
+            this.col_status_machine.DataPropertyName = "Status";
+            this.col_status_machine.HeaderText = "Status";
+            this.col_status_machine.Name = "col_status_machine";
+            this.col_status_machine.Width = 67;
+            // 
+            // col_comments_machine
+            // 
+            this.col_comments_machine.DataPropertyName = "CommentsMachine";
+            this.col_comments_machine.HeaderText = "Comments";
+            this.col_comments_machine.Name = "col_comments_machine";
+            this.col_comments_machine.Width = 94;
+            // 
+            // col_reason_tranfer
+            // 
+            this.col_reason_tranfer.DataPropertyName = "ReasonTranfer";
+            this.col_reason_tranfer.HeaderText = "Reason Tranfer";
+            this.col_reason_tranfer.Name = "col_reason_tranfer";
+            this.col_reason_tranfer.Width = 118;
+            // 
+            // col_confirm_received
+            // 
+            this.col_confirm_received.DataPropertyName = "ConfirmReceived";
+            this.col_confirm_received.HeaderText = "Confirm Received";
+            this.col_confirm_received.Name = "col_confirm_received";
+            this.col_confirm_received.Width = 130;
+            // 
+            // col_machine_costvalue
+            // 
+            this.col_machine_costvalue.DataPropertyName = "MachineCost";
+            this.col_machine_costvalue.HeaderText = "Cost Value";
+            this.col_machine_costvalue.Name = "col_machine_costvalue";
+            this.col_machine_costvalue.Width = 91;
+            // 
+            // col_registration_user_cd
+            // 
+            this.col_registration_user_cd.DataPropertyName = "RegistrationUserCode";
+            this.col_registration_user_cd.HeaderText = "User Code";
+            this.col_registration_user_cd.Name = "col_registration_user_cd";
+            this.col_registration_user_cd.Width = 92;
+            // 
+            // col_registration_date_time
+            // 
+            this.col_registration_date_time.DataPropertyName = "RegistrationDateTime";
+            this.col_registration_date_time.HeaderText = "Date Time";
+            this.col_registration_date_time.Name = "col_registration_date_time";
+            this.col_registration_date_time.Width = 89;
+            // 
+            // col_factory_cd
+            // 
+            this.col_factory_cd.DataPropertyName = "FactoryCode";
+            this.col_factory_cd.HeaderText = "Factory Code";
+            this.col_factory_cd.Name = "col_factory_cd";
+            this.col_factory_cd.Width = 104;
             // 
             // MovingMachineVTForm
             // 
@@ -588,8 +607,10 @@
         private Framework.LabelCommon code_status_lbl;
         private Framework.ComboBoxCommon code_status_cmb;
         private Framework.ComboBoxCommon code_name_cmb;
+        private Framework.ButtonCommon delete_all_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_moving_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machine_serial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_machine_model;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machine_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factory_tranfer_cd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factory_received_cd;
@@ -599,9 +620,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_comments_machine;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_reason_tranfer;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_confirm_received;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_machine_costvalue;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_registration_user_cd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_registration_date_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factory_cd;
-        private Framework.ButtonCommon delete_all_btn;
     }
 }

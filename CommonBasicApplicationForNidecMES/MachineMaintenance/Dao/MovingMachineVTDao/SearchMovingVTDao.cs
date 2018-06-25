@@ -27,7 +27,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
 
             sql.Append(@"select a.moving_id, a.machine_serial, a.factory_tranfer_cd, a.factory_received_cd, a.bg_cd, a.m_cd, a.t_cd, a.th_cd,  a.status, 
-            a.comments_machine, a.reason_tranfer, a.confirm_received, a.registration_user_cd, a.registration_date_time, a.factory_cd, b.machine_name
+            a.comments_machine, a.reason_tranfer, a.confirm_received, a.registration_user_cd, a.registration_date_time, a.factory_cd, b.machine_name, b.machine_model, b.machine_costvalue
             from t_vt_moving a
             left join t_vt_machine b on a.machine_serial = b.machine_serial
               where 1=1 ");
@@ -122,6 +122,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
+                        MachineModel = dataReader["machine_model"].ToString(),
+                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
                     };
                     voList.add(outVo);
                 }
@@ -143,6 +145,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
+                        MachineModel = dataReader["machine_model"].ToString(),
+                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
                     };
                     voList.add(outVo);
                 }
@@ -164,6 +168,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
+                        MachineModel = dataReader["machine_model"].ToString(),
+                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
                     };
                     voList.add(outVo);
                 }
@@ -185,6 +191,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         RegistrationDateTime = DateTime.Parse(dataReader["registration_date_time"].ToString()),
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
+                        MachineModel = dataReader["machine_model"].ToString(),
+                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
                     };
                     voList.add(outVo);
                 }

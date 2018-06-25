@@ -195,6 +195,7 @@
     <Compile Include="Cbm\WorkingStatusCbm\AddPlanWorkingStatusCbm.cs" />
     <Compile Include="Common\callmac.cs" />
     <Compile Include="Common\csvclass.cs" />
+    <Compile Include="Common\ExportMovingFile.cs" />
     <Compile Include="Common\Excel Class.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\AddAccountLocationDao.cs" />
     <Compile Include="Dao\Account-WhDao\AccountLocationDao\CheckAccountLocationDao.cs" />

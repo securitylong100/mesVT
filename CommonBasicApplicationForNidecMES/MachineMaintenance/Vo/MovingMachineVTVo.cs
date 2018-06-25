@@ -11,11 +11,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
     {
         public int MovingId { get; set; }
         public string MachineSerial { get; set; }
-public string MachineName {get; set;}
+        public string MachineName { get; set; }
+        public string MachineModel { get; set; }
+        public double MachineCost { get; set; } 
         public string TranferFactoryCode { get; set; }
         public string ReceivedFactoryCode { get; set; }
         public string CodeName { get; set; } //using compair distinct 4  status
-        public string CodeStatus { get; set; } 
+        public string CodeStatus { get; set; }
         /// </summary>
 
         public string BGCode { get; set; }

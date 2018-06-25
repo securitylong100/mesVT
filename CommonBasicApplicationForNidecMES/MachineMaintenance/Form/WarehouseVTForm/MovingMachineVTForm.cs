@@ -22,6 +22,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             InitializeComponent();
             vt_search_moving_dgv.AutoGenerateColumns = false;
+            vt_search_moving_dgv.ReadOnly = true;
         }
         private void MovingMachineVTForm_Load(object sender, EventArgs e)
         {
@@ -177,6 +178,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     logger.Error(exception.GetMessageData());
                 }
             }
+        }
+
+        private void exportexcel_btn_Click(object sender, EventArgs e)
+        {
+           
+            Common.ExportMovingFile export = new Common.ExportMovingFile();
+            export.exportmoving(ref vt_search_moving_dgv, code_status_cmb.Text);
+
         }
     }
 }

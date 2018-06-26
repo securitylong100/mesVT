@@ -37,7 +37,6 @@
             this.location_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.location_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.supplier_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.supplier_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.machine_name_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.qty_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.qty_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
@@ -58,6 +57,7 @@
             this.model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon5 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_supplier_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.SuspendLayout();
             // 
             // exit_btn
@@ -167,17 +167,6 @@
             this.supplier_lbl.Size = new System.Drawing.Size(56, 15);
             this.supplier_lbl.TabIndex = 73;
             this.supplier_lbl.Text = "Supplier:";
-            // 
-            // supplier_txt
-            // 
-            this.supplier_txt.ControlId = null;
-            this.supplier_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplier_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.supplier_txt.Location = new System.Drawing.Point(495, 197);
-            this.supplier_txt.Name = "supplier_txt";
-            this.supplier_txt.Size = new System.Drawing.Size(152, 21);
-            this.supplier_txt.TabIndex = 74;
-            this.supplier_txt.Text = "VLH";
             // 
             // machine_name_lbl
             // 
@@ -409,10 +398,21 @@
             this.labelCommon5.TabIndex = 85;
             this.labelCommon5.Text = "(*)";
             // 
+            // machine_supplier_cmb
+            // 
+            this.machine_supplier_cmb.ControlId = null;
+            this.machine_supplier_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machine_supplier_cmb.FormattingEnabled = true;
+            this.machine_supplier_cmb.Location = new System.Drawing.Point(495, 194);
+            this.machine_supplier_cmb.Name = "machine_supplier_cmb";
+            this.machine_supplier_cmb.Size = new System.Drawing.Size(152, 23);
+            this.machine_supplier_cmb.TabIndex = 86;
+            // 
             // AddNewMachineVT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(766, 475);
+            this.Controls.Add(this.machine_supplier_cmb);
             this.Controls.Add(this.labelCommon5);
             this.Controls.Add(this.labelCommon1);
             this.Controls.Add(this.model_cmb);
@@ -426,7 +426,6 @@
             this.Controls.Add(this.cost_txt);
             this.Controls.Add(this.serial_txt);
             this.Controls.Add(this.qty_txt);
-            this.Controls.Add(this.supplier_txt);
             this.Controls.Add(this.machine_cd_txt);
             this.Controls.Add(this.cost_lbl);
             this.Controls.Add(this.type_lbl);
@@ -463,7 +462,6 @@
             this.Controls.SetChildIndex(this.type_lbl, 0);
             this.Controls.SetChildIndex(this.cost_lbl, 0);
             this.Controls.SetChildIndex(this.machine_cd_txt, 0);
-            this.Controls.SetChildIndex(this.supplier_txt, 0);
             this.Controls.SetChildIndex(this.qty_txt, 0);
             this.Controls.SetChildIndex(this.serial_txt, 0);
             this.Controls.SetChildIndex(this.cost_txt, 0);
@@ -477,6 +475,7 @@
             this.Controls.SetChildIndex(this.model_cmb, 0);
             this.Controls.SetChildIndex(this.labelCommon1, 0);
             this.Controls.SetChildIndex(this.labelCommon5, 0);
+            this.Controls.SetChildIndex(this.machine_supplier_cmb, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,7 +491,6 @@
         private Framework.LabelCommon location_lbl;
         private Framework.TextBoxCommon location_txt;
         private Framework.LabelCommon supplier_lbl;
-        private Framework.TextBoxCommon supplier_txt;
         private Framework.LabelCommon machine_name_lbl;
         private Framework.LabelCommon qty_lbl;
         private Framework.TextBoxCommon qty_txt;
@@ -513,5 +511,6 @@
         private Framework.ComboBoxCommon model_cmb;
         private Framework.LabelCommon labelCommon1;
         private Framework.LabelCommon labelCommon5;
+        private Framework.ComboBoxCommon machine_supplier_cmb;
     }
 }

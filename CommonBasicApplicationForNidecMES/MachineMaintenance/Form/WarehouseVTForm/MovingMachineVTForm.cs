@@ -33,12 +33,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             // factory_tranfer_cmb
             FactoryVo factory_tranfer = (FactoryVo)DefaultCbmInvoker.Invoke(new GetFactoryMasterMntCbm(), new FactoryVo());
-            factory_tranfer_cmb.DisplayMember = "FactoryCode";
+            factory_tranfer_cmb.DisplayMember = "FactoryName";
             factory_tranfer_cmb.DataSource = factory_tranfer.FactoryListVo;
             factory_tranfer_cmb.Text = "";
 
             FactoryVo factory_received = (FactoryVo)DefaultCbmInvoker.Invoke(new GetFactoryMasterMntCbm(), new FactoryVo());
-            factory_received_cmb.DisplayMember = "FactoryCode";
+            factory_received_cmb.DisplayMember = "FactoryName";
             factory_received_cmb.DataSource = factory_received.FactoryListVo;
             factory_received_cmb.Text = "";
         }
@@ -71,8 +71,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 MovingMachineVTVo inVo = new MovingMachineVTVo
                 {
                     MachineSerial = machine_serial_cmb.Text,
-                    ReceivedFactoryCode = factory_received_cmb.Text,
-                    TranferFactoryCode = factory_tranfer_cmb.Text,
+                    ReceivedFactoryName = factory_received_cmb.Text,
+                    TranferFactoryName = factory_tranfer_cmb.Text,
                     CodeStatus = code_status_cmb.Text,
                     CodeName = code_name_cmb.Text,
                 };
@@ -88,17 +88,24 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         public string applyupdate = "";
         void codecheckCODESTATUS()
         {
-            for (int i = 0; i < vt_search_moving_dgv.RowCount - 1; i++)
+            if (vt_search_moving_dgv.RowCount > 2)
             {
-                if (vt_search_moving_dgv.Rows[i].Cells["col_code_name"].Value.ToString() == vt_search_moving_dgv.Rows[i + 1].Cells["col_code_name"].Value.ToString())
+                for (int i = 0; i < vt_search_moving_dgv.RowCount - 1; i++)
                 {
-                    applyupdate = "0";
+                    if (vt_search_moving_dgv.Rows[i].Cells["col_code_name"].Value.ToString() == vt_search_moving_dgv.Rows[i + 1].Cells["col_code_name"].Value.ToString())
+                    {
+                        applyupdate = "0";
+                    }
+                    else
+                    {
+                        applyupdate = "1";
+                        i = vt_search_moving_dgv.RowCount - 1;
+                    }
                 }
-                else
-                {
-                    applyupdate = "1";
-                    i = vt_search_moving_dgv.RowCount - 1;
-                }
+            }
+            else
+            {
+                applyupdate = "0";
             }
         }
         private void add_btn_Click(object sender, EventArgs e)
@@ -182,10 +189,16 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void exportexcel_btn_Click(object sender, EventArgs e)
         {
-           
+
             Common.ExportMovingFile export = new Common.ExportMovingFile();
             export.exportmoving(ref vt_search_moving_dgv, code_status_cmb.Text);
 
+        }
+
+        private void exportcsv_btn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(UserData.GetUserData().FactoryCode);
+            MessageBox.Show(UserData.GetUserData().FactoryName);
         }
     }
 }

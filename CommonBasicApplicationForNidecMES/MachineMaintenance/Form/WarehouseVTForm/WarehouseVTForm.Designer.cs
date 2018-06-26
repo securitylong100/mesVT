@@ -41,20 +41,6 @@
             this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.warehouse_vt_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.mac_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.machine_model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.machine_supplier_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.supplier_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.location_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.location_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.machine_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.machine_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.col_machineid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +57,20 @@
             this.col_machineinvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckTime_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.mac_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_supplier_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.supplier_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.location_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.location_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -251,168 +251,6 @@
             this.warehouse_vt_dgv.Size = new System.Drawing.Size(1175, 426);
             this.warehouse_vt_dgv.TabIndex = 75;
             // 
-            // groupBoxCommon2
-            // 
-            this.groupBoxCommon2.ControlId = null;
-            this.groupBoxCommon2.Controls.Add(this.exportcsv_btn);
-            this.groupBoxCommon2.Controls.Add(this.linksave_txt);
-            this.groupBoxCommon2.Controls.Add(this.browser_btn);
-            this.groupBoxCommon2.Controls.Add(this.exportexcel_btn);
-            this.groupBoxCommon2.Font = new System.Drawing.Font("Arial", 9F);
-            this.groupBoxCommon2.Location = new System.Drawing.Point(548, 199);
-            this.groupBoxCommon2.Name = "groupBoxCommon2";
-            this.groupBoxCommon2.Size = new System.Drawing.Size(532, 64);
-            this.groupBoxCommon2.TabIndex = 76;
-            this.groupBoxCommon2.TabStop = false;
-            // 
-            // exportcsv_btn
-            // 
-            this.exportcsv_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.exportcsv_btn.ControlId = null;
-            this.exportcsv_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.exportcsv_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.exportcsv_btn.Location = new System.Drawing.Point(435, 19);
-            this.exportcsv_btn.Name = "exportcsv_btn";
-            this.exportcsv_btn.Size = new System.Drawing.Size(91, 33);
-            this.exportcsv_btn.TabIndex = 56;
-            this.exportcsv_btn.Text = "Export .csv";
-            this.exportcsv_btn.UseVisualStyleBackColor = false;
-            this.exportcsv_btn.Click += new System.EventHandler(this.exportcsv_btn_Click);
-            // 
-            // rfid_txt
-            // 
-            this.rfid_txt.ControlId = null;
-            this.rfid_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rfid_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.rfid_txt.Location = new System.Drawing.Point(12, 167);
-            this.rfid_txt.MaxLength = 10;
-            this.rfid_txt.Name = "rfid_txt";
-            this.rfid_txt.Size = new System.Drawing.Size(121, 21);
-            this.rfid_txt.TabIndex = 72;
-            // 
-            // mac_cmb
-            // 
-            this.mac_cmb.ControlId = null;
-            this.mac_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mac_cmb.FormattingEnabled = true;
-            this.mac_cmb.Location = new System.Drawing.Point(1018, 149);
-            this.mac_cmb.Name = "mac_cmb";
-            this.mac_cmb.Size = new System.Drawing.Size(152, 23);
-            this.mac_cmb.TabIndex = 79;
-            this.mac_cmb.Visible = false;
-            // 
-            // machine_serial_cmb
-            // 
-            this.machine_serial_cmb.ControlId = null;
-            this.machine_serial_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.machine_serial_cmb.FormattingEnabled = true;
-            this.machine_serial_cmb.Location = new System.Drawing.Point(312, 165);
-            this.machine_serial_cmb.Name = "machine_serial_cmb";
-            this.machine_serial_cmb.Size = new System.Drawing.Size(121, 23);
-            this.machine_serial_cmb.TabIndex = 80;
-            // 
-            // serial_lbl
-            // 
-            this.serial_lbl.AutoSize = true;
-            this.serial_lbl.ControlId = null;
-            this.serial_lbl.Font = new System.Drawing.Font("Arial", 9F);
-            this.serial_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.serial_lbl.Location = new System.Drawing.Point(309, 147);
-            this.serial_lbl.Name = "serial_lbl";
-            this.serial_lbl.Size = new System.Drawing.Size(42, 15);
-            this.serial_lbl.TabIndex = 81;
-            this.serial_lbl.Text = "Serial:";
-            // 
-            // machine_model_cmb
-            // 
-            this.machine_model_cmb.ControlId = null;
-            this.machine_model_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.machine_model_cmb.FormattingEnabled = true;
-            this.machine_model_cmb.Location = new System.Drawing.Point(157, 165);
-            this.machine_model_cmb.Name = "machine_model_cmb";
-            this.machine_model_cmb.Size = new System.Drawing.Size(121, 23);
-            this.machine_model_cmb.TabIndex = 80;
-            this.machine_model_cmb.TextChanged += new System.EventHandler(this.machine_model_cmb_TextChanged);
-            this.machine_model_cmb.Click += new System.EventHandler(this.machine_model_cmb_Click);
-            // 
-            // model_lbl
-            // 
-            this.model_lbl.AutoSize = true;
-            this.model_lbl.ControlId = null;
-            this.model_lbl.Font = new System.Drawing.Font("Arial", 9F);
-            this.model_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.model_lbl.Location = new System.Drawing.Point(154, 147);
-            this.model_lbl.Name = "model_lbl";
-            this.model_lbl.Size = new System.Drawing.Size(43, 15);
-            this.model_lbl.TabIndex = 81;
-            this.model_lbl.Text = "Model:";
-            // 
-            // machine_supplier_cmb
-            // 
-            this.machine_supplier_cmb.ControlId = null;
-            this.machine_supplier_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.machine_supplier_cmb.FormattingEnabled = true;
-            this.machine_supplier_cmb.Location = new System.Drawing.Point(461, 167);
-            this.machine_supplier_cmb.Name = "machine_supplier_cmb";
-            this.machine_supplier_cmb.Size = new System.Drawing.Size(121, 23);
-            this.machine_supplier_cmb.TabIndex = 80;
-            // 
-            // supplier_lbl
-            // 
-            this.supplier_lbl.AutoSize = true;
-            this.supplier_lbl.ControlId = null;
-            this.supplier_lbl.Font = new System.Drawing.Font("Arial", 9F);
-            this.supplier_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.supplier_lbl.Location = new System.Drawing.Point(458, 149);
-            this.supplier_lbl.Name = "supplier_lbl";
-            this.supplier_lbl.Size = new System.Drawing.Size(56, 15);
-            this.supplier_lbl.TabIndex = 81;
-            this.supplier_lbl.Text = "Suppiler:";
-            // 
-            // location_lbl
-            // 
-            this.location_lbl.AutoSize = true;
-            this.location_lbl.ControlId = null;
-            this.location_lbl.Font = new System.Drawing.Font("Arial", 9F);
-            this.location_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.location_lbl.Location = new System.Drawing.Point(609, 147);
-            this.location_lbl.Name = "location_lbl";
-            this.location_lbl.Size = new System.Drawing.Size(57, 15);
-            this.location_lbl.TabIndex = 83;
-            this.location_lbl.Text = "Location:";
-            // 
-            // location_cmb
-            // 
-            this.location_cmb.ControlId = null;
-            this.location_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.location_cmb.FormattingEnabled = true;
-            this.location_cmb.Location = new System.Drawing.Point(612, 165);
-            this.location_cmb.Name = "location_cmb";
-            this.location_cmb.Size = new System.Drawing.Size(121, 23);
-            this.location_cmb.TabIndex = 82;
-            // 
-            // machine_status_lbl
-            // 
-            this.machine_status_lbl.AutoSize = true;
-            this.machine_status_lbl.ControlId = null;
-            this.machine_status_lbl.Font = new System.Drawing.Font("Arial", 9F);
-            this.machine_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.machine_status_lbl.Location = new System.Drawing.Point(754, 147);
-            this.machine_status_lbl.Name = "machine_status_lbl";
-            this.machine_status_lbl.Size = new System.Drawing.Size(91, 15);
-            this.machine_status_lbl.TabIndex = 85;
-            this.machine_status_lbl.Text = "Machine Status";
-            // 
-            // machine_status_cmb
-            // 
-            this.machine_status_cmb.ControlId = null;
-            this.machine_status_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.machine_status_cmb.FormattingEnabled = true;
-            this.machine_status_cmb.Location = new System.Drawing.Point(757, 165);
-            this.machine_status_cmb.Name = "machine_status_cmb";
-            this.machine_status_cmb.Size = new System.Drawing.Size(121, 23);
-            this.machine_status_cmb.TabIndex = 84;
-            // 
             // col_machineid
             // 
             this.col_machineid.DataPropertyName = "MachineId";
@@ -525,6 +363,168 @@
             this.colCheckTime_final.HeaderText = "Check Time";
             this.colCheckTime_final.Name = "colCheckTime_final";
             this.colCheckTime_final.Width = 98;
+            // 
+            // groupBoxCommon2
+            // 
+            this.groupBoxCommon2.ControlId = null;
+            this.groupBoxCommon2.Controls.Add(this.exportcsv_btn);
+            this.groupBoxCommon2.Controls.Add(this.linksave_txt);
+            this.groupBoxCommon2.Controls.Add(this.browser_btn);
+            this.groupBoxCommon2.Controls.Add(this.exportexcel_btn);
+            this.groupBoxCommon2.Font = new System.Drawing.Font("Arial", 9F);
+            this.groupBoxCommon2.Location = new System.Drawing.Point(548, 199);
+            this.groupBoxCommon2.Name = "groupBoxCommon2";
+            this.groupBoxCommon2.Size = new System.Drawing.Size(532, 64);
+            this.groupBoxCommon2.TabIndex = 76;
+            this.groupBoxCommon2.TabStop = false;
+            // 
+            // exportcsv_btn
+            // 
+            this.exportcsv_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.exportcsv_btn.ControlId = null;
+            this.exportcsv_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.exportcsv_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.exportcsv_btn.Location = new System.Drawing.Point(435, 19);
+            this.exportcsv_btn.Name = "exportcsv_btn";
+            this.exportcsv_btn.Size = new System.Drawing.Size(91, 33);
+            this.exportcsv_btn.TabIndex = 56;
+            this.exportcsv_btn.Text = "Export .csv";
+            this.exportcsv_btn.UseVisualStyleBackColor = false;
+            this.exportcsv_btn.Click += new System.EventHandler(this.exportcsv_btn_Click);
+            // 
+            // rfid_txt
+            // 
+            this.rfid_txt.ControlId = null;
+            this.rfid_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rfid_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.rfid_txt.Location = new System.Drawing.Point(12, 167);
+            this.rfid_txt.MaxLength = 10;
+            this.rfid_txt.Name = "rfid_txt";
+            this.rfid_txt.Size = new System.Drawing.Size(121, 21);
+            this.rfid_txt.TabIndex = 72;
+            // 
+            // mac_cmb
+            // 
+            this.mac_cmb.ControlId = null;
+            this.mac_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mac_cmb.FormattingEnabled = true;
+            this.mac_cmb.Location = new System.Drawing.Point(1018, 149);
+            this.mac_cmb.Name = "mac_cmb";
+            this.mac_cmb.Size = new System.Drawing.Size(152, 23);
+            this.mac_cmb.TabIndex = 79;
+            this.mac_cmb.Visible = false;
+            // 
+            // machine_serial_cmb
+            // 
+            this.machine_serial_cmb.ControlId = null;
+            this.machine_serial_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machine_serial_cmb.FormattingEnabled = true;
+            this.machine_serial_cmb.Location = new System.Drawing.Point(312, 165);
+            this.machine_serial_cmb.Name = "machine_serial_cmb";
+            this.machine_serial_cmb.Size = new System.Drawing.Size(121, 23);
+            this.machine_serial_cmb.TabIndex = 80;
+            // 
+            // serial_lbl
+            // 
+            this.serial_lbl.AutoSize = true;
+            this.serial_lbl.ControlId = null;
+            this.serial_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.serial_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.serial_lbl.Location = new System.Drawing.Point(309, 147);
+            this.serial_lbl.Name = "serial_lbl";
+            this.serial_lbl.Size = new System.Drawing.Size(42, 15);
+            this.serial_lbl.TabIndex = 81;
+            this.serial_lbl.Text = "Serial:";
+            // 
+            // machine_model_cmb
+            // 
+            this.machine_model_cmb.ControlId = null;
+            this.machine_model_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machine_model_cmb.FormattingEnabled = true;
+            this.machine_model_cmb.Location = new System.Drawing.Point(157, 165);
+            this.machine_model_cmb.Name = "machine_model_cmb";
+            this.machine_model_cmb.Size = new System.Drawing.Size(121, 23);
+            this.machine_model_cmb.TabIndex = 80;
+            this.machine_model_cmb.TextChanged += new System.EventHandler(this.machine_model_cmb_TextChanged);
+            this.machine_model_cmb.Click += new System.EventHandler(this.machine_model_cmb_Click);
+            // 
+            // model_lbl
+            // 
+            this.model_lbl.AutoSize = true;
+            this.model_lbl.ControlId = null;
+            this.model_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.model_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.model_lbl.Location = new System.Drawing.Point(154, 147);
+            this.model_lbl.Name = "model_lbl";
+            this.model_lbl.Size = new System.Drawing.Size(43, 15);
+            this.model_lbl.TabIndex = 81;
+            this.model_lbl.Text = "Model:";
+            // 
+            // machine_supplier_cmb
+            // 
+            this.machine_supplier_cmb.ControlId = null;
+            this.machine_supplier_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machine_supplier_cmb.FormattingEnabled = true;
+            this.machine_supplier_cmb.Location = new System.Drawing.Point(461, 167);
+            this.machine_supplier_cmb.Name = "machine_supplier_cmb";
+            this.machine_supplier_cmb.Size = new System.Drawing.Size(147, 23);
+            this.machine_supplier_cmb.TabIndex = 80;
+            // 
+            // supplier_lbl
+            // 
+            this.supplier_lbl.AutoSize = true;
+            this.supplier_lbl.ControlId = null;
+            this.supplier_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.supplier_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.supplier_lbl.Location = new System.Drawing.Point(458, 149);
+            this.supplier_lbl.Name = "supplier_lbl";
+            this.supplier_lbl.Size = new System.Drawing.Size(56, 15);
+            this.supplier_lbl.TabIndex = 81;
+            this.supplier_lbl.Text = "Suppiler:";
+            // 
+            // location_lbl
+            // 
+            this.location_lbl.AutoSize = true;
+            this.location_lbl.ControlId = null;
+            this.location_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.location_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.location_lbl.Location = new System.Drawing.Point(640, 147);
+            this.location_lbl.Name = "location_lbl";
+            this.location_lbl.Size = new System.Drawing.Size(57, 15);
+            this.location_lbl.TabIndex = 83;
+            this.location_lbl.Text = "Location:";
+            // 
+            // location_cmb
+            // 
+            this.location_cmb.ControlId = null;
+            this.location_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.location_cmb.FormattingEnabled = true;
+            this.location_cmb.Location = new System.Drawing.Point(643, 165);
+            this.location_cmb.Name = "location_cmb";
+            this.location_cmb.Size = new System.Drawing.Size(121, 23);
+            this.location_cmb.TabIndex = 82;
+            // 
+            // machine_status_lbl
+            // 
+            this.machine_status_lbl.AutoSize = true;
+            this.machine_status_lbl.ControlId = null;
+            this.machine_status_lbl.Font = new System.Drawing.Font("Arial", 9F);
+            this.machine_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.machine_status_lbl.Location = new System.Drawing.Point(785, 147);
+            this.machine_status_lbl.Name = "machine_status_lbl";
+            this.machine_status_lbl.Size = new System.Drawing.Size(91, 15);
+            this.machine_status_lbl.TabIndex = 85;
+            this.machine_status_lbl.Text = "Machine Status";
+            // 
+            // machine_status_cmb
+            // 
+            this.machine_status_cmb.ControlId = null;
+            this.machine_status_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machine_status_cmb.FormattingEnabled = true;
+            this.machine_status_cmb.Location = new System.Drawing.Point(788, 165);
+            this.machine_status_cmb.Name = "machine_status_cmb";
+            this.machine_status_cmb.Size = new System.Drawing.Size(121, 23);
+            this.machine_status_cmb.TabIndex = 84;
             // 
             // WarehouseVTForm
             // 

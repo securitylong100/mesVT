@@ -50,8 +50,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             sqlParameter.AddParameter("machine_serial", inVo.MachineSerial);
-            sqlParameter.AddParameter("factory_tranfer_cd", inVo.TranferFactoryCode);
-            sqlParameter.AddParameter("factory_received_cd", inVo.ReceivedFactoryCode);
+            sqlParameter.AddParameter("factory_tranfer_cd", inVo.TranferFactoryName);
+            sqlParameter.AddParameter("factory_received_cd", inVo.ReceivedFactoryName);
             sqlParameter.AddParameter("bg_cd", inVo.BGCode);
             sqlParameter.AddParameter("m_cd", inVo.MCode);
             sqlParameter.AddParameter("t_cd", inVo.TCode);

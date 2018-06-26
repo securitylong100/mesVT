@@ -38,15 +38,15 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and a.machine_serial  =:machine_serial");
                 sqlParameter.AddParameterString("machine_serial", inVo.MachineSerial);
             }
-            if (!String.IsNullOrEmpty(inVo.TranferFactoryCode))
+            if (!String.IsNullOrEmpty(inVo.TranferFactoryName))
             {
                 sql.Append(" and a.factory_tranfer_cd  =:factory_tranfer_cd");
-                sqlParameter.AddParameterString("factory_tranfer_cd", inVo.TranferFactoryCode);
+                sqlParameter.AddParameterString("factory_tranfer_cd", inVo.TranferFactoryName);
             }
-            if (!String.IsNullOrEmpty(inVo.ReceivedFactoryCode))
+            if (!String.IsNullOrEmpty(inVo.ReceivedFactoryName))
             {
                 sql.Append(" and a.factory_received_cd  =:factory_received_cd");
-                sqlParameter.AddParameterString("factory_received_cd", inVo.ReceivedFactoryCode);
+                sqlParameter.AddParameterString("factory_received_cd", inVo.ReceivedFactoryName);
             }
             if (inVo.CodeStatus == "Bàn Giao")
             {
@@ -110,8 +110,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     {
                         MovingId = int.Parse(dataReader["moving_id"].ToString()),
                         MachineSerial = dataReader["machine_serial"].ToString(),
-                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
-                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        TranferFactoryName = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryName = dataReader["factory_received_cd"].ToString(),
                         CodeName = dataReader["bg_cd"].ToString(), //only change
                         Status = dataReader["status"].ToString(),
                         CommentsMachine = dataReader["comments_machine"].ToString(),
@@ -123,7 +123,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
+                        MachineCostValue = int.Parse(dataReader["machine_costvalue"].ToString()),
                     };
                     voList.add(outVo);
                 }
@@ -133,8 +133,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     {
                         MovingId = int.Parse(dataReader["moving_id"].ToString()),
                         MachineSerial = dataReader["machine_serial"].ToString(),
-                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
-                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        TranferFactoryName = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryName = dataReader["factory_received_cd"].ToString(),
                         CodeName = dataReader["m_cd"].ToString(),//only change
                         Status = dataReader["status"].ToString(),
                         CommentsMachine = dataReader["comments_machine"].ToString(),
@@ -146,7 +146,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
+                        MachineCostValue = int.Parse(dataReader["machine_costvalue"].ToString()),
                     };
                     voList.add(outVo);
                 }
@@ -156,8 +156,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     {
                         MovingId = int.Parse(dataReader["moving_id"].ToString()),
                         MachineSerial = dataReader["machine_serial"].ToString(),
-                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
-                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        TranferFactoryName = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryName = dataReader["factory_received_cd"].ToString(),
                         CodeName = dataReader["t_cd"].ToString(),//only change
                         Status = dataReader["status"].ToString(),
                         CommentsMachine = dataReader["comments_machine"].ToString(),
@@ -169,7 +169,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
+                        MachineCostValue = 0,
                     };
                     voList.add(outVo);
                 }
@@ -179,8 +179,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                     {
                         MovingId = int.Parse(dataReader["moving_id"].ToString()),
                         MachineSerial = dataReader["machine_serial"].ToString(),
-                        TranferFactoryCode = dataReader["factory_tranfer_cd"].ToString(),
-                        ReceivedFactoryCode = dataReader["factory_received_cd"].ToString(),
+                        TranferFactoryName = dataReader["factory_tranfer_cd"].ToString(),
+                        ReceivedFactoryName = dataReader["factory_received_cd"].ToString(),
                         CodeName = dataReader["th_cd"].ToString(),//only change
                         Status = dataReader["status"].ToString(),
                         CommentsMachine = dataReader["comments_machine"].ToString(),
@@ -192,7 +192,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCost = int.Parse(dataReader["machine_costvalue"].ToString()),
+                        MachineCostValue = int.Parse(dataReader["machine_costvalue"].ToString()),
                     };
                     voList.add(outVo);
                 }

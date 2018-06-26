@@ -36,29 +36,33 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             // factory_tranfer_cmb
             FactoryVo factory_tranfer = (FactoryVo)DefaultCbmInvoker.Invoke(new GetFactoryMasterMntCbm(), new FactoryVo());
-            factory_tranfer_cmb.DisplayMember = "FactoryCode";
+            factory_tranfer_cmb.DisplayMember = "FactoryName";
             factory_tranfer_cmb.DataSource = factory_tranfer.FactoryListVo;
             factory_tranfer_cmb.Text = "";
 
             FactoryVo factory_received = (FactoryVo)DefaultCbmInvoker.Invoke(new GetFactoryMasterMntCbm(), new FactoryVo());
-            factory_received_cmb.DisplayMember = "FactoryCode";
+            factory_received_cmb.DisplayMember = "FactoryName";
             factory_received_cmb.DataSource = factory_received.FactoryListVo;
             factory_received_cmb.Text = "";
 
             getmaxcode();
             machine_name_cmb.Text = "";
+            machine_model_cmb.Text = "";
+            cost_value_cmb.Text = "";
 
             if (movingmachineVo.MovingId > 0)
             {
                 machine_serial_cmb.Text = movingmachineVo.MachineSerial;
                 machine_name_cmb.Text = movingmachineVo.MachineName;
-                factory_received_cmb.Text = movingmachineVo.ReceivedFactoryCode;
-                factory_tranfer_cmb.Text = movingmachineVo.TranferFactoryCode;
+                factory_received_cmb.Text = movingmachineVo.ReceivedFactoryName;
+                factory_tranfer_cmb.Text = movingmachineVo.TranferFactoryName;
                 code_status_cmb.Text = movingmachineVo.CodeStatus;
                 status_machine_cmb.Text = movingmachineVo.Status;
                 comments_txt.Text = movingmachineVo.CommentsMachine;
                 confirm_received_txt.Text = movingmachineVo.ConfirmReceived;
                 reason_tranfer_txt.Text = movingmachineVo.ReasonTranfer;
+                machine_model_cmb.Text = movingmachineVo.MachineModel;
+                cost_value_cmb.Text = movingmachineVo.MachineCostValue.ToString();
 
                 //
                 machine_serial_cmb.Enabled = false;
@@ -70,6 +74,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 code_name_lbl.Visible = true;
                 reason_tranfer_txt.Enabled = false;
                 confirm_received_txt.Enabled = false;
+                cost_value_cmb.Enabled = false;
+                machine_model_cmb.Enabled = false;
 
             }
         }
@@ -94,8 +100,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ValueObjectList<WarehouseVTVo> machinename = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new SearchMachineCbm(), new WarehouseVTVo { MachineSerial = machine_serial_cmb.Text });
                 machine_name_cmb.DisplayMember = "MachineName";
                 machine_name_cmb.DataSource = machinename.GetList();
-                factory_tranfer_cmb.DisplayMember = "MachineSupplier";
-                factory_tranfer_cmb.DataSource = machinename.GetList();
+
+                machine_model_cmb.DisplayMember = "MachineModel";
+                machine_model_cmb.DataSource = machinename.GetList();
+                cost_value_cmb.DisplayMember = "MachineCostValue";
+                cost_value_cmb.DataSource = machinename.GetList();
+                
             }
         }
         public string codeselect = ""; //dung de goi update value to database
@@ -192,8 +202,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 {
                     MovingId = movingmachineVo.MovingId,
                     MachineSerial = machine_serial_cmb.Text,
-                    TranferFactoryCode = factory_tranfer_cmb.Text,
-                    ReceivedFactoryCode = factory_received_cmb.Text,
+                    TranferFactoryName = factory_tranfer_cmb.Text,
+                    ReceivedFactoryName = factory_received_cmb.Text,
                     Status = status_machine_cmb.Text,
                     CommentsMachine = comments_txt.Text,
                     ReasonTranfer = reason_tranfer_txt.Text,
@@ -202,7 +212,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     TCode = T_code_value,
                     THCode = Th_code_value,
                     MCode = M_code_value,
-
                 };
                 try
                 {
@@ -216,11 +225,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         if (code_status_cmb.Text == "Bàn Giao")
                         {
                             WarehouseVTVo updateBG = new WarehouseVTVo();
-                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Đã Bàn Giao", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
+                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryName, MachineStatus = "Đã Bàn Giao", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
                         }
-                        if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryCode == inVo.ReceivedFactoryCode))//minh di muon thì add thêm
+                        if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryName == inVo.ReceivedFactoryName))//minh di muon thì add thêm
                         {
-
                             WarehouseVTVo addnewmachine = new WarehouseVTVo();
                             addnewmachine = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new AddNewMachineVTCbm(), new WarehouseVTVo()
                             {
@@ -228,34 +236,34 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 MachineCode = "",
                                 MachineName = machine_name_cmb.Text,
                                 MachineQty = 1,
-                                MachineModel = "",
+                                MachineModel = machine_model_cmb.Text,
                                 MachineSerial = machine_serial_cmb.Text,
                                 MachineLocation = "",
                                 MachineSupplier = factory_tranfer_cmb.Text,
                                 MachineInvoice = "",
-                                MachineCostValue = "0",
+                                MachineCostValue = cost_value_cmb.Text,
                                 RegistrationUserCode = UserData.GetUserData().UserName,
                                 RegistrationDateTime = DateTime.Now,
                                 TimeCheck = 1,
                                 MachineStatus = "Đã Mượn",
                             });
                         }
-                        if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//minh cho ngta muon, thì update statust
+                        if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryName == inVo.TranferFactoryName))//minh cho ngta muon, thì update statust
                         {
                             WarehouseVTVo updateBG = new WarehouseVTVo();
-                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Đã Cho Mượn", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
+                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryName, MachineStatus = "Đã Cho Mượn", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
                         }
-                        if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryCode == inVo.TranferFactoryCode))//mình trả cho ngta, thì xóa dòng đó.
+                        if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryName == inVo.TranferFactoryName))//mình trả cho ngta, thì xóa dòng đó.
                         {
                             WarehouseVTVo deletemachine = new WarehouseVTVo();
                             deletemachine = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new DeleteMachineVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial });
                         }
-                        if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryCode == inVo.ReceivedFactoryCode))//nguoi ta tra mình, update status
+                        if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryName == inVo.ReceivedFactoryName))//nguoi ta tra mình, update status
                         {
                             WarehouseVTVo updateBG = new WarehouseVTVo();
-                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryCode, MachineStatus = "Máy CTY", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
+                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryName, MachineStatus = "Máy CTY", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
                         }
-                        if ((code_status_cmb.Text == "Thuê") && (UserData.GetUserData().FactoryCode == inVo.ReceivedFactoryCode))//mình đi thuê thì add thêm
+                        if ((code_status_cmb.Text == "Thuê") && (UserData.GetUserData().FactoryName == inVo.ReceivedFactoryName))//mình đi thuê thì add thêm
                         {
                             WarehouseVTVo addnewmachine = new WarehouseVTVo();
                             addnewmachine = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new AddNewMachineVTCbm(), new WarehouseVTVo()
@@ -264,12 +272,12 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                                 MachineCode = "",
                                 MachineName = machine_name_cmb.Text,
                                 MachineQty = 1,
-                                MachineModel = "",
+                                MachineModel = machine_model_cmb.Text,
                                 MachineSerial = machine_serial_cmb.Text,
                                 MachineLocation = "",
                                 MachineSupplier = factory_tranfer_cmb.Text,
                                 MachineInvoice = "",
-                                MachineCostValue = "0",
+                                MachineCostValue = cost_value_cmb.Text,
                                 RegistrationUserCode = UserData.GetUserData().UserName,
                                 RegistrationDateTime = DateTime.Now,
                                 TimeCheck = 1,

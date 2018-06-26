@@ -16,6 +16,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
     {
         public void exportmoving(ref DataGridViewCommon dgv, string codestatus)
         {
+            string datetime = DateTime.Now.ToString("yyyy_mm_dd");
             try
             {
                 Excel.Application xlApp;
@@ -54,7 +55,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 #endregion
                 #region tableform
                 //số thứ tự
-                for(int i = 0; i <dgv.RowCount; i++)
+                for (int i = 0; i < dgv.RowCount; i++)
                 {
                     xlWorkSheet.Cells[i + 15, 1] = i + 1;
                     xlWorkSheet.Cells[i + 15, 3] = dgv.Rows[i].Cells["col_machine_name"].Value.ToString();
@@ -64,14 +65,19 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                     xlWorkSheet.Cells[i + 15, 32] = dgv.Rows[i].Cells["col_comments_machine"].Value.ToString();
                 }
                 #endregion
+                #region confirm received and register date time format form
+                xlWorkSheet.Cells[46, 7] = dgv.Rows[0].Cells["col_confirm_received"].Value.ToString();
+                xlWorkSheet.Cells[49, 25] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(8, 2); //day
+                xlWorkSheet.Cells[49, 29] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(5, 2); //month
+                xlWorkSheet.Cells[49, 33] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(0, 4); //year
+                #endregion
 
-                xlWorkBook.SaveAs("D:\\VT CP\\ExportMovingnew.xlsx", Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue,
+                xlWorkBook.SaveAs("D:\\VT CP\\ExportMoving_" + datetime + ".xlsx", Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue,
                  misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 MessageBox.Show("Excel file created, you can find in the folder D:\\VT CP", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 xlWorkBook.Close(true, misValue, misValue);
-                //   xlApp.Workbooks.Open("D:\\VT CP\\ExportMovingnew.xlsx");
-                // xlApp.Visible = true;
-
+                xlApp.Workbooks.Open("D:\\VT CP\\ExportMoving_" + datetime + ".xlsx");
+                xlApp.Visible = true;
             }
             catch
             {

@@ -26,6 +26,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             model_cmb.DisplayMember = "MachineModel";
             model_cmb.DataSource = machinemodel.GetList();
             model_cmb.Text = "";
+
+            FactoryVo factory_tranfer = (FactoryVo)DefaultCbmInvoker.Invoke(new GetFactoryMasterMntCbm(), new FactoryVo());
+            machine_supplier_cmb.DisplayMember = "FactoryName";
+            machine_supplier_cmb.DataSource = factory_tranfer.FactoryListVo;
+            machine_supplier_cmb.Text = "";
         }
         private void model_cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -62,7 +67,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         MachineModel = model_cmb.Text,
                         MachineSerial = serial_txt.Text,
                         MachineLocation = location_txt.Text,
-                        MachineSupplier = supplier_txt.Text,
+                        MachineSupplier = machine_supplier_cmb.Text,
                         MachineInvoice = invoice_txt.Text,
                         MachineCostValue = cost_txt.Text,
                         RegistrationUserCode = UserData.GetUserData().UserName,

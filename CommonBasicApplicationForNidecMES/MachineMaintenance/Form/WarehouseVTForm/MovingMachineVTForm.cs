@@ -88,7 +88,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         public string applyupdate = "";
         void codecheckCODESTATUS()
         {
-            if (vt_search_moving_dgv.RowCount > 2)
+            if (vt_search_moving_dgv.RowCount > 1)
             {
                 for (int i = 0; i < vt_search_moving_dgv.RowCount - 1; i++)
                 {
@@ -201,11 +201,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 search_btn_Click(sender, e);
             }
         }
-
-        private void exportcsv_btn_Click(object sender, EventArgs e)
-        {
-
-            //WAITTING 
-        }
+     
     }
 }

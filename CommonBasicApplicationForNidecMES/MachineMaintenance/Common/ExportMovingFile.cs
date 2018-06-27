@@ -49,9 +49,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 }
                 #endregion
                 #region factory and reason
-                xlWorkSheet.Cells[9, 6] = dgv.Rows[0].Cells["col_reason_tranfer"].Value.ToString();
+                xlWorkSheet.Cells[9, 8] = dgv.Rows[0].Cells["col_reason_tranfer"].Value.ToString();
                 xlWorkSheet.Cells[11, 8] = dgv.Rows[0].Cells["col_factory_tranfer_cd"].Value.ToString();
-                xlWorkSheet.Cells[11, 29] = dgv.Rows[0].Cells["col_factory_received_cd"].Value.ToString();
+                xlWorkSheet.Cells[11, 26] = dgv.Rows[0].Cells["col_factory_received_cd"].Value.ToString();
                 #endregion
                 #region tableform
                 //số thứ tự
@@ -66,8 +66,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 }
                 #endregion
                 #region confirm received and register date time format form
-                xlWorkSheet.Cells[46, 7] = dgv.Rows[0].Cells["col_confirm_received"].Value.ToString();
-                xlWorkSheet.Cells[49, 25] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(8, 2); //day
+                xlWorkSheet.Cells[46, 2] = dgv.Rows[0].Cells["col_confirm_received"].Value.ToString();
+                xlWorkSheet.Cells[49, 24] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(8, 2); //day
                 xlWorkSheet.Cells[49, 29] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(5, 2); //month
                 xlWorkSheet.Cells[49, 33] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(0, 4); //year
                 #endregion

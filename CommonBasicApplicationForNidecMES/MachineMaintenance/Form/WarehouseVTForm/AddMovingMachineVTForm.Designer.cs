@@ -75,7 +75,7 @@
             this.setting_gbc.Controls.Add(this.cancel_btn);
             this.setting_gbc.Controls.Add(this.Ok_btn);
             this.setting_gbc.Font = new System.Drawing.Font("Arial", 9F);
-            this.setting_gbc.Location = new System.Drawing.Point(284, 397);
+            this.setting_gbc.Location = new System.Drawing.Point(281, 432);
             this.setting_gbc.Name = "setting_gbc";
             this.setting_gbc.Size = new System.Drawing.Size(306, 77);
             this.setting_gbc.TabIndex = 60;
@@ -114,7 +114,7 @@
             this.machine_serial_cmb.ControlId = null;
             this.machine_serial_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.machine_serial_cmb.FormattingEnabled = true;
-            this.machine_serial_cmb.Location = new System.Drawing.Point(22, 184);
+            this.machine_serial_cmb.Location = new System.Drawing.Point(19, 219);
             this.machine_serial_cmb.Name = "machine_serial_cmb";
             this.machine_serial_cmb.Size = new System.Drawing.Size(183, 23);
             this.machine_serial_cmb.TabIndex = 80;
@@ -126,7 +126,7 @@
             this.serialmachine_lbl.ControlId = null;
             this.serialmachine_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.serialmachine_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.serialmachine_lbl.Location = new System.Drawing.Point(22, 166);
+            this.serialmachine_lbl.Location = new System.Drawing.Point(19, 201);
             this.serialmachine_lbl.Name = "serialmachine_lbl";
             this.serialmachine_lbl.Size = new System.Drawing.Size(88, 15);
             this.serialmachine_lbl.TabIndex = 81;
@@ -138,7 +138,7 @@
             this.factory_received_lbl.ControlId = null;
             this.factory_received_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.factory_received_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.factory_received_lbl.Location = new System.Drawing.Point(229, 226);
+            this.factory_received_lbl.Location = new System.Drawing.Point(226, 261);
             this.factory_received_lbl.Name = "factory_received_lbl";
             this.factory_received_lbl.Size = new System.Drawing.Size(100, 15);
             this.factory_received_lbl.TabIndex = 85;
@@ -149,7 +149,7 @@
             this.factory_received_cmb.ControlId = null;
             this.factory_received_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.factory_received_cmb.FormattingEnabled = true;
-            this.factory_received_cmb.Location = new System.Drawing.Point(231, 244);
+            this.factory_received_cmb.Location = new System.Drawing.Point(228, 279);
             this.factory_received_cmb.Name = "factory_received_cmb";
             this.factory_received_cmb.Size = new System.Drawing.Size(183, 23);
             this.factory_received_cmb.TabIndex = 84;
@@ -160,7 +160,7 @@
             this.factory_tranfer_lbl.ControlId = null;
             this.factory_tranfer_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.factory_tranfer_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.factory_tranfer_lbl.Location = new System.Drawing.Point(22, 226);
+            this.factory_tranfer_lbl.Location = new System.Drawing.Point(19, 261);
             this.factory_tranfer_lbl.Name = "factory_tranfer_lbl";
             this.factory_tranfer_lbl.Size = new System.Drawing.Size(88, 15);
             this.factory_tranfer_lbl.TabIndex = 87;
@@ -171,7 +171,7 @@
             this.factory_tranfer_cmb.ControlId = null;
             this.factory_tranfer_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.factory_tranfer_cmb.FormattingEnabled = true;
-            this.factory_tranfer_cmb.Location = new System.Drawing.Point(22, 244);
+            this.factory_tranfer_cmb.Location = new System.Drawing.Point(19, 279);
             this.factory_tranfer_cmb.Name = "factory_tranfer_cmb";
             this.factory_tranfer_cmb.Size = new System.Drawing.Size(183, 23);
             this.factory_tranfer_cmb.TabIndex = 86;
@@ -181,7 +181,7 @@
             this.rfid_txt.ControlId = null;
             this.rfid_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rfid_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.rfid_txt.Location = new System.Drawing.Point(22, 129);
+            this.rfid_txt.Location = new System.Drawing.Point(19, 164);
             this.rfid_txt.Multiline = true;
             this.rfid_txt.Name = "rfid_txt";
             this.rfid_txt.Size = new System.Drawing.Size(183, 24);
@@ -194,7 +194,7 @@
             this.rfid_lbl.ControlId = null;
             this.rfid_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rfid_lbl.Location = new System.Drawing.Point(22, 113);
+            this.rfid_lbl.Location = new System.Drawing.Point(19, 148);
             this.rfid_lbl.Name = "rfid_lbl";
             this.rfid_lbl.Size = new System.Drawing.Size(83, 15);
             this.rfid_lbl.TabIndex = 101;
@@ -205,7 +205,7 @@
             this.code_name_txt.ControlId = null;
             this.code_name_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.code_name_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.code_name_txt.Location = new System.Drawing.Point(760, 244);
+            this.code_name_txt.Location = new System.Drawing.Point(757, 279);
             this.code_name_txt.Multiline = true;
             this.code_name_txt.Name = "code_name_txt";
             this.code_name_txt.Size = new System.Drawing.Size(141, 23);
@@ -217,7 +217,7 @@
             this.code_name_lbl.ControlId = null;
             this.code_name_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.code_name_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.code_name_lbl.Location = new System.Drawing.Point(790, 226);
+            this.code_name_lbl.Location = new System.Drawing.Point(787, 261);
             this.code_name_lbl.Name = "code_name_lbl";
             this.code_name_lbl.Size = new System.Drawing.Size(77, 15);
             this.code_name_lbl.TabIndex = 103;
@@ -233,7 +233,7 @@
             "Mượn",
             "Trả",
             "Thuê"});
-            this.code_status_cmb.Location = new System.Drawing.Point(597, 244);
+            this.code_status_cmb.Location = new System.Drawing.Point(594, 279);
             this.code_status_cmb.Name = "code_status_cmb";
             this.code_status_cmb.Size = new System.Drawing.Size(141, 23);
             this.code_status_cmb.TabIndex = 84;
@@ -245,7 +245,7 @@
             this.code_status_lbl.ControlId = null;
             this.code_status_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.code_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.code_status_lbl.Location = new System.Drawing.Point(599, 226);
+            this.code_status_lbl.Location = new System.Drawing.Point(596, 261);
             this.code_status_lbl.Name = "code_status_lbl";
             this.code_status_lbl.Size = new System.Drawing.Size(75, 15);
             this.code_status_lbl.TabIndex = 85;
@@ -277,7 +277,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_maxcode.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_maxcode.Location = new System.Drawing.Point(679, 113);
+            this.dgv_maxcode.Location = new System.Drawing.Point(676, 148);
             this.dgv_maxcode.Name = "dgv_maxcode";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -326,7 +326,7 @@
             this.status_machine_cmb.Items.AddRange(new object[] {
             "OK",
             "NG"});
-            this.status_machine_cmb.Location = new System.Drawing.Point(436, 244);
+            this.status_machine_cmb.Location = new System.Drawing.Point(433, 279);
             this.status_machine_cmb.Name = "status_machine_cmb";
             this.status_machine_cmb.Size = new System.Drawing.Size(141, 23);
             this.status_machine_cmb.TabIndex = 84;
@@ -338,7 +338,7 @@
             this.status_machine_lbl.ControlId = null;
             this.status_machine_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.status_machine_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.status_machine_lbl.Location = new System.Drawing.Point(437, 226);
+            this.status_machine_lbl.Location = new System.Drawing.Point(434, 261);
             this.status_machine_lbl.Name = "status_machine_lbl";
             this.status_machine_lbl.Size = new System.Drawing.Size(91, 15);
             this.status_machine_lbl.TabIndex = 85;
@@ -350,7 +350,7 @@
             this.comments_lbl.ControlId = null;
             this.comments_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.comments_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comments_lbl.Location = new System.Drawing.Point(23, 283);
+            this.comments_lbl.Location = new System.Drawing.Point(20, 318);
             this.comments_lbl.Name = "comments_lbl";
             this.comments_lbl.Size = new System.Drawing.Size(69, 15);
             this.comments_lbl.TabIndex = 106;
@@ -361,7 +361,7 @@
             this.comments_txt.ControlId = null;
             this.comments_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comments_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.comments_txt.Location = new System.Drawing.Point(22, 301);
+            this.comments_txt.Location = new System.Drawing.Point(19, 336);
             this.comments_txt.Multiline = true;
             this.comments_txt.Name = "comments_txt";
             this.comments_txt.Size = new System.Drawing.Size(270, 79);
@@ -372,7 +372,7 @@
             this.reason_tranfer_txt.ControlId = null;
             this.reason_tranfer_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reason_tranfer_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.reason_tranfer_txt.Location = new System.Drawing.Point(330, 301);
+            this.reason_tranfer_txt.Location = new System.Drawing.Point(327, 336);
             this.reason_tranfer_txt.Multiline = true;
             this.reason_tranfer_txt.Name = "reason_tranfer_txt";
             this.reason_tranfer_txt.Size = new System.Drawing.Size(270, 79);
@@ -384,7 +384,7 @@
             this.reason_tranfer_lbl.ControlId = null;
             this.reason_tranfer_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.reason_tranfer_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.reason_tranfer_lbl.Location = new System.Drawing.Point(331, 283);
+            this.reason_tranfer_lbl.Location = new System.Drawing.Point(328, 318);
             this.reason_tranfer_lbl.Name = "reason_tranfer_lbl";
             this.reason_tranfer_lbl.Size = new System.Drawing.Size(89, 15);
             this.reason_tranfer_lbl.TabIndex = 106;
@@ -395,7 +395,7 @@
             this.confirm_received_txt.ControlId = null;
             this.confirm_received_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirm_received_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.confirm_received_txt.Location = new System.Drawing.Point(631, 301);
+            this.confirm_received_txt.Location = new System.Drawing.Point(628, 336);
             this.confirm_received_txt.Multiline = true;
             this.confirm_received_txt.Name = "confirm_received_txt";
             this.confirm_received_txt.Size = new System.Drawing.Size(270, 79);
@@ -407,7 +407,7 @@
             this.confirm_received_lbl.ControlId = null;
             this.confirm_received_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.confirm_received_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.confirm_received_lbl.Location = new System.Drawing.Point(632, 283);
+            this.confirm_received_lbl.Location = new System.Drawing.Point(629, 318);
             this.confirm_received_lbl.Name = "confirm_received_lbl";
             this.confirm_received_lbl.Size = new System.Drawing.Size(105, 15);
             this.confirm_received_lbl.TabIndex = 106;
@@ -418,7 +418,7 @@
             this.machine_name_cmb.ControlId = null;
             this.machine_name_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.machine_name_cmb.FormattingEnabled = true;
-            this.machine_name_cmb.Location = new System.Drawing.Point(231, 130);
+            this.machine_name_cmb.Location = new System.Drawing.Point(228, 165);
             this.machine_name_cmb.Name = "machine_name_cmb";
             this.machine_name_cmb.Size = new System.Drawing.Size(404, 23);
             this.machine_name_cmb.TabIndex = 80;
@@ -429,7 +429,7 @@
             this.machine_name_lbl.ControlId = null;
             this.machine_name_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.machine_name_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.machine_name_lbl.Location = new System.Drawing.Point(228, 113);
+            this.machine_name_lbl.Location = new System.Drawing.Point(225, 148);
             this.machine_name_lbl.Name = "machine_name_lbl";
             this.machine_name_lbl.Size = new System.Drawing.Size(90, 15);
             this.machine_name_lbl.TabIndex = 81;
@@ -441,7 +441,7 @@
             this.machine_model_lbl.ControlId = null;
             this.machine_model_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.machine_model_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.machine_model_lbl.Location = new System.Drawing.Point(228, 166);
+            this.machine_model_lbl.Location = new System.Drawing.Point(225, 201);
             this.machine_model_lbl.Name = "machine_model_lbl";
             this.machine_model_lbl.Size = new System.Drawing.Size(89, 15);
             this.machine_model_lbl.TabIndex = 108;
@@ -452,7 +452,7 @@
             this.machine_model_cmb.ControlId = null;
             this.machine_model_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.machine_model_cmb.FormattingEnabled = true;
-            this.machine_model_cmb.Location = new System.Drawing.Point(231, 184);
+            this.machine_model_cmb.Location = new System.Drawing.Point(228, 219);
             this.machine_model_cmb.Name = "machine_model_cmb";
             this.machine_model_cmb.Size = new System.Drawing.Size(404, 23);
             this.machine_model_cmb.TabIndex = 107;
@@ -462,7 +462,7 @@
             this.cost_value_cmb.ControlId = null;
             this.cost_value_cmb.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cost_value_cmb.FormattingEnabled = true;
-            this.cost_value_cmb.Location = new System.Drawing.Point(760, 185);
+            this.cost_value_cmb.Location = new System.Drawing.Point(757, 220);
             this.cost_value_cmb.Name = "cost_value_cmb";
             this.cost_value_cmb.Size = new System.Drawing.Size(141, 23);
             this.cost_value_cmb.TabIndex = 80;
@@ -474,7 +474,7 @@
             this.cost_value_lbl.ControlId = null;
             this.cost_value_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.cost_value_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cost_value_lbl.Location = new System.Drawing.Point(685, 188);
+            this.cost_value_lbl.Location = new System.Drawing.Point(682, 223);
             this.cost_value_lbl.Name = "cost_value_lbl";
             this.cost_value_lbl.Size = new System.Drawing.Size(69, 15);
             this.cost_value_lbl.TabIndex = 81;
@@ -483,7 +483,7 @@
             // AddMovingMachineVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(925, 494);
+            this.ClientSize = new System.Drawing.Size(925, 524);
             this.Controls.Add(this.machine_model_lbl);
             this.Controls.Add(this.machine_model_cmb);
             this.Controls.Add(this.confirm_received_lbl);

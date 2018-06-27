@@ -143,6 +143,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             logger.Info(messageData);
                             popUpMessage.Information(messageData, Text);
                         }
+                        GridBind();
                     }
                 }
                 catch (Framework.ApplicationException exception)
@@ -177,6 +178,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             logger.Info(messageData);
                             popUpMessage.Information(messageData, Text);
                         }
+                        GridBind();
                     }
                 }
                 catch (Framework.ApplicationException exception)
@@ -189,16 +191,21 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void exportexcel_btn_Click(object sender, EventArgs e)
         {
-
-            Common.ExportMovingFile export = new Common.ExportMovingFile();
-            export.exportmoving(ref vt_search_moving_dgv, code_status_cmb.Text);
-
+            if (vt_search_moving_dgv.Rows.Count > 0 && vt_search_moving_dgv.DataSource != null && applyupdate == "0")
+            {
+                Common.ExportMovingFile export = new Common.ExportMovingFile();
+                export.exportmoving(ref vt_search_moving_dgv, code_status_cmb.Text);
+            }
+            else
+            {
+                search_btn_Click(sender, e);
+            }
         }
 
         private void exportcsv_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(UserData.GetUserData().FactoryCode);
-            MessageBox.Show(UserData.GetUserData().FactoryName);
+
+            //WAITTING 
         }
     }
 }

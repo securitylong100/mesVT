@@ -37,11 +37,22 @@
             this.update_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.delete_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.search_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.linksave_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.exportexcel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.vt_search_moving_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.factory_received_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.factory_received_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.factory_tranfer_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.factory_tranfer_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.code_name_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.code_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.code_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.code_name_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.col_moving_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machine_serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machine_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,19 +69,6 @@
             this.col_registration_user_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_registration_date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_factory_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.machine_serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_received_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_received_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.factory_tranfer_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_tranfer_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.code_name_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.code_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.code_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.code_name_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vt_search_moving_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -161,42 +159,19 @@
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
-            // linksave_txt
-            // 
-            this.linksave_txt.ControlId = null;
-            this.linksave_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linksave_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.linksave_txt.Location = new System.Drawing.Point(100, 25);
-            this.linksave_txt.Name = "linksave_txt";
-            this.linksave_txt.Size = new System.Drawing.Size(202, 21);
-            this.linksave_txt.TabIndex = 55;
-            // 
             // exportexcel_btn
             // 
             this.exportexcel_btn.BackColor = System.Drawing.SystemColors.Control;
             this.exportexcel_btn.ControlId = null;
             this.exportexcel_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.exportexcel_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.exportexcel_btn.Location = new System.Drawing.Point(307, 19);
+            this.exportexcel_btn.Location = new System.Drawing.Point(13, 20);
             this.exportexcel_btn.Name = "exportexcel_btn";
             this.exportexcel_btn.Size = new System.Drawing.Size(91, 33);
             this.exportexcel_btn.TabIndex = 10;
             this.exportexcel_btn.Text = "Export Excel";
             this.exportexcel_btn.UseVisualStyleBackColor = false;
             this.exportexcel_btn.Click += new System.EventHandler(this.exportexcel_btn_Click);
-            // 
-            // browser_btn
-            // 
-            this.browser_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.browser_btn.ControlId = null;
-            this.browser_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.browser_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.browser_btn.Location = new System.Drawing.Point(16, 19);
-            this.browser_btn.Name = "browser_btn";
-            this.browser_btn.Size = new System.Drawing.Size(80, 33);
-            this.browser_btn.TabIndex = 10;
-            this.browser_btn.Text = "Browser:";
-            this.browser_btn.UseVisualStyleBackColor = false;
             // 
             // rfid_lbl
             // 
@@ -265,128 +240,15 @@
             this.vt_search_moving_dgv.Size = new System.Drawing.Size(1270, 426);
             this.vt_search_moving_dgv.TabIndex = 75;
             // 
-            // col_moving_id
-            // 
-            this.col_moving_id.DataPropertyName = "MovingId";
-            this.col_moving_id.HeaderText = "Moving ID";
-            this.col_moving_id.Name = "col_moving_id";
-            this.col_moving_id.Width = 85;
-            // 
-            // col_machine_serial
-            // 
-            this.col_machine_serial.DataPropertyName = "MachineSerial";
-            this.col_machine_serial.HeaderText = "Machine Serial";
-            this.col_machine_serial.Name = "col_machine_serial";
-            this.col_machine_serial.Width = 113;
-            // 
-            // col_machine_model
-            // 
-            this.col_machine_model.DataPropertyName = "MachineModel";
-            this.col_machine_model.HeaderText = "Model";
-            this.col_machine_model.Name = "col_machine_model";
-            this.col_machine_model.Width = 65;
-            // 
-            // col_machine_name
-            // 
-            this.col_machine_name.DataPropertyName = "MachineName";
-            this.col_machine_name.HeaderText = "Machine Name";
-            this.col_machine_name.Name = "col_machine_name";
-            this.col_machine_name.Width = 115;
-            // 
-            // col_factory_tranfer_cd
-            // 
-            this.col_factory_tranfer_cd.DataPropertyName = "TranferFactoryName";
-            this.col_factory_tranfer_cd.HeaderText = "TranferFactoryCode";
-            this.col_factory_tranfer_cd.Name = "col_factory_tranfer_cd";
-            this.col_factory_tranfer_cd.Width = 140;
-            // 
-            // col_factory_received_cd
-            // 
-            this.col_factory_received_cd.DataPropertyName = "ReceivedFactoryName";
-            this.col_factory_received_cd.HeaderText = "Received Factory";
-            this.col_factory_received_cd.Name = "col_factory_received_cd";
-            this.col_factory_received_cd.Width = 125;
-            // 
-            // col_code_status
-            // 
-            this.col_code_status.DataPropertyName = "CodeStatus";
-            this.col_code_status.HeaderText = "Code Status";
-            this.col_code_status.Name = "col_code_status";
-            // 
-            // col_code_name
-            // 
-            this.col_code_name.DataPropertyName = "CodeName";
-            this.col_code_name.HeaderText = "Code Name";
-            this.col_code_name.Name = "col_code_name";
-            this.col_code_name.Width = 99;
-            // 
-            // col_status_machine
-            // 
-            this.col_status_machine.DataPropertyName = "Status";
-            this.col_status_machine.HeaderText = "Status";
-            this.col_status_machine.Name = "col_status_machine";
-            this.col_status_machine.Width = 67;
-            // 
-            // col_comments_machine
-            // 
-            this.col_comments_machine.DataPropertyName = "CommentsMachine";
-            this.col_comments_machine.HeaderText = "Comments";
-            this.col_comments_machine.Name = "col_comments_machine";
-            this.col_comments_machine.Width = 94;
-            // 
-            // col_reason_tranfer
-            // 
-            this.col_reason_tranfer.DataPropertyName = "ReasonTranfer";
-            this.col_reason_tranfer.HeaderText = "Reason Tranfer";
-            this.col_reason_tranfer.Name = "col_reason_tranfer";
-            this.col_reason_tranfer.Width = 118;
-            // 
-            // col_confirm_received
-            // 
-            this.col_confirm_received.DataPropertyName = "ConfirmReceived";
-            this.col_confirm_received.HeaderText = "Confirm Received";
-            this.col_confirm_received.Name = "col_confirm_received";
-            this.col_confirm_received.Width = 130;
-            // 
-            // col_machine_costvalue
-            // 
-            this.col_machine_costvalue.DataPropertyName = "MachineCost";
-            this.col_machine_costvalue.HeaderText = "Cost Value";
-            this.col_machine_costvalue.Name = "col_machine_costvalue";
-            this.col_machine_costvalue.Width = 91;
-            // 
-            // col_registration_user_cd
-            // 
-            this.col_registration_user_cd.DataPropertyName = "RegistrationUserCode";
-            this.col_registration_user_cd.HeaderText = "User Code";
-            this.col_registration_user_cd.Name = "col_registration_user_cd";
-            this.col_registration_user_cd.Width = 92;
-            // 
-            // col_registration_date_time
-            // 
-            this.col_registration_date_time.DataPropertyName = "RegistrationDateTime";
-            this.col_registration_date_time.HeaderText = "Date Time";
-            this.col_registration_date_time.Name = "col_registration_date_time";
-            this.col_registration_date_time.Width = 89;
-            // 
-            // col_factory_cd
-            // 
-            this.col_factory_cd.DataPropertyName = "FactoryCode";
-            this.col_factory_cd.HeaderText = "Factory Code";
-            this.col_factory_cd.Name = "col_factory_cd";
-            this.col_factory_cd.Width = 104;
-            // 
             // groupBoxCommon2
             // 
             this.groupBoxCommon2.ControlId = null;
             this.groupBoxCommon2.Controls.Add(this.exportcsv_btn);
-            this.groupBoxCommon2.Controls.Add(this.linksave_txt);
-            this.groupBoxCommon2.Controls.Add(this.browser_btn);
             this.groupBoxCommon2.Controls.Add(this.exportexcel_btn);
             this.groupBoxCommon2.Font = new System.Drawing.Font("Arial", 9F);
-            this.groupBoxCommon2.Location = new System.Drawing.Point(641, 199);
+            this.groupBoxCommon2.Location = new System.Drawing.Point(589, 199);
             this.groupBoxCommon2.Name = "groupBoxCommon2";
-            this.groupBoxCommon2.Size = new System.Drawing.Size(518, 64);
+            this.groupBoxCommon2.Size = new System.Drawing.Size(232, 64);
             this.groupBoxCommon2.TabIndex = 76;
             this.groupBoxCommon2.TabStop = false;
             // 
@@ -396,7 +258,7 @@
             this.exportcsv_btn.ControlId = null;
             this.exportcsv_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.exportcsv_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.exportcsv_btn.Location = new System.Drawing.Point(416, 19);
+            this.exportcsv_btn.Location = new System.Drawing.Point(122, 20);
             this.exportcsv_btn.Name = "exportcsv_btn";
             this.exportcsv_btn.Size = new System.Drawing.Size(91, 33);
             this.exportcsv_btn.TabIndex = 56;
@@ -537,6 +399,117 @@
             this.code_name_cmb.Size = new System.Drawing.Size(128, 23);
             this.code_name_cmb.TabIndex = 108;
             // 
+            // col_moving_id
+            // 
+            this.col_moving_id.DataPropertyName = "MovingId";
+            this.col_moving_id.HeaderText = "Moving ID";
+            this.col_moving_id.Name = "col_moving_id";
+            this.col_moving_id.Width = 85;
+            // 
+            // col_machine_serial
+            // 
+            this.col_machine_serial.DataPropertyName = "MachineSerial";
+            this.col_machine_serial.HeaderText = "Machine Serial";
+            this.col_machine_serial.Name = "col_machine_serial";
+            this.col_machine_serial.Width = 113;
+            // 
+            // col_machine_model
+            // 
+            this.col_machine_model.DataPropertyName = "MachineModel";
+            this.col_machine_model.HeaderText = "Model";
+            this.col_machine_model.Name = "col_machine_model";
+            this.col_machine_model.Width = 65;
+            // 
+            // col_machine_name
+            // 
+            this.col_machine_name.DataPropertyName = "MachineName";
+            this.col_machine_name.HeaderText = "Machine Name";
+            this.col_machine_name.Name = "col_machine_name";
+            this.col_machine_name.Width = 115;
+            // 
+            // col_factory_tranfer_cd
+            // 
+            this.col_factory_tranfer_cd.DataPropertyName = "TranferFactoryName";
+            this.col_factory_tranfer_cd.HeaderText = "TranferFactoryCode";
+            this.col_factory_tranfer_cd.Name = "col_factory_tranfer_cd";
+            this.col_factory_tranfer_cd.Width = 140;
+            // 
+            // col_factory_received_cd
+            // 
+            this.col_factory_received_cd.DataPropertyName = "ReceivedFactoryName";
+            this.col_factory_received_cd.HeaderText = "Received Factory";
+            this.col_factory_received_cd.Name = "col_factory_received_cd";
+            this.col_factory_received_cd.Width = 125;
+            // 
+            // col_code_status
+            // 
+            this.col_code_status.DataPropertyName = "CodeStatus";
+            this.col_code_status.HeaderText = "Code Status";
+            this.col_code_status.Name = "col_code_status";
+            // 
+            // col_code_name
+            // 
+            this.col_code_name.DataPropertyName = "CodeName";
+            this.col_code_name.HeaderText = "Code Name";
+            this.col_code_name.Name = "col_code_name";
+            this.col_code_name.Width = 99;
+            // 
+            // col_status_machine
+            // 
+            this.col_status_machine.DataPropertyName = "Status";
+            this.col_status_machine.HeaderText = "Status";
+            this.col_status_machine.Name = "col_status_machine";
+            this.col_status_machine.Width = 67;
+            // 
+            // col_comments_machine
+            // 
+            this.col_comments_machine.DataPropertyName = "CommentsMachine";
+            this.col_comments_machine.HeaderText = "Comments";
+            this.col_comments_machine.Name = "col_comments_machine";
+            this.col_comments_machine.Width = 94;
+            // 
+            // col_reason_tranfer
+            // 
+            this.col_reason_tranfer.DataPropertyName = "ReasonTranfer";
+            this.col_reason_tranfer.HeaderText = "Reason Tranfer";
+            this.col_reason_tranfer.Name = "col_reason_tranfer";
+            this.col_reason_tranfer.Width = 118;
+            // 
+            // col_confirm_received
+            // 
+            this.col_confirm_received.DataPropertyName = "ConfirmReceived";
+            this.col_confirm_received.HeaderText = "Confirm Received";
+            this.col_confirm_received.Name = "col_confirm_received";
+            this.col_confirm_received.Width = 130;
+            // 
+            // col_machine_costvalue
+            // 
+            this.col_machine_costvalue.DataPropertyName = "MachineCostValue";
+            this.col_machine_costvalue.HeaderText = "Cost Value";
+            this.col_machine_costvalue.Name = "col_machine_costvalue";
+            this.col_machine_costvalue.Width = 91;
+            // 
+            // col_registration_user_cd
+            // 
+            this.col_registration_user_cd.DataPropertyName = "RegistrationUserCode";
+            this.col_registration_user_cd.HeaderText = "User Code";
+            this.col_registration_user_cd.Name = "col_registration_user_cd";
+            this.col_registration_user_cd.Width = 92;
+            // 
+            // col_registration_date_time
+            // 
+            this.col_registration_date_time.DataPropertyName = "RegistrationDateTime";
+            this.col_registration_date_time.HeaderText = "Date Time";
+            this.col_registration_date_time.Name = "col_registration_date_time";
+            this.col_registration_date_time.Width = 89;
+            // 
+            // col_factory_cd
+            // 
+            this.col_factory_cd.DataPropertyName = "FactoryCode";
+            this.col_factory_cd.HeaderText = "Factory Code";
+            this.col_factory_cd.Name = "col_factory_cd";
+            this.col_factory_cd.Width = 104;
+            // 
             // MovingMachineVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,7 +551,6 @@
             this.setting_gbc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vt_search_moving_dgv)).EndInit();
             this.groupBoxCommon2.ResumeLayout(false);
-            this.groupBoxCommon2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,10 +558,8 @@
 
         #endregion
         private Framework.GroupBoxCommon setting_gbc;
-        private Framework.TextBoxCommon linksave_txt;
         private Framework.ButtonCommon update_btn;
         private Framework.ButtonCommon exportexcel_btn;
-        private Framework.ButtonCommon browser_btn;
         private Framework.ButtonCommon delete_btn;
         private Framework.ButtonCommon search_btn;
         private Framework.LabelCommon rfid_lbl;

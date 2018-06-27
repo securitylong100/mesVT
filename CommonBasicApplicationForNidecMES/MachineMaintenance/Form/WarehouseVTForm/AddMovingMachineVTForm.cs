@@ -251,7 +251,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         if ((code_status_cmb.Text == "Mượn") && (UserData.GetUserData().FactoryName == inVo.TranferFactoryName))//minh cho ngta muon, thì update statust
                         {
                             WarehouseVTVo updateBG = new WarehouseVTVo();
-                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.ReceivedFactoryName, MachineStatus = "Đã Cho Mượn", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
+                            updateBG = (WarehouseVTVo)DefaultCbmInvoker.Invoke(new UpdateBGMovingVTCbm(), new WarehouseVTVo() { MachineSerial = inVo.MachineSerial, MachineSupplier = inVo.TranferFactoryName, MachineStatus = "Đã Cho Mượn", RegistrationUserCode = inVo.RegistrationUserCode, RegistrationDateTime = DateTime.Now, });
                         }
                         if ((code_status_cmb.Text == "Trả") && (UserData.GetUserData().FactoryName == inVo.TranferFactoryName))//mình trả cho ngta, thì xóa dòng đó.
                         {

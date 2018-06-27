@@ -47,7 +47,7 @@ ALTER TABLE public.t_vt_list_check
 
 CREATE TABLE public.t_vt_machine
 (
-  machine_id integer NOT NULL DEFAULT nextval('t_vt_machine_seq'::regclass),
+  machine_id serial not null,
   rfid_cd character varying(10),
   machine_cd character varying(10),
   machine_name character varying(256) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE public.t_vt_machine
   registration_date_time timestamp without time zone,
   factory_cd character varying(8),
   time_check_fi integer DEFAULT 0,
-  machine_status character varying(8),
+  machine_status character varying,
   CONSTRAINT t_vt_machine_pkey PRIMARY KEY (machine_serial)
 )
 WITH (
@@ -73,7 +73,8 @@ ALTER TABLE public.t_vt_machine
 
 
 
--- Table: public.t_vt_moving
+
+---- Table: public.t_vt_moving
 
 -- DROP TABLE public.t_vt_moving;
 
@@ -81,13 +82,13 @@ CREATE TABLE public.t_vt_moving
 (
   moving_id integer NOT NULL DEFAULT nextval('t_vt_moving_moving_id_seq'::regclass),
   machine_serial character varying(64) NOT NULL,
-  factory_tranfer_cd character varying(8) NOT NULL,
-  factory_received_cd character varying(8) NOT NULL,
+  factory_tranfer_cd character varying(64) NOT NULL,
+  factory_received_cd character varying(64) NOT NULL,
   bg_cd character varying(8),
+  m_cd character varying(8),
   t_cd character varying(8),
-  tr_cd character varying(8),
   th_cd character varying(8),
-  status_machine character varying(8) NOT NULL,
+  status character varying NOT NULL,
   comments_machine character varying,
   reason_tranfer character varying NOT NULL,
   confirm_received character varying,

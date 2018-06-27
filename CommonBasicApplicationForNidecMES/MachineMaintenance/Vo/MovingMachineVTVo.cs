@@ -13,7 +13,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string MachineSerial { get; set; }
         public string MachineName { get; set; }
         public string MachineModel { get; set; }
-        public double MachineCostValue { get; set; } 
+        public string MachineCostValue { get; set; } 
         public string TranferFactoryName { get; set; }
         public string ReceivedFactoryName { get; set; }
         public string CodeName { get; set; } //using compair distinct 4  status

@@ -123,7 +123,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCostValue = int.Parse(dataReader["machine_costvalue"].ToString()),
+                        MachineCostValue =dataReader["machine_costvalue"].ToString(),
                     };
                     voList.add(outVo);
                 }
@@ -146,7 +146,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCostValue = int.Parse(dataReader["machine_costvalue"].ToString()),
+                        MachineCostValue =dataReader["machine_costvalue"].ToString(),
+                       
                     };
                     voList.add(outVo);
                 }
@@ -169,7 +170,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCostValue = 0,
+                      MachineCostValue = dataReader["machine_costvalue"].ToString(),
+                       
                     };
                     voList.add(outVo);
                 }
@@ -192,7 +194,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                         FactoryCode = dataReader["factory_cd"].ToString(),
                         CodeStatus = inVo.CodeStatus,
                         MachineModel = dataReader["machine_model"].ToString(),
-                        MachineCostValue = int.Parse(dataReader["machine_costvalue"].ToString()),
+                        MachineCostValue = dataReader["machine_costvalue"].ToString(),
                     };
                     voList.add(outVo);
                 }

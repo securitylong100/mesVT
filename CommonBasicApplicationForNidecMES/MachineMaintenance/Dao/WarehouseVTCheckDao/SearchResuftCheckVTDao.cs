@@ -29,6 +29,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
               where 1=1  ");
                 sql.Append(@" and   time_check_fi  =:time_check_fi");
                 sqlParameter.AddParameterInteger("time_check_fi", inVo.TimeCheck);
+                sql.Append(" AND machine_status = 'Máy CTY' or  machine_status = 'Đã Cho Mượn' ");
             }
             else   if (inVo.ValueResult == "False")
                 {
@@ -37,6 +38,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
               where 1=1 ");
                 sql.Append(@" and   time_check_fi  !=:time_check_fi");
                 sqlParameter.AddParameterInteger("time_check_fi", inVo.TimeCheck);
+                sql.Append(" AND machine_status = 'Máy CTY' or  machine_status = 'Đã Cho Mượn' ");
             }
             if (!String.IsNullOrEmpty(inVo.MachineSerial))
             {

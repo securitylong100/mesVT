@@ -66,7 +66,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         }
 
-
         private void click_btn_Click(object sender, EventArgs e)
         {
             warehouse_vt_dgv.DataSource = null;

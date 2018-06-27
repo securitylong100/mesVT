@@ -73,7 +73,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         RegistrationUserCode = UserData.GetUserData().UserName,
                         RegistrationDateTime = DateTime.Now,
                         TimeCheck = int.Parse(checktime_txt.Text),
-                        MachineStatus = "Máy của CTY",
+                        MachineStatus = "Máy CTY",
                     };
                     try
                     {

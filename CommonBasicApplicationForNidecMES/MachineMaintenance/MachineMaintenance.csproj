@@ -504,6 +504,12 @@
     <Compile Include="Form\WarehouseVTForm\AddMovingMachineVTForm.Designer.cs">
       <DependentUpon>AddMovingMachineVTForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\WarehouseVTForm\MaintenanceMachineVTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\WarehouseVTForm\MaintenanceMachineVTForm.Designer.cs">
+      <DependentUpon>MaintenanceMachineVTForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\WarehouseVTForm\WarehouseVTCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -700,6 +706,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\WarehouseVTForm\AddMovingMachineVTForm.resx">
       <DependentUpon>AddMovingMachineVTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\WarehouseVTForm\MaintenanceMachineVTForm.resx">
+      <DependentUpon>MaintenanceMachineVTForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\WarehouseVTForm\WarehouseVTCheckForm.resx">
       <DependentUpon>WarehouseVTCheckForm.cs</DependentUpon>

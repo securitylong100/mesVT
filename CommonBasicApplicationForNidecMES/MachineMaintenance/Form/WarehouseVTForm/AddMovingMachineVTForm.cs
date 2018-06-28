@@ -98,16 +98,24 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             if (machine_serial_cmb.Text.Length != 0)
             {
                 ValueObjectList<WarehouseVTVo> machinename = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new SearchMachineCbm(), new WarehouseVTVo { MachineSerial = machine_serial_cmb.Text });
+
                 machine_name_cmb.DisplayMember = "MachineName";
                 machine_name_cmb.DataSource = machinename.GetList();
-
+                machine_name_cmb.Text = "";
                 machine_model_cmb.DisplayMember = "MachineModel";
                 machine_model_cmb.DataSource = machinename.GetList();
+                machine_model_cmb.Text = "";
                 cost_value_cmb.DisplayMember = "MachineCostValue";
                 cost_value_cmb.DataSource = machinename.GetList();
-                
+                cost_value_cmb.Text = "";
+
             }
         }
+        private void machine_serial_cmb_TextChanged(object sender, EventArgs e)
+        {
+            machine_serial_cmb_SelectedIndexChanged(sender, e);
+        }
+
         public string codeselect = ""; //dung de goi update value to database
         public string codestatus = ""; //not using
         public string BG_code_value = null;
@@ -353,6 +361,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             Close();
         }
+
+
     }
 
 }

@@ -119,6 +119,8 @@
             this.machine_serial_cmb.Size = new System.Drawing.Size(183, 23);
             this.machine_serial_cmb.TabIndex = 80;
             this.machine_serial_cmb.SelectedIndexChanged += new System.EventHandler(this.machine_serial_cmb_SelectedIndexChanged);
+            this.machine_serial_cmb.TextChanged += new System.EventHandler(this.machine_serial_cmb_TextChanged);
+
             // 
             // serialmachine_lbl
             // 

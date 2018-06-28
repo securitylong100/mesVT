@@ -40,6 +40,18 @@
             this.exportexcel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.vt_search_moving_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.factory_received_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.factory_received_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.factory_tranfer_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.factory_tranfer_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.code_name_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.code_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.code_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.code_name_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.col_moving_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machine_serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machine_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,18 +68,6 @@
             this.col_registration_user_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_registration_date_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_factory_cd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.machine_serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_received_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_received_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.factory_tranfer_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.factory_tranfer_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.code_name_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.code_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.code_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.code_name_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vt_search_moving_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -238,117 +238,6 @@
             this.vt_search_moving_dgv.Size = new System.Drawing.Size(1270, 426);
             this.vt_search_moving_dgv.TabIndex = 75;
             // 
-            // col_moving_id
-            // 
-            this.col_moving_id.DataPropertyName = "MovingId";
-            this.col_moving_id.HeaderText = "Moving ID";
-            this.col_moving_id.Name = "col_moving_id";
-            this.col_moving_id.Width = 85;
-            // 
-            // col_machine_serial
-            // 
-            this.col_machine_serial.DataPropertyName = "MachineSerial";
-            this.col_machine_serial.HeaderText = "Machine Serial";
-            this.col_machine_serial.Name = "col_machine_serial";
-            this.col_machine_serial.Width = 113;
-            // 
-            // col_machine_model
-            // 
-            this.col_machine_model.DataPropertyName = "MachineModel";
-            this.col_machine_model.HeaderText = "Model";
-            this.col_machine_model.Name = "col_machine_model";
-            this.col_machine_model.Width = 65;
-            // 
-            // col_machine_name
-            // 
-            this.col_machine_name.DataPropertyName = "MachineName";
-            this.col_machine_name.HeaderText = "Machine Name";
-            this.col_machine_name.Name = "col_machine_name";
-            this.col_machine_name.Width = 115;
-            // 
-            // col_factory_tranfer_cd
-            // 
-            this.col_factory_tranfer_cd.DataPropertyName = "TranferFactoryName";
-            this.col_factory_tranfer_cd.HeaderText = "TranferFactoryCode";
-            this.col_factory_tranfer_cd.Name = "col_factory_tranfer_cd";
-            this.col_factory_tranfer_cd.Width = 140;
-            // 
-            // col_factory_received_cd
-            // 
-            this.col_factory_received_cd.DataPropertyName = "ReceivedFactoryName";
-            this.col_factory_received_cd.HeaderText = "Received Factory";
-            this.col_factory_received_cd.Name = "col_factory_received_cd";
-            this.col_factory_received_cd.Width = 125;
-            // 
-            // col_code_status
-            // 
-            this.col_code_status.DataPropertyName = "CodeStatus";
-            this.col_code_status.HeaderText = "Code Status";
-            this.col_code_status.Name = "col_code_status";
-            // 
-            // col_code_name
-            // 
-            this.col_code_name.DataPropertyName = "CodeName";
-            this.col_code_name.HeaderText = "Code Name";
-            this.col_code_name.Name = "col_code_name";
-            this.col_code_name.Width = 99;
-            // 
-            // col_status_machine
-            // 
-            this.col_status_machine.DataPropertyName = "Status";
-            this.col_status_machine.HeaderText = "Status";
-            this.col_status_machine.Name = "col_status_machine";
-            this.col_status_machine.Width = 67;
-            // 
-            // col_comments_machine
-            // 
-            this.col_comments_machine.DataPropertyName = "CommentsMachine";
-            this.col_comments_machine.HeaderText = "Comments";
-            this.col_comments_machine.Name = "col_comments_machine";
-            this.col_comments_machine.Width = 94;
-            // 
-            // col_reason_tranfer
-            // 
-            this.col_reason_tranfer.DataPropertyName = "ReasonTranfer";
-            this.col_reason_tranfer.HeaderText = "Reason Tranfer";
-            this.col_reason_tranfer.Name = "col_reason_tranfer";
-            this.col_reason_tranfer.Width = 118;
-            // 
-            // col_confirm_received
-            // 
-            this.col_confirm_received.DataPropertyName = "ConfirmReceived";
-            this.col_confirm_received.HeaderText = "Confirm Received";
-            this.col_confirm_received.Name = "col_confirm_received";
-            this.col_confirm_received.Width = 130;
-            // 
-            // col_machine_costvalue
-            // 
-            this.col_machine_costvalue.DataPropertyName = "MachineCostValue";
-            this.col_machine_costvalue.HeaderText = "Cost Value";
-            this.col_machine_costvalue.Name = "col_machine_costvalue";
-            this.col_machine_costvalue.Width = 91;
-            // 
-            // col_registration_user_cd
-            // 
-            this.col_registration_user_cd.DataPropertyName = "RegistrationUserCode";
-            this.col_registration_user_cd.HeaderText = "User Code";
-            this.col_registration_user_cd.Name = "col_registration_user_cd";
-            this.col_registration_user_cd.Width = 92;
-            // 
-            // col_registration_date_time
-            // 
-            this.col_registration_date_time.DataPropertyName = "RegistrationDateTime";
-            this.col_registration_date_time.HeaderText = "Date Time";
-            this.col_registration_date_time.Name = "col_registration_date_time";
-            this.col_registration_date_time.Width = 89;
-            // 
-            // col_factory_cd
-            // 
-            this.col_factory_cd.DataPropertyName = "FactoryCode";
-            this.col_factory_cd.HeaderText = "Factory Code";
-            this.col_factory_cd.Name = "col_factory_cd";
-            this.col_factory_cd.Width = 104;
-            // 
             // groupBoxCommon2
             // 
             this.groupBoxCommon2.ControlId = null;
@@ -492,6 +381,118 @@
             this.code_name_cmb.Name = "code_name_cmb";
             this.code_name_cmb.Size = new System.Drawing.Size(128, 23);
             this.code_name_cmb.TabIndex = 108;
+            // 
+            // col_moving_id
+            // 
+            this.col_moving_id.DataPropertyName = "MovingId";
+            this.col_moving_id.HeaderText = "Moving ID";
+            this.col_moving_id.Name = "col_moving_id";
+            this.col_moving_id.Visible = false;
+            this.col_moving_id.Width = 85;
+            // 
+            // col_machine_serial
+            // 
+            this.col_machine_serial.DataPropertyName = "MachineSerial";
+            this.col_machine_serial.HeaderText = "Machine Serial";
+            this.col_machine_serial.Name = "col_machine_serial";
+            this.col_machine_serial.Width = 113;
+            // 
+            // col_machine_model
+            // 
+            this.col_machine_model.DataPropertyName = "MachineModel";
+            this.col_machine_model.HeaderText = "Model";
+            this.col_machine_model.Name = "col_machine_model";
+            this.col_machine_model.Width = 65;
+            // 
+            // col_machine_name
+            // 
+            this.col_machine_name.DataPropertyName = "MachineName";
+            this.col_machine_name.HeaderText = "Machine Name";
+            this.col_machine_name.Name = "col_machine_name";
+            this.col_machine_name.Width = 115;
+            // 
+            // col_factory_tranfer_cd
+            // 
+            this.col_factory_tranfer_cd.DataPropertyName = "TranferFactoryName";
+            this.col_factory_tranfer_cd.HeaderText = "TranferFactoryCode";
+            this.col_factory_tranfer_cd.Name = "col_factory_tranfer_cd";
+            this.col_factory_tranfer_cd.Width = 140;
+            // 
+            // col_factory_received_cd
+            // 
+            this.col_factory_received_cd.DataPropertyName = "ReceivedFactoryName";
+            this.col_factory_received_cd.HeaderText = "Received Factory";
+            this.col_factory_received_cd.Name = "col_factory_received_cd";
+            this.col_factory_received_cd.Width = 125;
+            // 
+            // col_code_status
+            // 
+            this.col_code_status.DataPropertyName = "CodeStatus";
+            this.col_code_status.HeaderText = "Code Status";
+            this.col_code_status.Name = "col_code_status";
+            // 
+            // col_code_name
+            // 
+            this.col_code_name.DataPropertyName = "CodeName";
+            this.col_code_name.HeaderText = "Code Name";
+            this.col_code_name.Name = "col_code_name";
+            this.col_code_name.Width = 99;
+            // 
+            // col_status_machine
+            // 
+            this.col_status_machine.DataPropertyName = "Status";
+            this.col_status_machine.HeaderText = "Status";
+            this.col_status_machine.Name = "col_status_machine";
+            this.col_status_machine.Width = 67;
+            // 
+            // col_comments_machine
+            // 
+            this.col_comments_machine.DataPropertyName = "CommentsMachine";
+            this.col_comments_machine.HeaderText = "Comments";
+            this.col_comments_machine.Name = "col_comments_machine";
+            this.col_comments_machine.Width = 94;
+            // 
+            // col_reason_tranfer
+            // 
+            this.col_reason_tranfer.DataPropertyName = "ReasonTranfer";
+            this.col_reason_tranfer.HeaderText = "Reason Tranfer";
+            this.col_reason_tranfer.Name = "col_reason_tranfer";
+            this.col_reason_tranfer.Width = 118;
+            // 
+            // col_confirm_received
+            // 
+            this.col_confirm_received.DataPropertyName = "ConfirmReceived";
+            this.col_confirm_received.HeaderText = "Confirm Received";
+            this.col_confirm_received.Name = "col_confirm_received";
+            this.col_confirm_received.Width = 130;
+            // 
+            // col_machine_costvalue
+            // 
+            this.col_machine_costvalue.DataPropertyName = "MachineCostValue";
+            this.col_machine_costvalue.HeaderText = "Cost Value";
+            this.col_machine_costvalue.Name = "col_machine_costvalue";
+            this.col_machine_costvalue.Width = 91;
+            // 
+            // col_registration_user_cd
+            // 
+            this.col_registration_user_cd.DataPropertyName = "RegistrationUserCode";
+            this.col_registration_user_cd.HeaderText = "User Code";
+            this.col_registration_user_cd.Name = "col_registration_user_cd";
+            this.col_registration_user_cd.Width = 92;
+            // 
+            // col_registration_date_time
+            // 
+            this.col_registration_date_time.DataPropertyName = "RegistrationDateTime";
+            this.col_registration_date_time.HeaderText = "Date Time";
+            this.col_registration_date_time.Name = "col_registration_date_time";
+            this.col_registration_date_time.Width = 89;
+            // 
+            // col_factory_cd
+            // 
+            this.col_factory_cd.DataPropertyName = "FactoryCode";
+            this.col_factory_cd.HeaderText = "Factory Code";
+            this.col_factory_cd.Name = "col_factory_cd";
+            this.col_factory_cd.Width = 104;
             // 
             // MovingMachineVTForm
             // 

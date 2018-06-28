@@ -51,20 +51,16 @@
             this.mainternance_vt_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
             this.col_machineid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_machinecode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_machinename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_usercode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_machineqty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machineserial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_machinename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinemodel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_machineqty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinelocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinesupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colfactorycd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_machineinvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckTime_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).BeginInit();
             this.SuspendLayout();
@@ -285,20 +281,16 @@
             this.mainternance_vt_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_machineid,
             this.col_rfid,
-            this.col_machinecode,
-            this.col_machinename,
-            this.col_usercode,
-            this.col_datetime,
-            this.col_machineqty,
             this.col_machineserial,
+            this.col_machinename,
             this.col_machinemodel,
+            this.col_machineqty,
             this.col_machinelocation,
             this.col_machinesupplier,
             this.col_machinestatus,
             this.colfactorycd,
-            this.col_machineinvoice,
             this.col_machinecostvalue,
-            this.colCheckTime_final});
+            this.col_datetime});
             this.mainternance_vt_dgv.ControlId = null;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -337,12 +329,12 @@
             this.col_rfid.Name = "col_rfid";
             this.col_rfid.Width = 63;
             // 
-            // col_machinecode
+            // col_machineserial
             // 
-            this.col_machinecode.DataPropertyName = "MachineCode";
-            this.col_machinecode.HeaderText = "Machine Code";
-            this.col_machinecode.Name = "col_machinecode";
-            this.col_machinecode.Width = 111;
+            this.col_machineserial.DataPropertyName = "MachineSerial";
+            this.col_machineserial.HeaderText = "Machine Serial";
+            this.col_machineserial.Name = "col_machineserial";
+            this.col_machineserial.Width = 113;
             // 
             // col_machinename
             // 
@@ -351,19 +343,12 @@
             this.col_machinename.Name = "col_machinename";
             this.col_machinename.Width = 115;
             // 
-            // col_usercode
+            // col_machinemodel
             // 
-            this.col_usercode.DataPropertyName = "RegistrationUserCode";
-            this.col_usercode.HeaderText = "User Add";
-            this.col_usercode.Name = "col_usercode";
-            this.col_usercode.Width = 82;
-            // 
-            // col_datetime
-            // 
-            this.col_datetime.DataPropertyName = "RegistrationDateTime";
-            this.col_datetime.HeaderText = "Date Time Add";
-            this.col_datetime.Name = "col_datetime";
-            this.col_datetime.Width = 112;
+            this.col_machinemodel.DataPropertyName = "MachineModel";
+            this.col_machinemodel.HeaderText = "Machine Model";
+            this.col_machinemodel.Name = "col_machinemodel";
+            this.col_machinemodel.Width = 114;
             // 
             // col_machineqty
             // 
@@ -371,20 +356,6 @@
             this.col_machineqty.HeaderText = "Machine Qty";
             this.col_machineqty.Name = "col_machineqty";
             this.col_machineqty.Width = 98;
-            // 
-            // col_machineserial
-            // 
-            this.col_machineserial.DataPropertyName = "MachineSerial";
-            this.col_machineserial.HeaderText = "Machine Serial";
-            this.col_machineserial.Name = "col_machineserial";
-            this.col_machineserial.Width = 113;
-            // 
-            // col_machinemodel
-            // 
-            this.col_machinemodel.DataPropertyName = "MachineModel";
-            this.col_machinemodel.HeaderText = "Machine Model";
-            this.col_machinemodel.Name = "col_machinemodel";
-            this.col_machinemodel.Width = 114;
             // 
             // col_machinelocation
             // 
@@ -414,13 +385,6 @@
             this.colfactorycd.Name = "colfactorycd";
             this.colfactorycd.Width = 71;
             // 
-            // col_machineinvoice
-            // 
-            this.col_machineinvoice.DataPropertyName = "MachineInvoice";
-            this.col_machineinvoice.HeaderText = "Machine Invoice";
-            this.col_machineinvoice.Name = "col_machineinvoice";
-            this.col_machineinvoice.Width = 119;
-            // 
             // col_machinecostvalue
             // 
             this.col_machinecostvalue.DataPropertyName = "MachineCostValue";
@@ -428,12 +392,12 @@
             this.col_machinecostvalue.Name = "col_machinecostvalue";
             this.col_machinecostvalue.Width = 58;
             // 
-            // colCheckTime_final
+            // col_datetime
             // 
-            this.colCheckTime_final.DataPropertyName = "TimeCheck";
-            this.colCheckTime_final.HeaderText = "Check Time";
-            this.colCheckTime_final.Name = "colCheckTime_final";
-            this.colCheckTime_final.Width = 98;
+            this.col_datetime.DataPropertyName = "RegistrationDateTime";
+            this.col_datetime.HeaderText = "Date Time Add";
+            this.col_datetime.Name = "col_datetime";
+            this.col_datetime.Width = 112;
             // 
             // MaintenanceMachineVTForm
             // 
@@ -499,19 +463,15 @@
         private Framework.DataGridViewCommon mainternance_vt_dgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rfid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_machinename;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_usercode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_datetime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_machineqty;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineserial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_machinename;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinemodel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_machineqty;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinelocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinesupplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinestatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colfactorycd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_machineinvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecostvalue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckTime_final;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_datetime;
     }
 }

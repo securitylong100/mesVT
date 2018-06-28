@@ -247,7 +247,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.warehouse_vt_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.warehouse_vt_dgv.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.warehouse_vt_dgv.Size = new System.Drawing.Size(1175, 426);
             this.warehouse_vt_dgv.TabIndex = 75;
             // 

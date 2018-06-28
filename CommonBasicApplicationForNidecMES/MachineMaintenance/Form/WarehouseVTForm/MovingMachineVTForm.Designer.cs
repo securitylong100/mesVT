@@ -235,7 +235,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.vt_search_moving_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.vt_search_moving_dgv.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.vt_search_moving_dgv.Size = new System.Drawing.Size(1270, 426);
             this.vt_search_moving_dgv.TabIndex = 75;
             // 

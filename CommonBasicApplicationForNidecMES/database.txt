@@ -103,3 +103,28 @@ WITH (
 ALTER TABLE public.t_vt_moving
   OWNER TO postgres;
 
+
+
+
+-- Table: public.t_vt_maintenance
+
+-- DROP TABLE public.t_vt_maintenance;
+
+CREATE TABLE public.t_vt_maintenance
+(
+  maintenance_id integer NOT NULL DEFAULT nextval('t_vt_maintenance_maintenance_id_seq'::regclass),
+  machine_model character varying(64),
+  machine_serial character varying(64) NOT NULL,
+  start_day date NOT NULL,
+  month_repeat integer NOT NULL,
+  check_status boolean NOT NULL,
+  registration_user_cd character varying(32),
+  registration_date_time timestamp without time zone,
+  factory_cd character varying(8),
+  CONSTRAINT t_vt_maintenance_pkey PRIMARY KEY (maintenance_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.t_vt_maintenance
+  OWNER TO postgres;

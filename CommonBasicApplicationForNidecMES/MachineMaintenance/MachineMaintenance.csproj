@@ -135,6 +135,9 @@
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\DeleteRankCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\GetRankCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\UpdateAssetCbm.cs" />
+    <Compile Include="Cbm\MainternanceMachineVTCbm\CheckMainternanceMachineVTCbm.cs" />
+    <Compile Include="Cbm\MainternanceMachineVTCbm\SearchMachineNewCbm.cs" />
+    <Compile Include="Cbm\MainternanceMachineVTCbm\AddMainternanceMachineVTCbm.cs" />
     <Compile Include="Cbm\MovingMachineVTCbm\GetCodeNameMovingVTCbm.cs" />
     <Compile Include="Cbm\MovingMachineVTCbm\DeleteMovingVTCbm.cs" />
     <Compile Include="Cbm\MovingMachineVTCbm\UpdateMovingVTCbm.cs" />
@@ -255,6 +258,9 @@
     <Compile Include="Dao\Account-WhDao\RankMasterDao\DeleteRankDao.cs" />
     <Compile Include="Dao\Account-WhDao\RankMasterDao\GetRankDao.cs" />
     <Compile Include="Dao\Account-WhDao\RankMasterDao\UpdateRankDao.cs" />
+    <Compile Include="Dao\MainternanceMachineVTDao\AddMainternanceMachineVTDao.cs" />
+    <Compile Include="Dao\MainternanceMachineVTDao\CheckMainternanceMachineVTDao.cs" />
+    <Compile Include="Dao\MainternanceMachineVTDao\SearchMachineNewDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\AddMovingVTDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\DeleteMovingVTDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\GetCodeNameMovingVTDao.cs" />
@@ -504,6 +510,12 @@
     <Compile Include="Form\WarehouseVTForm\AddMovingMachineVTForm.Designer.cs">
       <DependentUpon>AddMovingMachineVTForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\WarehouseVTForm\AddMaintenanceMachineVTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\WarehouseVTForm\AddMaintenanceMachineVTForm.Designer.cs">
+      <DependentUpon>AddMaintenanceMachineVTForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\WarehouseVTForm\MaintenanceMachineVTForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -563,6 +575,7 @@
     <Compile Include="Vo\Account-WhVo\WareHouseMainVo.cs" />
     <Compile Include="Vo\Account-WhVo\AccountMainVo.cs" />
     <Compile Include="Vo\AddMachineStatusVo.cs" />
+    <Compile Include="Vo\MaintenanceMachineVTVo.cs" />
     <Compile Include="Vo\WarehouseVTListVo.cs" />
     <Compile Include="Vo\MovingMachineVTVo.cs" />
     <Compile Include="Vo\WarehouseVTVo.cs" />
@@ -707,6 +720,9 @@
     <EmbeddedResource Include="Form\WarehouseVTForm\AddMovingMachineVTForm.resx">
       <DependentUpon>AddMovingMachineVTForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\WarehouseVTForm\AddMaintenanceMachineVTForm.resx">
+      <DependentUpon>AddMaintenanceMachineVTForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\WarehouseVTForm\MaintenanceMachineVTForm.resx">
       <DependentUpon>MaintenanceMachineVTForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -784,6 +800,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

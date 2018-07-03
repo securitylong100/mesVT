@@ -33,8 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.setting_gbc = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.add_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.update_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.delete_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.search_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.machine_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.machine_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
@@ -49,9 +47,17 @@
             this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.mainternance_vt_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.buttonCommon1 = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.buttonCommon2 = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.buttonCommon3 = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.buttonCommon4 = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.col_machineid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machineserial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMonthRepeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinemodel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machineqty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,19 +69,18 @@
             this.col_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).BeginInit();
+            this.groupBoxCommon1.SuspendLayout();
             this.SuspendLayout();
             // 
             // setting_gbc
             // 
             this.setting_gbc.ControlId = null;
             this.setting_gbc.Controls.Add(this.add_btn);
-            this.setting_gbc.Controls.Add(this.update_btn);
-            this.setting_gbc.Controls.Add(this.delete_btn);
             this.setting_gbc.Controls.Add(this.search_btn);
             this.setting_gbc.Font = new System.Drawing.Font("Arial", 9F);
             this.setting_gbc.Location = new System.Drawing.Point(12, 199);
             this.setting_gbc.Name = "setting_gbc";
-            this.setting_gbc.Size = new System.Drawing.Size(443, 64);
+            this.setting_gbc.Size = new System.Drawing.Size(214, 64);
             this.setting_gbc.TabIndex = 60;
             this.setting_gbc.TabStop = false;
             // 
@@ -91,32 +96,7 @@
             this.add_btn.TabIndex = 11;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = false;
-            // 
-            // update_btn
-            // 
-            this.update_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.update_btn.ControlId = "";
-            this.update_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.update_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update_btn.Location = new System.Drawing.Point(220, 20);
-            this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(84, 33);
-            this.update_btn.TabIndex = 11;
-            this.update_btn.Text = "Update";
-            this.update_btn.UseVisualStyleBackColor = false;
-            // 
-            // delete_btn
-            // 
-            this.delete_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.delete_btn.ControlId = null;
-            this.delete_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.delete_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.delete_btn.Location = new System.Drawing.Point(320, 20);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(90, 33);
-            this.delete_btn.TabIndex = 10;
-            this.delete_btn.Text = "Delete";
-            this.delete_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // search_btn
             // 
@@ -282,6 +262,9 @@
             this.col_machineid,
             this.col_rfid,
             this.col_machineserial,
+            this.colStartDay,
+            this.colMonthRepeat,
+            this.colCheckStatus,
             this.col_machinename,
             this.col_machinemodel,
             this.col_machineqty,
@@ -301,7 +284,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.mainternance_vt_dgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.mainternance_vt_dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainternance_vt_dgv.Location = new System.Drawing.Point(0, 273);
+            this.mainternance_vt_dgv.Location = new System.Drawing.Point(0, 269);
             this.mainternance_vt_dgv.Name = "mainternance_vt_dgv";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -311,8 +294,75 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.mainternance_vt_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.mainternance_vt_dgv.Size = new System.Drawing.Size(1277, 426);
+            this.mainternance_vt_dgv.Size = new System.Drawing.Size(1277, 430);
             this.mainternance_vt_dgv.TabIndex = 98;
+            // 
+            // groupBoxCommon1
+            // 
+            this.groupBoxCommon1.ControlId = null;
+            this.groupBoxCommon1.Controls.Add(this.buttonCommon1);
+            this.groupBoxCommon1.Controls.Add(this.buttonCommon2);
+            this.groupBoxCommon1.Controls.Add(this.buttonCommon3);
+            this.groupBoxCommon1.Controls.Add(this.buttonCommon4);
+            this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F);
+            this.groupBoxCommon1.Location = new System.Drawing.Point(241, 199);
+            this.groupBoxCommon1.Name = "groupBoxCommon1";
+            this.groupBoxCommon1.Size = new System.Drawing.Size(455, 64);
+            this.groupBoxCommon1.TabIndex = 99;
+            this.groupBoxCommon1.TabStop = false;
+            // 
+            // buttonCommon1
+            // 
+            this.buttonCommon1.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCommon1.ControlId = "";
+            this.buttonCommon1.Font = new System.Drawing.Font("Arial", 9F);
+            this.buttonCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonCommon1.Location = new System.Drawing.Point(114, 20);
+            this.buttonCommon1.Name = "buttonCommon1";
+            this.buttonCommon1.Size = new System.Drawing.Size(88, 33);
+            this.buttonCommon1.TabIndex = 11;
+            this.buttonCommon1.Text = "Add";
+            this.buttonCommon1.UseVisualStyleBackColor = false;
+            // 
+            // buttonCommon2
+            // 
+            this.buttonCommon2.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCommon2.ControlId = "";
+            this.buttonCommon2.Font = new System.Drawing.Font("Arial", 9F);
+            this.buttonCommon2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonCommon2.Location = new System.Drawing.Point(220, 20);
+            this.buttonCommon2.Name = "buttonCommon2";
+            this.buttonCommon2.Size = new System.Drawing.Size(84, 33);
+            this.buttonCommon2.TabIndex = 11;
+            this.buttonCommon2.Text = "Update";
+            this.buttonCommon2.UseVisualStyleBackColor = false;
+            // 
+            // buttonCommon3
+            // 
+            this.buttonCommon3.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCommon3.ControlId = null;
+            this.buttonCommon3.Font = new System.Drawing.Font("Arial", 9F);
+            this.buttonCommon3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonCommon3.Location = new System.Drawing.Point(320, 20);
+            this.buttonCommon3.Name = "buttonCommon3";
+            this.buttonCommon3.Size = new System.Drawing.Size(90, 33);
+            this.buttonCommon3.TabIndex = 10;
+            this.buttonCommon3.Text = "Delete";
+            this.buttonCommon3.UseVisualStyleBackColor = false;
+            // 
+            // buttonCommon4
+            // 
+            this.buttonCommon4.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCommon4.ControlId = null;
+            this.buttonCommon4.Font = new System.Drawing.Font("Arial", 9F);
+            this.buttonCommon4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonCommon4.Location = new System.Drawing.Point(15, 20);
+            this.buttonCommon4.Name = "buttonCommon4";
+            this.buttonCommon4.Size = new System.Drawing.Size(80, 33);
+            this.buttonCommon4.TabIndex = 10;
+            this.buttonCommon4.Text = "Search";
+            this.buttonCommon4.UseVisualStyleBackColor = false;
+            this.buttonCommon4.Click += new System.EventHandler(this.buttonCommon4_Click);
             // 
             // col_machineid
             // 
@@ -335,6 +385,27 @@
             this.col_machineserial.HeaderText = "Machine Serial";
             this.col_machineserial.Name = "col_machineserial";
             this.col_machineserial.Width = 113;
+            // 
+            // colStartDay
+            // 
+            this.colStartDay.DataPropertyName = "StartDay";
+            this.colStartDay.HeaderText = "Start Day";
+            this.colStartDay.Name = "colStartDay";
+            this.colStartDay.Width = 81;
+            // 
+            // colMonthRepeat
+            // 
+            this.colMonthRepeat.DataPropertyName = "MonthRepeat";
+            this.colMonthRepeat.HeaderText = "Month Repeat";
+            this.colMonthRepeat.Name = "colMonthRepeat";
+            this.colMonthRepeat.Width = 108;
+            // 
+            // colCheckStatus
+            // 
+            this.colCheckStatus.DataPropertyName = "CheckStatus";
+            this.colCheckStatus.HeaderText = "Check Status";
+            this.colCheckStatus.Name = "colCheckStatus";
+            this.colCheckStatus.Width = 105;
             // 
             // col_machinename
             // 
@@ -403,7 +474,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1277, 699);
-            this.Controls.Add(this.mainternance_vt_dgv);
+            this.Controls.Add(this.groupBoxCommon1);
             this.Controls.Add(this.machine_status_lbl);
             this.Controls.Add(this.machine_status_cmb);
             this.Controls.Add(this.location_lbl);
@@ -417,10 +488,12 @@
             this.Controls.Add(this.rfid_txt);
             this.Controls.Add(this.rfid_lbl);
             this.Controls.Add(this.setting_gbc);
+            this.Controls.Add(this.mainternance_vt_dgv);
             this.Name = "MaintenanceMachineVTForm";
             this.Text = "Equipments Management";
             this.TitleText = "Maintenance Machine Form";
             this.Load += new System.EventHandler(this.MaintenanceMachineVTForm_Load);
+            this.Controls.SetChildIndex(this.mainternance_vt_dgv, 0);
             this.Controls.SetChildIndex(this.setting_gbc, 0);
             this.Controls.SetChildIndex(this.rfid_lbl, 0);
             this.Controls.SetChildIndex(this.rfid_txt, 0);
@@ -434,9 +507,10 @@
             this.Controls.SetChildIndex(this.location_lbl, 0);
             this.Controls.SetChildIndex(this.machine_status_cmb, 0);
             this.Controls.SetChildIndex(this.machine_status_lbl, 0);
-            this.Controls.SetChildIndex(this.mainternance_vt_dgv, 0);
+            this.Controls.SetChildIndex(this.groupBoxCommon1, 0);
             this.setting_gbc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).EndInit();
+            this.groupBoxCommon1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,8 +518,6 @@
 
         #endregion
         private Framework.GroupBoxCommon setting_gbc;
-        private Framework.ButtonCommon update_btn;
-        private Framework.ButtonCommon delete_btn;
         private Framework.ButtonCommon search_btn;
         private Framework.ButtonCommon add_btn;
         private Framework.LabelCommon machine_status_lbl;
@@ -461,9 +533,17 @@
         private Framework.TextBoxCommon rfid_txt;
         private Framework.LabelCommon rfid_lbl;
         private Framework.DataGridViewCommon mainternance_vt_dgv;
+        private Framework.GroupBoxCommon groupBoxCommon1;
+        private Framework.ButtonCommon buttonCommon1;
+        private Framework.ButtonCommon buttonCommon2;
+        private Framework.ButtonCommon buttonCommon3;
+        private Framework.ButtonCommon buttonCommon4;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rfid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineserial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMonthRepeat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinename;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinemodel;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineqty;

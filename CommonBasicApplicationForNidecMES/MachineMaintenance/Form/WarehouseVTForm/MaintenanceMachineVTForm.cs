@@ -57,7 +57,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ValueObjectList<WarehouseVTVo> model = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new SearchMachineCbm(), new WarehouseVTVo { MachineModel = machine_model_cmb.Text });
                 machine_serial_cmb.DisplayMember = "MachineSerial";
                 machine_serial_cmb.DataSource = model.GetList();
-
             }
             machine_serial_cmb.Text = "";
         }
@@ -66,6 +65,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             mainternance_vt_dgv.DataSource = null;
             GridBind();
+            //mainternance_vt_dgv.Columns["colEndday"].DataPropertyName = "MachineSerial";
+            //mainternance_vt_dgv.Columns["colStartDay"].Visible = false;
         }
         private void GridBind()
         {
@@ -94,6 +95,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 popUpMessage.ApplicationError(exception.GetMessageData(), Text);
                 logger.Error(exception.GetMessageData());
             }
+        }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            if (mainternance_vt_dgv.DataSource != null)
+            {
+
+                AddMaintenanceMachineVTForm ad = new AddMaintenanceMachineVTForm(ref mainternance_vt_dgv, machine_model_cmb.Text);
+                ad.ShowDialog();
+            }
+        }
+
+        private void buttonCommon4_Click(object sender, EventArgs e)
+        {
+            MaintenanceMachineVTVo whvos = new MaintenanceMachineVTVo()
+            {
+
+            };
+
+
+            MaintenanceMachineVTVo listvo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.SearchMachineNewCbm(),whvos);
+            mainternance_vt_dgv.DataSource = listvo.dt;
         }
     }
 }

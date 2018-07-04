@@ -63,6 +63,26 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void search_btn_Click(object sender, EventArgs e)
         {
+            mainternance_vt_dgv.Columns["col_machineid"].DataPropertyName = "MachineId";
+            mainternance_vt_dgv.Columns["col_rfid"].DataPropertyName = "RFId";
+            mainternance_vt_dgv.Columns["col_machineserial"].DataPropertyName = "MachineSerial";
+            mainternance_vt_dgv.Columns["col_machinename"].DataPropertyName = "MachineName";
+            mainternance_vt_dgv.Columns["col_machinemodel"].DataPropertyName = "MachineModel";
+            mainternance_vt_dgv.Columns["col_machineqty"].DataPropertyName = "MachineQty";
+            mainternance_vt_dgv.Columns["col_machinelocation"].DataPropertyName = "MachineLocation";
+            mainternance_vt_dgv.Columns["col_machinesupplier"].DataPropertyName = "MachineSupplier";
+            mainternance_vt_dgv.Columns["col_machinestatus"].DataPropertyName = "MachineStatus";
+            mainternance_vt_dgv.Columns["col_factorycd"].DataPropertyName = "FactoryCode";
+            mainternance_vt_dgv.Columns["col_machinecostvalue"].DataPropertyName = "MachineCostValue";
+            mainternance_vt_dgv.Columns["col_datetime"].DataPropertyName = "RegistrationDateTime";
+            //change header
+            mainternance_vt_dgv.Columns["col_machineqty"].HeaderText = "Qty";
+            mainternance_vt_dgv.Columns["col_factorycd"].HeaderText = "Factory";
+            mainternance_vt_dgv.Columns["col_machinecostvalue"].HeaderText = "Cost";
+
+            mainternance_vt_dgv.Columns["col_checkstatus"].Visible = false;
+
+
             mainternance_vt_dgv.DataSource = null;
             GridBind();
             //mainternance_vt_dgv.Columns["colEndday"].DataPropertyName = "MachineSerial";
@@ -81,8 +101,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     MachineSupplier = machine_supplier_cmb.Text,
                     MachineStatus = machine_status_cmb.Text
                 };
-
-
                 ValueObjectList<WarehouseVTVo> listvo = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchMachineCbm(), whvos);
                 mainternance_vt_dgv.DataSource = listvo.GetList();
 
@@ -96,27 +114,60 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
-
         private void add_btn_Click(object sender, EventArgs e)
         {
             if (mainternance_vt_dgv.DataSource != null)
             {
-
                 AddMaintenanceMachineVTForm ad = new AddMaintenanceMachineVTForm(ref mainternance_vt_dgv, machine_model_cmb.Text);
                 ad.ShowDialog();
             }
         }
-
-        private void buttonCommon4_Click(object sender, EventArgs e)
+        private void search_info_btn_Click(object sender, EventArgs e)
         {
-            MaintenanceMachineVTVo whvos = new MaintenanceMachineVTVo()
+            mainternance_vt_dgv.DataSource = null;
+            //change datasourch
+            mainternance_vt_dgv.Columns["col_machineid"].DataPropertyName = "MainternanceId";
+            mainternance_vt_dgv.Columns["col_rfid"].DataPropertyName = "RFId";
+            mainternance_vt_dgv.Columns["col_machineserial"].DataPropertyName = "MachineSerial";
+            mainternance_vt_dgv.Columns["col_machinename"].DataPropertyName = "MachineName";
+            mainternance_vt_dgv.Columns["col_machinemodel"].DataPropertyName = "MachineModel";
+            mainternance_vt_dgv.Columns["col_machineqty"].DataPropertyName = "MonthRepeat";
+            mainternance_vt_dgv.Columns["col_machinelocation"].DataPropertyName = "MachineLocation";
+            mainternance_vt_dgv.Columns["col_machinesupplier"].DataPropertyName = "MachineSupplier";
+            mainternance_vt_dgv.Columns["col_machinestatus"].DataPropertyName = "MachineStatus";
+            mainternance_vt_dgv.Columns["col_factorycd"].DataPropertyName = "StartDay";
+            mainternance_vt_dgv.Columns["col_machinecostvalue"].DataPropertyName = "RegistrationUserCode";
+            mainternance_vt_dgv.Columns["col_datetime"].DataPropertyName = "RegistrationDateTime";
+
+            //change header
+            mainternance_vt_dgv.Columns["col_machineqty"].HeaderText = "Month Repeat";
+            mainternance_vt_dgv.Columns["col_factorycd"].HeaderText = "Start Day";
+            mainternance_vt_dgv.Columns["col_machinecostvalue"].HeaderText = "User Add";
+            //change status 
+            mainternance_vt_dgv.Columns["col_checkstatus"].DataPropertyName = "CheckStatus";
+            mainternance_vt_dgv.Columns["col_checkstatus"].Visible = true;
+            mainternance_vt_dgv.Columns["col_rfid"].Visible = false;
+
+            try
+            {
+                MaintenanceMachineVTVo inVo = new MaintenanceMachineVTVo
+                {
+                    MachineSerial = machine_serial_cmb.Text,
+                    MachineLocation = location_cmb.Text,
+                    RFId = rfid_txt.Text,
+                    MachineModel = machine_model_cmb.Text,
+                    MachineSupplier = machine_supplier_cmb.Text,
+                    MachineStatus = machine_status_cmb.Text
+
+                };
+                ValueObjectList<MaintenanceMachineVTVo> listvo = (ValueObjectList<MaintenanceMachineVTVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchMainternanceMachineVTCbm(), inVo);
+                mainternance_vt_dgv.DataSource = listvo.GetList();
+
+            }
+            catch
             {
 
-            };
-
-
-            MaintenanceMachineVTVo listvo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.SearchMachineNewCbm(),whvos);
-            mainternance_vt_dgv.DataSource = listvo.dt;
+            }
         }
     }
 }

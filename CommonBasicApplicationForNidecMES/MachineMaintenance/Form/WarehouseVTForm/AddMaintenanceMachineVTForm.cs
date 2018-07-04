@@ -12,6 +12,8 @@ using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
 using Com.Nidec.Mes.Common.Basic.MachineMaintenance.Cbm;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
+using Com.Nidec.Mes.GlobalMasterMaintenance.Cbm;
+using Com.Nidec.Mes.GlobalMasterMaintenance.Vo;
 namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 {//WarehouseVTCheckForm
     public partial class AddMaintenanceMachineVTForm : FormCommonNCVP
@@ -53,14 +55,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         StartDay = start_day_dtp.Value,
                         MonthRepeat = int.Parse(month_repeat_txt.Text),
                         CheckStatus = false,
-
                     };
                     CheckoutVo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.CheckMainternanceMachineVTCbm(), inVo);
+
                     if (CheckoutVo.AffectedCount == 0)
                     {
                         outVo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.AddMainternanceMachineVTCbm(), inVo);
                     }
-
                 }
             }
             catch (Framework.ApplicationException exception)

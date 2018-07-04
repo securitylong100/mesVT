@@ -136,7 +136,7 @@
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\GetRankCbm.cs" />
     <Compile Include="Cbm\Account-WhCbm\RankMasterCbm\UpdateAssetCbm.cs" />
     <Compile Include="Cbm\MainternanceMachineVTCbm\CheckMainternanceMachineVTCbm.cs" />
-    <Compile Include="Cbm\MainternanceMachineVTCbm\SearchMachineNewCbm.cs" />
+    <Compile Include="Cbm\MainternanceMachineVTCbm\SearchMainternanceMachineVTCbm.cs" />
     <Compile Include="Cbm\MainternanceMachineVTCbm\AddMainternanceMachineVTCbm.cs" />
     <Compile Include="Cbm\MovingMachineVTCbm\GetCodeNameMovingVTCbm.cs" />
     <Compile Include="Cbm\MovingMachineVTCbm\DeleteMovingVTCbm.cs" />
@@ -260,7 +260,7 @@
     <Compile Include="Dao\Account-WhDao\RankMasterDao\UpdateRankDao.cs" />
     <Compile Include="Dao\MainternanceMachineVTDao\AddMainternanceMachineVTDao.cs" />
     <Compile Include="Dao\MainternanceMachineVTDao\CheckMainternanceMachineVTDao.cs" />
-    <Compile Include="Dao\MainternanceMachineVTDao\SearchMachineNewDao.cs" />
+    <Compile Include="Dao\MainternanceMachineVTDao\SearchMainternanceMachineVTDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\AddMovingVTDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\DeleteMovingVTDao.cs" />
     <Compile Include="Dao\MovingMachineVTDao\GetCodeNameMovingVTDao.cs" />

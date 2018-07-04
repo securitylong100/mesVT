@@ -51,20 +51,18 @@
             this.buttonCommon1 = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.buttonCommon2 = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.buttonCommon3 = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.buttonCommon4 = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.search_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.col_machineid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machineserial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMonthRepeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_checkstatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_machinename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinemodel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machineqty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinelocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinesupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colfactorycd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_factorycd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setting_gbc.SuspendLayout();
@@ -262,16 +260,14 @@
             this.col_machineid,
             this.col_rfid,
             this.col_machineserial,
-            this.colStartDay,
-            this.colMonthRepeat,
-            this.colCheckStatus,
+            this.col_checkstatus,
             this.col_machinename,
             this.col_machinemodel,
             this.col_machineqty,
             this.col_machinelocation,
             this.col_machinesupplier,
             this.col_machinestatus,
-            this.colfactorycd,
+            this.col_factorycd,
             this.col_machinecostvalue,
             this.col_datetime});
             this.mainternance_vt_dgv.ControlId = null;
@@ -303,7 +299,7 @@
             this.groupBoxCommon1.Controls.Add(this.buttonCommon1);
             this.groupBoxCommon1.Controls.Add(this.buttonCommon2);
             this.groupBoxCommon1.Controls.Add(this.buttonCommon3);
-            this.groupBoxCommon1.Controls.Add(this.buttonCommon4);
+            this.groupBoxCommon1.Controls.Add(this.search_info_btn);
             this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F);
             this.groupBoxCommon1.Location = new System.Drawing.Point(241, 199);
             this.groupBoxCommon1.Name = "groupBoxCommon1";
@@ -350,23 +346,22 @@
             this.buttonCommon3.Text = "Delete";
             this.buttonCommon3.UseVisualStyleBackColor = false;
             // 
-            // buttonCommon4
+            // search_info_btn
             // 
-            this.buttonCommon4.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCommon4.ControlId = null;
-            this.buttonCommon4.Font = new System.Drawing.Font("Arial", 9F);
-            this.buttonCommon4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCommon4.Location = new System.Drawing.Point(15, 20);
-            this.buttonCommon4.Name = "buttonCommon4";
-            this.buttonCommon4.Size = new System.Drawing.Size(80, 33);
-            this.buttonCommon4.TabIndex = 10;
-            this.buttonCommon4.Text = "Search";
-            this.buttonCommon4.UseVisualStyleBackColor = false;
-            this.buttonCommon4.Click += new System.EventHandler(this.buttonCommon4_Click);
+            this.search_info_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.search_info_btn.ControlId = null;
+            this.search_info_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.search_info_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search_info_btn.Location = new System.Drawing.Point(15, 20);
+            this.search_info_btn.Name = "search_info_btn";
+            this.search_info_btn.Size = new System.Drawing.Size(80, 33);
+            this.search_info_btn.TabIndex = 10;
+            this.search_info_btn.Text = "Search info";
+            this.search_info_btn.UseVisualStyleBackColor = false;
+            this.search_info_btn.Click += new System.EventHandler(this.search_info_btn_Click);
             // 
             // col_machineid
             // 
-            this.col_machineid.DataPropertyName = "MachineId";
             this.col_machineid.HeaderText = "Machine ID";
             this.col_machineid.Name = "col_machineid";
             this.col_machineid.Visible = false;
@@ -374,98 +369,72 @@
             // 
             // col_rfid
             // 
-            this.col_rfid.DataPropertyName = "RFId";
             this.col_rfid.HeaderText = "RFID ";
             this.col_rfid.Name = "col_rfid";
             this.col_rfid.Width = 63;
             // 
             // col_machineserial
             // 
-            this.col_machineserial.DataPropertyName = "MachineSerial";
             this.col_machineserial.HeaderText = "Machine Serial";
             this.col_machineserial.Name = "col_machineserial";
             this.col_machineserial.Width = 113;
             // 
-            // colStartDay
+            // col_checkstatus
             // 
-            this.colStartDay.DataPropertyName = "StartDay";
-            this.colStartDay.HeaderText = "Start Day";
-            this.colStartDay.Name = "colStartDay";
-            this.colStartDay.Width = 81;
-            // 
-            // colMonthRepeat
-            // 
-            this.colMonthRepeat.DataPropertyName = "MonthRepeat";
-            this.colMonthRepeat.HeaderText = "Month Repeat";
-            this.colMonthRepeat.Name = "colMonthRepeat";
-            this.colMonthRepeat.Width = 108;
-            // 
-            // colCheckStatus
-            // 
-            this.colCheckStatus.DataPropertyName = "CheckStatus";
-            this.colCheckStatus.HeaderText = "Check Status";
-            this.colCheckStatus.Name = "colCheckStatus";
-            this.colCheckStatus.Width = 105;
+            this.col_checkstatus.HeaderText = "Check Status";
+            this.col_checkstatus.Name = "col_checkstatus";
+            this.col_checkstatus.Width = 86;
             // 
             // col_machinename
             // 
-            this.col_machinename.DataPropertyName = "MachineName";
             this.col_machinename.HeaderText = "Machine Name";
             this.col_machinename.Name = "col_machinename";
             this.col_machinename.Width = 115;
             // 
             // col_machinemodel
             // 
-            this.col_machinemodel.DataPropertyName = "MachineModel";
             this.col_machinemodel.HeaderText = "Machine Model";
             this.col_machinemodel.Name = "col_machinemodel";
             this.col_machinemodel.Width = 114;
             // 
             // col_machineqty
             // 
-            this.col_machineqty.DataPropertyName = "MachineQty";
             this.col_machineqty.HeaderText = "Machine Qty";
             this.col_machineqty.Name = "col_machineqty";
             this.col_machineqty.Width = 98;
             // 
             // col_machinelocation
             // 
-            this.col_machinelocation.DataPropertyName = "MachineLocation";
             this.col_machinelocation.HeaderText = "Location";
             this.col_machinelocation.Name = "col_machinelocation";
             this.col_machinelocation.Width = 79;
             // 
             // col_machinesupplier
             // 
-            this.col_machinesupplier.DataPropertyName = "MachineSupplier";
             this.col_machinesupplier.HeaderText = "Machine Supplier";
             this.col_machinesupplier.Name = "col_machinesupplier";
             this.col_machinesupplier.Width = 127;
             // 
             // col_machinestatus
             // 
-            this.col_machinestatus.DataPropertyName = "MachineStatus";
             this.col_machinestatus.HeaderText = "Status";
             this.col_machinestatus.Name = "col_machinestatus";
             this.col_machinestatus.Width = 67;
             // 
-            // colfactorycd
+            // col_factorycd
             // 
-            this.colfactorycd.DataPropertyName = "FactoryCode";
-            this.colfactorycd.HeaderText = "Factory";
-            this.colfactorycd.Name = "colfactorycd";
-            this.colfactorycd.Width = 71;
+            this.col_factorycd.HeaderText = "Factory";
+            this.col_factorycd.Name = "col_factorycd";
+            this.col_factorycd.Width = 71;
             // 
             // col_machinecostvalue
             // 
-            this.col_machinecostvalue.DataPropertyName = "MachineCostValue";
             this.col_machinecostvalue.HeaderText = "Cost";
             this.col_machinecostvalue.Name = "col_machinecostvalue";
             this.col_machinecostvalue.Width = 58;
             // 
             // col_datetime
             // 
-            this.col_datetime.DataPropertyName = "RegistrationDateTime";
             this.col_datetime.HeaderText = "Date Time Add";
             this.col_datetime.Name = "col_datetime";
             this.col_datetime.Width = 112;
@@ -537,20 +506,18 @@
         private Framework.ButtonCommon buttonCommon1;
         private Framework.ButtonCommon buttonCommon2;
         private Framework.ButtonCommon buttonCommon3;
-        private Framework.ButtonCommon buttonCommon4;
+        private Framework.ButtonCommon search_info_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rfid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineserial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStartDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMonthRepeat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckStatus;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn col_checkstatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinename;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinemodel;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineqty;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinelocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinesupplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinestatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colfactorycd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_factorycd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecostvalue;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_datetime;
     }

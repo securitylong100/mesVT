@@ -15,12 +15,17 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string MachineModel { get; set; }
         public DateTime StartDay { get; set; }
         public int MonthRepeat { get; set; }
+        public bool CheckStatus { get; set; }
         public string RegistrationUserCode { get; set; }
         public DateTime RegistrationDateTime { get; set; }
         public string FactoryCode { get; set; }
 
-        public DataTable dt { get; set; }
-        public bool CheckStatus { get; set; }
+        public string RFId { get; set; }
+        public string MachineName { get; set; }
+        public string MachineSupplier { get; set; }
+        public string MachineLocation { get; set; }
+        public string MachineStatus { get; set; }
+
         public int AffectedCount { get; set; }
         /// <summary>
         /// //check RFid

@@ -16,7 +16,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
         {
             MaintenanceMachineVTVo inVo = (MaintenanceMachineVTVo)vo;
             StringBuilder sql = new StringBuilder();
-            ValueObjectList<MaintenanceMachineVTVo> voList = new ValueObjectList<MaintenanceMachineVTVo>();
+           MaintenanceMachineVTVo voNOList = new MaintenanceMachineVTVo();
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
@@ -36,13 +36,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 MaintenanceMachineVTVo outVo = new MaintenanceMachineVTVo
                 {
                   
-                    AffectedCount  = int.Parse(dataReader["SerialCount"].ToString()),
+                    AffectedCount  = Convert.ToInt32(dataReader["SerialCount"].ToString()),
             
                 };
-                voList.add(outVo);
+                voNOList.AffectedCount = outVo.AffectedCount;
             }
             dataReader.Close();
-            return voList;
+            return voNOList;
         }
     }
 }

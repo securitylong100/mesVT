@@ -43,6 +43,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             //col_machineserial
             //col_machinemodel
+            if (checkdata())
             try
             {
 
@@ -76,7 +77,23 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 popUpMessage.Information(messageData, Text);
             }
         }
+        bool checkdata()
+        {
+            if (month_repeat_txt.Text != "")
+            {
 
+                return true;
+
+            }
+            else
+            {
+                messageData = new MessageData("mmcc00005", Properties.Resources.mmcc00005, month_repeat_lbl.Text);
+                popUpMessage.Warning(messageData, Text);
+                month_repeat_lbl.Focus();
+                return false;
+
+            }
+        }
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             this.Close();

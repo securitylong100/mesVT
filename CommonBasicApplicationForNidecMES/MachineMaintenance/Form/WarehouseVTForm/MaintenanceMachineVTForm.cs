@@ -233,13 +233,28 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         {
             //   mainternance_vt_dgv.Columns["col_factorycd"]
             // mainternance_vt_dgv.Columns["col_machineqty"]
-            for(int i =0; i < )
+            //  mainternance_vt_dgv.Columns["col_checkstatus"]
+            for (int i = 0; i < mainternance_vt_dgv.RowCount; i++)
             {
-                DateTime startdatetime = DateTime.Parse(mainternance_vt_dgv.Rows[0].Cells["col_factorycd"].Value.ToString());
-                int monthrepeat = int.Parse(mainternance_vt_dgv.Rows[0].Cells["col_machineqty"].Value.ToString());
-                DateTime news = startdatetime.AddMonths(monthrepeat);
+                DateTime startdatetime = DateTime.Parse(mainternance_vt_dgv.Rows[i].Cells["col_factorycd"].Value.ToString());
+                int monthrepeat = int.Parse(mainternance_vt_dgv.Rows[i].Cells["col_machineqty"].Value.ToString());
+                DateTime compareDateTime = startdatetime.AddDays(monthrepeat);
+                bool checkstatus = bool.Parse(mainternance_vt_dgv.Rows[i].Cells["col_checkstatus"].Value.ToString());
+                DateTime NowDateTime = DateTime.Now;
+                if(compareDateTime > NowDateTime.AddDays(-7))
+                {
+                    //vang   
+                    mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                }
+                if (compareDateTime > NowDateTime)
+                {
+                    //do
+                    mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+
+
             }
-            
+
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             InitializeComponent();
             mainternance_vt_dgv.AutoGenerateColumns = false;
             mainternance_vt_dgv.ReadOnly = true;
+            checkboxHeader.Visible = false;
         }
 
         private void MaintenanceMachineVTForm_Load(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             mainternance_vt_dgv.Columns["col_checkstatus"].Visible = false;
 
-
+            checkboxHeader.Visible = false;
             mainternance_vt_dgv.DataSource = null;
             GridBind();
             //mainternance_vt_dgv.Columns["colEndday"].DataPropertyName = "MachineSerial";
@@ -122,9 +123,40 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ad.ShowDialog();
             }
         }
+        private void checkboxHeader_CheckedChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < mainternance_vt_dgv.RowCount; i++)
+            {
+                mainternance_vt_dgv.Rows[i].Cells["col_checkstatus"].Value = ((CheckBox)mainternance_vt_dgv.Controls.Find("checkboxHeader", true)[0]).Checked;
+            }
+            mainternance_vt_dgv.EndEdit();
+        }
+        CheckBox checkboxHeader = new CheckBox();
+        void addcheckboxheader()
+        {
+            //DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn();
+            //checkboxColumn.Width = 30;
+            //checkboxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //mainternance_vt_dgv.Columns.Insert(0, checkboxColumn);
+
+            // add checkbox header
+            Rectangle rect = mainternance_vt_dgv.GetCellDisplayRectangle(0, -1, true);
+            // set checkbox header to center of header cell. +1 pixel to position correctly.
+            rect.X = rect.Location.X + (rect.Width / 4);
+
+            checkboxHeader.Name = "checkboxHeader";
+            checkboxHeader.Size = new Size(25, 25);
+            checkboxHeader.Location = rect.Location;
+            checkboxHeader.CheckedChanged += new EventHandler(checkboxHeader_CheckedChanged);
+            mainternance_vt_dgv.Controls.Add(checkboxHeader);
+
+        }
         private void search_info_btn_Click(object sender, EventArgs e)
         {
+            checkboxHeader.Visible = true;
+            addcheckboxheader();
             mainternance_vt_dgv.DataSource = null;
+            mainternance_vt_dgv.ReadOnly = false;
             //change datasourch
             mainternance_vt_dgv.Columns["col_machineid"].DataPropertyName = "MainternanceId";
             mainternance_vt_dgv.Columns["col_rfid"].DataPropertyName = "RFId";
@@ -163,10 +195,44 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 ValueObjectList<MaintenanceMachineVTVo> listvo = (ValueObjectList<MaintenanceMachineVTVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchMainternanceMachineVTCbm(), inVo);
                 mainternance_vt_dgv.DataSource = listvo.GetList();
 
+                caculatorDatePlan();
             }
-            catch
+            catch (Framework.ApplicationException exception)
             {
+                popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                logger.Error(exception.GetMessageData());
+            }
+        }
+        void caculatorDatePlan()
+        {
+            //   mainternance_vt_dgv.Columns["col_factorycd"]
+            // mainternance_vt_dgv.Columns["col_machineqty"]
+            DateTime startdatetime = DateTime.Parse(mainternance_vt_dgv.Rows[0].Cells["col_factorycd"].Value.ToString());
+            int time = int.Parse(startdatetime.ToString("yyyy"));
+        }
+        private void update_info_btn_Click(object sender, EventArgs e)
+        {
+            if (mainternance_vt_dgv.RowCount > 0)
+            {
+                try
+                {
+                    for (int i = 0; i < mainternance_vt_dgv.RowCount; i++)
+                    {
+                        MaintenanceMachineVTVo inVo = (MaintenanceMachineVTVo)mainternance_vt_dgv.Rows[i].DataBoundItem;
+                        MaintenanceMachineVTVo outVo = new MaintenanceMachineVTVo();
+                        outVo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.UpdateinfoMainternanceMachineVTCbm(), inVo);
+                    }
+                    messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, "UPDATE: " + " : " + "LIST");
+                    logger.Info(messageData);
+                    popUpMessage.Information(messageData, Text);
 
+                }
+                catch (Framework.ApplicationException exception)
+                {
+                    popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                    logger.Error(exception.GetMessageData());
+
+                }
             }
         }
     }

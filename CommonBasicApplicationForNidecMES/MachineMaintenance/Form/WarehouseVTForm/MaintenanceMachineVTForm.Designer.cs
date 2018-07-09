@@ -47,11 +47,6 @@
             this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
             this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.mainternance_vt_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.buttonCommon1 = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.buttonCommon2 = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.buttonCommon3 = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.search_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.col_machineid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machineserial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +60,11 @@
             this.col_factorycd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.buttonCommon1 = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.update_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.buttonCommon3 = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.search_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).BeginInit();
             this.groupBoxCommon1.SuspendLayout();
@@ -246,7 +246,7 @@
             // 
             // mainternance_vt_dgv
             // 
-            this.mainternance_vt_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.mainternance_vt_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.mainternance_vt_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
@@ -292,73 +292,6 @@
             this.mainternance_vt_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mainternance_vt_dgv.Size = new System.Drawing.Size(1277, 430);
             this.mainternance_vt_dgv.TabIndex = 98;
-            // 
-            // groupBoxCommon1
-            // 
-            this.groupBoxCommon1.ControlId = null;
-            this.groupBoxCommon1.Controls.Add(this.buttonCommon1);
-            this.groupBoxCommon1.Controls.Add(this.buttonCommon2);
-            this.groupBoxCommon1.Controls.Add(this.buttonCommon3);
-            this.groupBoxCommon1.Controls.Add(this.search_info_btn);
-            this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F);
-            this.groupBoxCommon1.Location = new System.Drawing.Point(241, 199);
-            this.groupBoxCommon1.Name = "groupBoxCommon1";
-            this.groupBoxCommon1.Size = new System.Drawing.Size(455, 64);
-            this.groupBoxCommon1.TabIndex = 99;
-            this.groupBoxCommon1.TabStop = false;
-            // 
-            // buttonCommon1
-            // 
-            this.buttonCommon1.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCommon1.ControlId = "";
-            this.buttonCommon1.Font = new System.Drawing.Font("Arial", 9F);
-            this.buttonCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCommon1.Location = new System.Drawing.Point(114, 20);
-            this.buttonCommon1.Name = "buttonCommon1";
-            this.buttonCommon1.Size = new System.Drawing.Size(88, 33);
-            this.buttonCommon1.TabIndex = 11;
-            this.buttonCommon1.Text = "Add";
-            this.buttonCommon1.UseVisualStyleBackColor = false;
-            // 
-            // buttonCommon2
-            // 
-            this.buttonCommon2.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCommon2.ControlId = "";
-            this.buttonCommon2.Font = new System.Drawing.Font("Arial", 9F);
-            this.buttonCommon2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCommon2.Location = new System.Drawing.Point(220, 20);
-            this.buttonCommon2.Name = "buttonCommon2";
-            this.buttonCommon2.Size = new System.Drawing.Size(84, 33);
-            this.buttonCommon2.TabIndex = 11;
-            this.buttonCommon2.Text = "Update";
-            this.buttonCommon2.UseVisualStyleBackColor = false;
-            // 
-            // buttonCommon3
-            // 
-            this.buttonCommon3.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCommon3.ControlId = null;
-            this.buttonCommon3.Font = new System.Drawing.Font("Arial", 9F);
-            this.buttonCommon3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCommon3.Location = new System.Drawing.Point(320, 20);
-            this.buttonCommon3.Name = "buttonCommon3";
-            this.buttonCommon3.Size = new System.Drawing.Size(90, 33);
-            this.buttonCommon3.TabIndex = 10;
-            this.buttonCommon3.Text = "Delete";
-            this.buttonCommon3.UseVisualStyleBackColor = false;
-            // 
-            // search_info_btn
-            // 
-            this.search_info_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.search_info_btn.ControlId = null;
-            this.search_info_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.search_info_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search_info_btn.Location = new System.Drawing.Point(15, 20);
-            this.search_info_btn.Name = "search_info_btn";
-            this.search_info_btn.Size = new System.Drawing.Size(80, 33);
-            this.search_info_btn.TabIndex = 10;
-            this.search_info_btn.Text = "Search info";
-            this.search_info_btn.UseVisualStyleBackColor = false;
-            this.search_info_btn.Click += new System.EventHandler(this.search_info_btn_Click);
             // 
             // col_machineid
             // 
@@ -439,6 +372,74 @@
             this.col_datetime.Name = "col_datetime";
             this.col_datetime.Width = 112;
             // 
+            // groupBoxCommon1
+            // 
+            this.groupBoxCommon1.ControlId = null;
+            this.groupBoxCommon1.Controls.Add(this.buttonCommon1);
+            this.groupBoxCommon1.Controls.Add(this.update_info_btn);
+            this.groupBoxCommon1.Controls.Add(this.buttonCommon3);
+            this.groupBoxCommon1.Controls.Add(this.search_info_btn);
+            this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F);
+            this.groupBoxCommon1.Location = new System.Drawing.Point(241, 199);
+            this.groupBoxCommon1.Name = "groupBoxCommon1";
+            this.groupBoxCommon1.Size = new System.Drawing.Size(455, 64);
+            this.groupBoxCommon1.TabIndex = 99;
+            this.groupBoxCommon1.TabStop = false;
+            // 
+            // buttonCommon1
+            // 
+            this.buttonCommon1.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCommon1.ControlId = "";
+            this.buttonCommon1.Font = new System.Drawing.Font("Arial", 9F);
+            this.buttonCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonCommon1.Location = new System.Drawing.Point(250, 20);
+            this.buttonCommon1.Name = "buttonCommon1";
+            this.buttonCommon1.Size = new System.Drawing.Size(88, 33);
+            this.buttonCommon1.TabIndex = 11;
+            this.buttonCommon1.Text = "Add";
+            this.buttonCommon1.UseVisualStyleBackColor = false;
+            // 
+            // update_info_btn
+            // 
+            this.update_info_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.update_info_btn.ControlId = "";
+            this.update_info_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.update_info_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.update_info_btn.Location = new System.Drawing.Point(117, 20);
+            this.update_info_btn.Name = "update_info_btn";
+            this.update_info_btn.Size = new System.Drawing.Size(84, 33);
+            this.update_info_btn.TabIndex = 11;
+            this.update_info_btn.Text = "Update";
+            this.update_info_btn.UseVisualStyleBackColor = false;
+            this.update_info_btn.Click += new System.EventHandler(this.update_info_btn_Click);
+            // 
+            // buttonCommon3
+            // 
+            this.buttonCommon3.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCommon3.ControlId = null;
+            this.buttonCommon3.Font = new System.Drawing.Font("Arial", 9F);
+            this.buttonCommon3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonCommon3.Location = new System.Drawing.Point(320, 20);
+            this.buttonCommon3.Name = "buttonCommon3";
+            this.buttonCommon3.Size = new System.Drawing.Size(90, 33);
+            this.buttonCommon3.TabIndex = 10;
+            this.buttonCommon3.Text = "Delete";
+            this.buttonCommon3.UseVisualStyleBackColor = false;
+            // 
+            // search_info_btn
+            // 
+            this.search_info_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.search_info_btn.ControlId = null;
+            this.search_info_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.search_info_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search_info_btn.Location = new System.Drawing.Point(15, 20);
+            this.search_info_btn.Name = "search_info_btn";
+            this.search_info_btn.Size = new System.Drawing.Size(80, 33);
+            this.search_info_btn.TabIndex = 10;
+            this.search_info_btn.Text = "Search info";
+            this.search_info_btn.UseVisualStyleBackColor = false;
+            this.search_info_btn.Click += new System.EventHandler(this.search_info_btn_Click);
+            // 
             // MaintenanceMachineVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,7 +505,7 @@
         private Framework.DataGridViewCommon mainternance_vt_dgv;
         private Framework.GroupBoxCommon groupBoxCommon1;
         private Framework.ButtonCommon buttonCommon1;
-        private Framework.ButtonCommon buttonCommon2;
+        private Framework.ButtonCommon update_info_btn;
         private Framework.ButtonCommon buttonCommon3;
         private Framework.ButtonCommon search_info_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;

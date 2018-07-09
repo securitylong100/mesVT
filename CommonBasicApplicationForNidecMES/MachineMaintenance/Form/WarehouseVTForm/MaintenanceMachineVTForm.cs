@@ -203,13 +203,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 logger.Error(exception.GetMessageData());
             }
         }
-        void caculatorDatePlan()
-        {
-            //   mainternance_vt_dgv.Columns["col_factorycd"]
-            // mainternance_vt_dgv.Columns["col_machineqty"]
-            DateTime startdatetime = DateTime.Parse(mainternance_vt_dgv.Rows[0].Cells["col_factorycd"].Value.ToString());
-            int time = int.Parse(startdatetime.ToString("yyyy"));
-        }
+
         private void update_info_btn_Click(object sender, EventArgs e)
         {
             if (mainternance_vt_dgv.RowCount > 0)
@@ -234,6 +228,18 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
                 }
             }
+        }
+        void caculatorDatePlan()
+        {
+            //   mainternance_vt_dgv.Columns["col_factorycd"]
+            // mainternance_vt_dgv.Columns["col_machineqty"]
+            for(int i =0; i < )
+            {
+                DateTime startdatetime = DateTime.Parse(mainternance_vt_dgv.Rows[0].Cells["col_factorycd"].Value.ToString());
+                int monthrepeat = int.Parse(mainternance_vt_dgv.Rows[0].Cells["col_machineqty"].Value.ToString());
+                DateTime news = startdatetime.AddMonths(monthrepeat);
+            }
+            
         }
     }
 }

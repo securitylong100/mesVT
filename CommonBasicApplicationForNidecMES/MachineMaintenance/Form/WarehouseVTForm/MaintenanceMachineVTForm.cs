@@ -241,20 +241,27 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 DateTime compareDateTime = startdatetime.AddDays(monthrepeat);
                 bool checkstatus = bool.Parse(mainternance_vt_dgv.Rows[i].Cells["col_checkstatus"].Value.ToString());
                 DateTime NowDateTime = DateTime.Now;
-                if(compareDateTime > NowDateTime.AddDays(-7))
+                TimeSpan ts = compareDateTime - NowDateTime;
+                if (checkstatus == false)
                 {
-                    //vang   
-                    mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-                if (compareDateTime > NowDateTime)
-                {
-                    //do
-                    mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                }
+                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 8 && float.Parse(Convert.ToString(ts.TotalDays)) > -1)
+                    {
+                        //vang   
+                        { mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; }
 
-
+                    }
+                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 0)
+                    {
+                        //do
+                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    }
+                    if (float.Parse(Convert.ToString(ts.TotalDays)) > 7)
+                    {
+                        //trang   
+                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    }
+                }
             }
-
         }
     }
 }

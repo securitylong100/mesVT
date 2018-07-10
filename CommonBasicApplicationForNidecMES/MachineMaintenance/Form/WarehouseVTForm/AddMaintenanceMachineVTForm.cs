@@ -56,6 +56,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                         StartDay = start_day_dtp.Value,
                         MonthRepeat = int.Parse(month_repeat_txt.Text),
                         CheckStatus = false,
+                
                     };
                     CheckoutVo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.CheckMainternanceMachineVTCbm(), inVo);
 

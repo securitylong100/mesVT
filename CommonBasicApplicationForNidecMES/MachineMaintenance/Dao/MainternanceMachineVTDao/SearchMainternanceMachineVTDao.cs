@@ -59,6 +59,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and b.machine_status  =:machine_status");
                 sqlParameter.AddParameterString("machine_status", inVo.MachineStatus);
             }
+            sql.Append(" and  a.maintenance_id  in(select max (maintenance_id) from t_vt_maintenance group by machine_serial)");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //execute SQL

@@ -242,25 +242,36 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 bool checkstatus = bool.Parse(mainternance_vt_dgv.Rows[i].Cells["col_checkstatus"].Value.ToString());
                 DateTime NowDateTime = DateTime.Now;
                 TimeSpan ts = compareDateTime - NowDateTime;
-                if (checkstatus == false)
+                /*
+                                if (checkstatus == false)
+                                {
+                                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 8 && float.Parse(Convert.ToString(ts.TotalDays)) > -1)
+                                    {
+                                        //vang   
+                                        { mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; }
+                                    }
+                                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 0)
+                                    {
+                                        //do
+                                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                                    }
+                                    if (float.Parse(Convert.ToString(ts.TotalDays)) > 7)
+                                    {
+                                        //trang   
+                                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                                    }
+                                }
+             */
+             if(compareDateTime > NowDateTime)
                 {
-                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 8 && float.Parse(Convert.ToString(ts.TotalDays)) > -1)
-                    {
-                        //vang   
-                        { mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; }
-                    }
-                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 0)
-                    {
-                        //do
-                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    }
-                    if (float.Parse(Convert.ToString(ts.TotalDays)) > 7)
-                    {
-                        //trang   
-                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                    }
+
                 }
             }
+        }
+
+        private void search_info_history_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

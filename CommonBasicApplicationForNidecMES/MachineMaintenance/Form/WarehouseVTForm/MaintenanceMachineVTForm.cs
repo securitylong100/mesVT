@@ -248,7 +248,6 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     {
                         //vang   
                         { mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; }
-
                     }
                     if (float.Parse(Convert.ToString(ts.TotalDays)) < 0)
                     {

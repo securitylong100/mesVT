@@ -59,7 +59,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
                 sql.Append(" and b.machine_status  =:machine_status");
                 sqlParameter.AddParameterString("machine_status", inVo.MachineStatus);
             }
-            sql.Append(" and  a.maintenance_id  in(select max (maintenance_id) from t_vt_maintenance group by machine_serial)");
+            //Danh sách     Lịch sử 
+            if(inVo.SearchStatus == "Danh sách")
+            {
+                sql.Append(" and  a.maintenance_id  in(select max (maintenance_id) from t_vt_maintenance group by machine_serial)");
+            }
+            else if (inVo.SearchStatus == "Lịch sử")
+            { }
+            sql.Append(" order by a.start_day desc");
             sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //execute SQL

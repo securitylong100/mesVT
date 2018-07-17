@@ -25,7 +25,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Vo
         public string MachineSupplier { get; set; }
         public string MachineLocation { get; set; }
         public string MachineStatus { get; set; }
-
+        public string SearchStatus { get; set; }
         public int AffectedCount { get; set; }
         /// <summary>
         /// //check RFid

@@ -151,7 +151,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             mainternance_vt_dgv.Controls.Add(checkboxHeader);
 
         }
-        private void search_info_btn_Click(object sender, EventArgs e)
+        public void PropertyDGV()
         {
             checkboxHeader.Visible = true;
             addcheckboxheader();
@@ -180,6 +180,10 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             mainternance_vt_dgv.Columns["col_checkstatus"].Visible = true;
             mainternance_vt_dgv.Columns["col_rfid"].Visible = false;
 
+        }
+        private void search_info_btn_Click(object sender, EventArgs e)
+        {
+            PropertyDGV();
             try
             {
                 MaintenanceMachineVTVo inVo = new MaintenanceMachineVTVo
@@ -189,8 +193,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     RFId = rfid_txt.Text,
                     MachineModel = machine_model_cmb.Text,
                     MachineSupplier = machine_supplier_cmb.Text,
-                    MachineStatus = machine_status_cmb.Text
-
+                    MachineStatus = machine_status_cmb.Text,
+                    SearchStatus = searchstatus_cbm.Text,                    //Danh sách     Lịch sử               
                 };
                 ValueObjectList<MaintenanceMachineVTVo> listvo = (ValueObjectList<MaintenanceMachineVTVo>)DefaultCbmInvoker.Invoke(new Cbm.SearchMainternanceMachineVTCbm(), inVo);
                 mainternance_vt_dgv.DataSource = listvo.GetList();
@@ -238,40 +242,55 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             {
                 DateTime startdatetime = DateTime.Parse(mainternance_vt_dgv.Rows[i].Cells["col_factorycd"].Value.ToString());
                 int monthrepeat = int.Parse(mainternance_vt_dgv.Rows[i].Cells["col_machineqty"].Value.ToString());
-                DateTime compareDateTime = startdatetime.AddDays(monthrepeat);
+                DateTime compareDateTime = startdatetime.AddDays(0);
                 bool checkstatus = bool.Parse(mainternance_vt_dgv.Rows[i].Cells["col_checkstatus"].Value.ToString());
                 DateTime NowDateTime = DateTime.Now;
                 TimeSpan ts = compareDateTime - NowDateTime;
-                /*
-                                if (checkstatus == false)
-                                {
-                                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 8 && float.Parse(Convert.ToString(ts.TotalDays)) > -1)
-                                    {
-                                        //vang   
-                                        { mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; }
-                                    }
-                                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 0)
-                                    {
-                                        //do
-                                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                                    }
-                                    if (float.Parse(Convert.ToString(ts.TotalDays)) > 7)
-                                    {
-                                        //trang   
-                                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                                    }
-                                }
-             */
-             if(compareDateTime > NowDateTime)
+
+               
+                if (compareDateTime < NowDateTime)
                 {
+                    TimeSpan timeDate = NowDateTime - startdatetime;
+                    //double totalday = timeDate.TotalDays;
+                    //double ng = totalday / 10;
+                    int solan = (int)(timeDate.TotalDays / monthrepeat) + 1;
+                    if(solan > 0)
+                    {
+                        for (int j = 1; j <= solan; j++)
+                        {
+                            MaintenanceMachineVTVo InVo = new MaintenanceMachineVTVo()
+                            {
+                                MachineModel = mainternance_vt_dgv.Rows[i].Cells["col_machinemodel"].Value.ToString(),
+                                MachineSerial = mainternance_vt_dgv.Rows[i].Cells["col_machineserial"].Value.ToString(),
+                                StartDay = startdatetime.AddDays(monthrepeat*j),
+                                MonthRepeat = monthrepeat,
+                                CheckStatus = false,
+                            };
 
+                            MaintenanceMachineVTVo AddVo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.AddMainternanceMachineVTCbm(), InVo);
+                        }
+                    }
                 }
+                if (checkstatus == false)
+                {
+                    if (ts.TotalDays < 8 && ts.TotalDays > -1)
+                    {
+                        //vang   
+                        { mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; }
+                    }
+                    if (float.Parse(Convert.ToString(ts.TotalDays)) < 0)
+                    {
+                        //do
+                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    }
+                    if (float.Parse(Convert.ToString(ts.TotalDays)) > 7)
+                    {
+                        //trang   
+                        mainternance_vt_dgv.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                    }
+                }
+
             }
-        }
-
-        private void search_info_history_btn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

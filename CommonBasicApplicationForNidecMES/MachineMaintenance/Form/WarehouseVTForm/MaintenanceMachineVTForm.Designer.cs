@@ -61,10 +61,11 @@
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.search_info_history_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.update_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.buttonCommon3 = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.search_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.searchstatus_cbm = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).BeginInit();
             this.groupBoxCommon1.SuspendLayout();
@@ -375,30 +376,15 @@
             // groupBoxCommon1
             // 
             this.groupBoxCommon1.ControlId = null;
-            this.groupBoxCommon1.Controls.Add(this.search_info_history_btn);
             this.groupBoxCommon1.Controls.Add(this.update_info_btn);
             this.groupBoxCommon1.Controls.Add(this.buttonCommon3);
             this.groupBoxCommon1.Controls.Add(this.search_info_btn);
             this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F);
             this.groupBoxCommon1.Location = new System.Drawing.Point(241, 199);
             this.groupBoxCommon1.Name = "groupBoxCommon1";
-            this.groupBoxCommon1.Size = new System.Drawing.Size(569, 64);
+            this.groupBoxCommon1.Size = new System.Drawing.Size(354, 64);
             this.groupBoxCommon1.TabIndex = 99;
             this.groupBoxCommon1.TabStop = false;
-            // 
-            // search_info_history_btn
-            // 
-            this.search_info_history_btn.BackColor = System.Drawing.SystemColors.Control;
-            this.search_info_history_btn.ControlId = "";
-            this.search_info_history_btn.Font = new System.Drawing.Font("Arial", 9F);
-            this.search_info_history_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search_info_history_btn.Location = new System.Drawing.Point(124, 20);
-            this.search_info_history_btn.Name = "search_info_history_btn";
-            this.search_info_history_btn.Size = new System.Drawing.Size(120, 33);
-            this.search_info_history_btn.TabIndex = 11;
-            this.search_info_history_btn.Text = "Search info history";
-            this.search_info_history_btn.UseVisualStyleBackColor = false;
-            this.search_info_history_btn.Click += new System.EventHandler(this.search_info_history_btn_Click);
             // 
             // update_info_btn
             // 
@@ -406,7 +392,7 @@
             this.update_info_btn.ControlId = "";
             this.update_info_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.update_info_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update_info_btn.Location = new System.Drawing.Point(262, 20);
+            this.update_info_btn.Location = new System.Drawing.Point(124, 20);
             this.update_info_btn.Name = "update_info_btn";
             this.update_info_btn.Size = new System.Drawing.Size(84, 33);
             this.update_info_btn.TabIndex = 11;
@@ -420,7 +406,7 @@
             this.buttonCommon3.ControlId = null;
             this.buttonCommon3.Font = new System.Drawing.Font("Arial", 9F);
             this.buttonCommon3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCommon3.Location = new System.Drawing.Point(458, 20);
+            this.buttonCommon3.Location = new System.Drawing.Point(236, 20);
             this.buttonCommon3.Name = "buttonCommon3";
             this.buttonCommon3.Size = new System.Drawing.Size(90, 33);
             this.buttonCommon3.TabIndex = 10;
@@ -441,10 +427,37 @@
             this.search_info_btn.UseVisualStyleBackColor = false;
             this.search_info_btn.Click += new System.EventHandler(this.search_info_btn_Click);
             // 
+            // labelCommon1
+            // 
+            this.labelCommon1.AutoSize = true;
+            this.labelCommon1.ControlId = null;
+            this.labelCommon1.Font = new System.Drawing.Font("Arial", 9F);
+            this.labelCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.labelCommon1.Location = new System.Drawing.Point(929, 153);
+            this.labelCommon1.Name = "labelCommon1";
+            this.labelCommon1.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon1.TabIndex = 101;
+            this.labelCommon1.Text = "Search";
+            // 
+            // searchstatus_cbm
+            // 
+            this.searchstatus_cbm.ControlId = null;
+            this.searchstatus_cbm.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchstatus_cbm.FormattingEnabled = true;
+            this.searchstatus_cbm.Items.AddRange(new object[] {
+            "Danh sách",
+            "Lịch sử"});
+            this.searchstatus_cbm.Location = new System.Drawing.Point(932, 171);
+            this.searchstatus_cbm.Name = "searchstatus_cbm";
+            this.searchstatus_cbm.Size = new System.Drawing.Size(121, 23);
+            this.searchstatus_cbm.TabIndex = 100;
+            // 
             // MaintenanceMachineVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1277, 699);
+            this.Controls.Add(this.labelCommon1);
+            this.Controls.Add(this.searchstatus_cbm);
             this.Controls.Add(this.groupBoxCommon1);
             this.Controls.Add(this.machine_status_lbl);
             this.Controls.Add(this.machine_status_cmb);
@@ -479,6 +492,8 @@
             this.Controls.SetChildIndex(this.machine_status_cmb, 0);
             this.Controls.SetChildIndex(this.machine_status_lbl, 0);
             this.Controls.SetChildIndex(this.groupBoxCommon1, 0);
+            this.Controls.SetChildIndex(this.searchstatus_cbm, 0);
+            this.Controls.SetChildIndex(this.labelCommon1, 0);
             this.setting_gbc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).EndInit();
             this.groupBoxCommon1.ResumeLayout(false);
@@ -505,7 +520,6 @@
         private Framework.LabelCommon rfid_lbl;
         private Framework.DataGridViewCommon mainternance_vt_dgv;
         private Framework.GroupBoxCommon groupBoxCommon1;
-        private Framework.ButtonCommon search_info_history_btn;
         private Framework.ButtonCommon update_info_btn;
         private Framework.ButtonCommon buttonCommon3;
         private Framework.ButtonCommon search_info_btn;
@@ -522,5 +536,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factorycd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecostvalue;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_datetime;
+        private Framework.LabelCommon labelCommon1;
+        private Framework.ComboBoxCommon searchstatus_cbm;
     }
 }

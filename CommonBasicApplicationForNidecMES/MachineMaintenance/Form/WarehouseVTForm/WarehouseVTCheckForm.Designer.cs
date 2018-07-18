@@ -72,13 +72,6 @@
             this.mac_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon7 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.warehouse_list_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.col_checkid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRFIdWarehouseList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMachineSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChecktime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValueCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.valueNodata_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.valueFalse_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -94,12 +87,19 @@
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.datalost_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.col_checkid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRFIdWarehouseList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMachineSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChecktime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValueCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDatalostId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRFId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMachine_Serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckTimes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -125,11 +125,11 @@
             this.machine_cd_lbl.ControlId = null;
             this.machine_cd_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.machine_cd_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.machine_cd_lbl.Location = new System.Drawing.Point(12, 58);
+            this.machine_cd_lbl.Location = new System.Drawing.Point(57, 58);
             this.machine_cd_lbl.Name = "machine_cd_lbl";
-            this.machine_cd_lbl.Size = new System.Drawing.Size(91, 15);
+            this.machine_cd_lbl.Size = new System.Drawing.Size(49, 15);
             this.machine_cd_lbl.TabIndex = 67;
-            this.machine_cd_lbl.Text = "Machine Serial:";
+            this.machine_cd_lbl.Text = "Số Máy:";
             // 
             // setting_gbc
             // 
@@ -148,7 +148,7 @@
             this.setting_gbc.Size = new System.Drawing.Size(414, 117);
             this.setting_gbc.TabIndex = 60;
             this.setting_gbc.TabStop = false;
-            this.setting_gbc.Text = "Check Action";
+            this.setting_gbc.Text = "Thao Tác";
             // 
             // checktime_cmb
             // 
@@ -187,11 +187,11 @@
             this.checktime_lbl.ControlId = null;
             this.checktime_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.checktime_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checktime_lbl.Location = new System.Drawing.Point(23, 87);
+            this.checktime_lbl.Location = new System.Drawing.Point(1, 88);
             this.checktime_lbl.Name = "checktime_lbl";
-            this.checktime_lbl.Size = new System.Drawing.Size(76, 15);
+            this.checktime_lbl.Size = new System.Drawing.Size(106, 15);
             this.checktime_lbl.TabIndex = 79;
-            this.checktime_lbl.Text = "Check Time:";
+            this.checktime_lbl.Text = "Lần Kiểm Kê Thứ:";
             // 
             // machine_serial_cmb
             // 
@@ -227,7 +227,7 @@
             this.check_btn.Name = "check_btn";
             this.check_btn.Size = new System.Drawing.Size(80, 33);
             this.check_btn.TabIndex = 10;
-            this.check_btn.Text = "Check";
+            this.check_btn.Text = "Nhập Tay";
             this.check_btn.UseVisualStyleBackColor = false;
             this.check_btn.Click += new System.EventHandler(this.click_btn_Click);
             // 
@@ -237,11 +237,11 @@
             this.rfid_lbl.ControlId = null;
             this.rfid_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rfid_lbl.Location = new System.Drawing.Point(17, 30);
+            this.rfid_lbl.Location = new System.Drawing.Point(52, 30);
             this.rfid_lbl.Name = "rfid_lbl";
-            this.rfid_lbl.Size = new System.Drawing.Size(86, 15);
+            this.rfid_lbl.Size = new System.Drawing.Size(56, 15);
             this.rfid_lbl.TabIndex = 58;
-            this.rfid_lbl.Text = "RFID Number:";
+            this.rfid_lbl.Text = "Số RFID:";
             // 
             // rowcount_cmb
             // 
@@ -262,7 +262,7 @@
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(80, 24);
             this.search_btn.TabIndex = 83;
-            this.search_btn.Text = "Search";
+            this.search_btn.Text = "Tìm Kiếm";
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
@@ -271,10 +271,10 @@
             this.linksave_txt.ControlId = null;
             this.linksave_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linksave_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.linksave_txt.Location = new System.Drawing.Point(100, 22);
+            this.linksave_txt.Location = new System.Drawing.Point(106, 22);
             this.linksave_txt.Name = "linksave_txt";
             this.linksave_txt.ReadOnly = true;
-            this.linksave_txt.Size = new System.Drawing.Size(189, 21);
+            this.linksave_txt.Size = new System.Drawing.Size(183, 21);
             this.linksave_txt.TabIndex = 55;
             // 
             // exportexcel_btn
@@ -287,7 +287,7 @@
             this.exportexcel_btn.Name = "exportexcel_btn";
             this.exportexcel_btn.Size = new System.Drawing.Size(91, 29);
             this.exportexcel_btn.TabIndex = 10;
-            this.exportexcel_btn.Text = "Export Excel";
+            this.exportexcel_btn.Text = "Xuất Excel";
             this.exportexcel_btn.UseVisualStyleBackColor = false;
             this.exportexcel_btn.Click += new System.EventHandler(this.exportexcel_btn_Click);
             // 
@@ -297,11 +297,11 @@
             this.browser_btn.ControlId = null;
             this.browser_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.browser_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.browser_btn.Location = new System.Drawing.Point(16, 16);
+            this.browser_btn.Location = new System.Drawing.Point(6, 16);
             this.browser_btn.Name = "browser_btn";
-            this.browser_btn.Size = new System.Drawing.Size(80, 29);
+            this.browser_btn.Size = new System.Drawing.Size(94, 29);
             this.browser_btn.TabIndex = 10;
-            this.browser_btn.Text = "Browser:";
+            this.browser_btn.Text = "Đường dẫn:";
             this.browser_btn.UseVisualStyleBackColor = false;
             this.browser_btn.Click += new System.EventHandler(this.browser_btn_Click);
             // 
@@ -375,86 +375,86 @@
             // col_machinecode
             // 
             this.col_machinecode.DataPropertyName = "MachineCode";
-            this.col_machinecode.HeaderText = "Machine Code";
+            this.col_machinecode.HeaderText = "Mã Máy";
             this.col_machinecode.Name = "col_machinecode";
-            this.col_machinecode.Width = 111;
+            this.col_machinecode.Width = 72;
             // 
             // col_machinename
             // 
             this.col_machinename.DataPropertyName = "MachineName";
-            this.col_machinename.HeaderText = "Machine Name";
+            this.col_machinename.HeaderText = "Tên Máy";
             this.col_machinename.Name = "col_machinename";
-            this.col_machinename.Width = 115;
+            this.col_machinename.Width = 77;
             // 
             // col_usercode
             // 
             this.col_usercode.DataPropertyName = "RegistrationUserCode";
-            this.col_usercode.HeaderText = "User";
+            this.col_usercode.HeaderText = "Người Thêm";
             this.col_usercode.Name = "col_usercode";
-            this.col_usercode.Width = 59;
+            this.col_usercode.Width = 102;
             // 
             // col_datetime
             // 
             this.col_datetime.DataPropertyName = "RegistrationDateTime";
-            this.col_datetime.HeaderText = "Date Time";
+            this.col_datetime.HeaderText = "Ngày Giờ";
             this.col_datetime.Name = "col_datetime";
-            this.col_datetime.Width = 89;
+            this.col_datetime.Width = 83;
             // 
             // col_machineqty
             // 
             this.col_machineqty.DataPropertyName = "MachineQty";
-            this.col_machineqty.HeaderText = "Machine Qty";
+            this.col_machineqty.HeaderText = "Số Lượng";
             this.col_machineqty.Name = "col_machineqty";
-            this.col_machineqty.Width = 98;
+            this.col_machineqty.Width = 87;
             // 
             // col_machineserial
             // 
             this.col_machineserial.DataPropertyName = "MachineSerial";
-            this.col_machineserial.HeaderText = "Machine Serial";
+            this.col_machineserial.HeaderText = "Số Máy";
             this.col_machineserial.Name = "col_machineserial";
-            this.col_machineserial.Width = 113;
+            this.col_machineserial.Width = 71;
             // 
             // col_machinemodel
             // 
             this.col_machinemodel.DataPropertyName = "MachineModel";
-            this.col_machinemodel.HeaderText = "Machine Model";
+            this.col_machinemodel.HeaderText = "Ký Hiệu";
             this.col_machinemodel.Name = "col_machinemodel";
-            this.col_machinemodel.Width = 114;
+            this.col_machinemodel.Width = 74;
             // 
             // col_machinelocation
             // 
             this.col_machinelocation.DataPropertyName = "MachineLocation";
-            this.col_machinelocation.HeaderText = "Machine Location";
+            this.col_machinelocation.HeaderText = "Vị Trí";
             this.col_machinelocation.Name = "col_machinelocation";
-            this.col_machinelocation.Width = 128;
+            this.col_machinelocation.Width = 59;
             // 
             // col_machinesupplier
             // 
             this.col_machinesupplier.DataPropertyName = "MachineSupplier";
-            this.col_machinesupplier.HeaderText = "Machine Supplier";
+            this.col_machinesupplier.HeaderText = "Nguồn Gốc Máy";
             this.col_machinesupplier.Name = "col_machinesupplier";
-            this.col_machinesupplier.Width = 127;
+            this.col_machinesupplier.Width = 118;
             // 
             // col_machineinvoice
             // 
             this.col_machineinvoice.DataPropertyName = "MachineInvoice";
-            this.col_machineinvoice.HeaderText = "Machine Invoice";
+            this.col_machineinvoice.HeaderText = "Số Chứng Từ";
             this.col_machineinvoice.Name = "col_machineinvoice";
-            this.col_machineinvoice.Width = 119;
+            this.col_machineinvoice.Width = 106;
             // 
             // col_machinecostvalue
             // 
             this.col_machinecostvalue.DataPropertyName = "MachineCostValue";
-            this.col_machinecostvalue.HeaderText = "Cost";
+            this.col_machinecostvalue.HeaderText = "Giá";
             this.col_machinecostvalue.Name = "col_machinecostvalue";
-            this.col_machinecostvalue.Width = 58;
+            this.col_machinecostvalue.Width = 51;
             // 
             // colchecktimefinal
             // 
             this.colchecktimefinal.DataPropertyName = "TimeCheck";
-            this.colchecktimefinal.HeaderText = "Check Time";
+            this.colchecktimefinal.HeaderText = "Lần Kiểm Kê Thứ";
             this.colchecktimefinal.Name = "colchecktimefinal";
-            this.colchecktimefinal.Width = 98;
+            this.colchecktimefinal.Width = 128;
             // 
             // groupBoxCommon2
             // 
@@ -471,7 +471,7 @@
             this.groupBoxCommon2.Size = new System.Drawing.Size(597, 57);
             this.groupBoxCommon2.TabIndex = 76;
             this.groupBoxCommon2.TabStop = false;
-            this.groupBoxCommon2.Text = "Export Action";
+            this.groupBoxCommon2.Text = "Lưu trữ";
             // 
             // exportcsv_btn
             // 
@@ -483,7 +483,7 @@
             this.exportcsv_btn.Name = "exportcsv_btn";
             this.exportcsv_btn.Size = new System.Drawing.Size(91, 29);
             this.exportcsv_btn.TabIndex = 93;
-            this.exportcsv_btn.Text = "Export .csv";
+            this.exportcsv_btn.Text = "Xuất .csv";
             this.exportcsv_btn.UseVisualStyleBackColor = false;
             this.exportcsv_btn.Click += new System.EventHandler(this.exportcsv_btn_Click);
             // 
@@ -556,63 +556,6 @@
             this.warehouse_list_dgv.Size = new System.Drawing.Size(1017, 151);
             this.warehouse_list_dgv.TabIndex = 77;
             // 
-            // col_checkid
-            // 
-            this.col_checkid.DataPropertyName = "CheckId";
-            this.col_checkid.HeaderText = "Id Check";
-            this.col_checkid.Name = "col_checkid";
-            this.col_checkid.ReadOnly = true;
-            this.col_checkid.Visible = false;
-            this.col_checkid.Width = 80;
-            // 
-            // colRFIdWarehouseList
-            // 
-            this.colRFIdWarehouseList.DataPropertyName = "RFId";
-            this.colRFIdWarehouseList.HeaderText = "RFId";
-            this.colRFIdWarehouseList.Name = "colRFIdWarehouseList";
-            this.colRFIdWarehouseList.ReadOnly = true;
-            this.colRFIdWarehouseList.Width = 58;
-            // 
-            // colMachineSerial
-            // 
-            this.colMachineSerial.DataPropertyName = "MachineSerial";
-            this.colMachineSerial.HeaderText = "Machine Serial";
-            this.colMachineSerial.Name = "colMachineSerial";
-            this.colMachineSerial.ReadOnly = true;
-            this.colMachineSerial.Width = 113;
-            // 
-            // colUser
-            // 
-            this.colUser.DataPropertyName = "RegistrationUserCode";
-            this.colUser.HeaderText = "User";
-            this.colUser.Name = "colUser";
-            this.colUser.ReadOnly = true;
-            this.colUser.Width = 59;
-            // 
-            // colChecktime
-            // 
-            this.colChecktime.DataPropertyName = "CheckTime";
-            this.colChecktime.HeaderText = "Check Time";
-            this.colChecktime.Name = "colChecktime";
-            this.colChecktime.ReadOnly = true;
-            this.colChecktime.Width = 98;
-            // 
-            // colValueCheck
-            // 
-            this.colValueCheck.DataPropertyName = "ValueCheck";
-            this.colValueCheck.HeaderText = "";
-            this.colValueCheck.Name = "colValueCheck";
-            this.colValueCheck.ReadOnly = true;
-            this.colValueCheck.Width = 21;
-            // 
-            // colDatetime
-            // 
-            this.colDatetime.DataPropertyName = "RegistrationDateTime";
-            this.colDatetime.HeaderText = "Date Times";
-            this.colDatetime.Name = "colDatetime";
-            this.colDatetime.ReadOnly = true;
-            this.colDatetime.Width = 96;
-            // 
             // groupBoxCommon1
             // 
             this.groupBoxCommon1.ControlId = null;
@@ -637,7 +580,7 @@
             this.groupBoxCommon1.Size = new System.Drawing.Size(597, 59);
             this.groupBoxCommon1.TabIndex = 84;
             this.groupBoxCommon1.TabStop = false;
-            this.groupBoxCommon1.Text = "Search Action";
+            this.groupBoxCommon1.Text = "Kết Quả";
             // 
             // valueNodata_lbl
             // 
@@ -845,6 +788,67 @@
             this.datalost_dgv.Size = new System.Drawing.Size(1017, 429);
             this.datalost_dgv.TabIndex = 85;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // col_checkid
+            // 
+            this.col_checkid.DataPropertyName = "CheckId";
+            this.col_checkid.HeaderText = "Id Check";
+            this.col_checkid.Name = "col_checkid";
+            this.col_checkid.ReadOnly = true;
+            this.col_checkid.Visible = false;
+            this.col_checkid.Width = 80;
+            // 
+            // colRFIdWarehouseList
+            // 
+            this.colRFIdWarehouseList.DataPropertyName = "RFId";
+            this.colRFIdWarehouseList.HeaderText = "RFId";
+            this.colRFIdWarehouseList.Name = "colRFIdWarehouseList";
+            this.colRFIdWarehouseList.ReadOnly = true;
+            this.colRFIdWarehouseList.Width = 58;
+            // 
+            // colMachineSerial
+            // 
+            this.colMachineSerial.DataPropertyName = "MachineSerial";
+            this.colMachineSerial.HeaderText = "Số Máy";
+            this.colMachineSerial.Name = "colMachineSerial";
+            this.colMachineSerial.ReadOnly = true;
+            this.colMachineSerial.Width = 71;
+            // 
+            // colUser
+            // 
+            this.colUser.DataPropertyName = "RegistrationUserCode";
+            this.colUser.HeaderText = "Người Thêm";
+            this.colUser.Name = "colUser";
+            this.colUser.ReadOnly = true;
+            this.colUser.Width = 102;
+            // 
+            // colChecktime
+            // 
+            this.colChecktime.DataPropertyName = "CheckTime";
+            this.colChecktime.HeaderText = "Lần Kiểm Kê Thứ";
+            this.colChecktime.Name = "colChecktime";
+            this.colChecktime.ReadOnly = true;
+            this.colChecktime.Width = 128;
+            // 
+            // colValueCheck
+            // 
+            this.colValueCheck.DataPropertyName = "ValueCheck";
+            this.colValueCheck.HeaderText = "";
+            this.colValueCheck.Name = "colValueCheck";
+            this.colValueCheck.ReadOnly = true;
+            this.colValueCheck.Width = 21;
+            // 
+            // colDatetime
+            // 
+            this.colDatetime.DataPropertyName = "RegistrationDateTime";
+            this.colDatetime.HeaderText = "Ngày Giờ";
+            this.colDatetime.Name = "colDatetime";
+            this.colDatetime.ReadOnly = true;
+            this.colDatetime.Width = 83;
+            // 
             // colDatalostId
             // 
             this.colDatalostId.DataPropertyName = "DatalostId";
@@ -864,30 +868,26 @@
             // colMachine_Serial
             // 
             this.colMachine_Serial.DataPropertyName = "MachineSerial";
-            this.colMachine_Serial.HeaderText = "Machine Serial";
+            this.colMachine_Serial.HeaderText = "Số Máy";
             this.colMachine_Serial.Name = "colMachine_Serial";
             this.colMachine_Serial.ReadOnly = true;
-            this.colMachine_Serial.Width = 113;
+            this.colMachine_Serial.Width = 71;
             // 
             // colCheckTimes
             // 
             this.colCheckTimes.DataPropertyName = "CheckTime";
-            this.colCheckTimes.HeaderText = "Check Time";
+            this.colCheckTimes.HeaderText = "Lần Kiểm Kê Thứ";
             this.colCheckTimes.Name = "colCheckTimes";
             this.colCheckTimes.ReadOnly = true;
-            this.colCheckTimes.Width = 98;
+            this.colCheckTimes.Width = 128;
             // 
             // colComent
             // 
             this.colComent.DataPropertyName = "Comment";
-            this.colComent.HeaderText = "Comment";
+            this.colComent.HeaderText = "Ghi Chú";
             this.colComent.Name = "colComent";
             this.colComent.ReadOnly = true;
-            this.colComent.Width = 87;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.colComent.Width = 77;
             // 
             // WarehouseVTCheckForm
             // 
@@ -919,7 +919,6 @@
             this.groupBoxCommon1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalost_dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -959,6 +958,7 @@
         private Framework.ComboBoxCommon mac_cmb;
         private System.Windows.Forms.Timer timer1;
         private Framework.ButtonCommon exportcsv_btn;
+        private Framework.ButtonCommon AutoCheck_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rfid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecode;
@@ -985,6 +985,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMachine_Serial;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckTimes;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComent;
-        private Framework.ButtonCommon AutoCheck_btn;
     }
 }

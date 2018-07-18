@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.setting_gbc = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.cancel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.Ok_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -120,7 +120,6 @@
             this.machine_serial_cmb.TabIndex = 80;
             this.machine_serial_cmb.SelectedIndexChanged += new System.EventHandler(this.machine_serial_cmb_SelectedIndexChanged);
             this.machine_serial_cmb.TextChanged += new System.EventHandler(this.machine_serial_cmb_TextChanged);
-
             // 
             // serialmachine_lbl
             // 
@@ -130,9 +129,9 @@
             this.serialmachine_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.serialmachine_lbl.Location = new System.Drawing.Point(19, 201);
             this.serialmachine_lbl.Name = "serialmachine_lbl";
-            this.serialmachine_lbl.Size = new System.Drawing.Size(88, 15);
+            this.serialmachine_lbl.Size = new System.Drawing.Size(49, 15);
             this.serialmachine_lbl.TabIndex = 81;
-            this.serialmachine_lbl.Text = "Serial Machine";
+            this.serialmachine_lbl.Text = "Số Máy:";
             // 
             // factory_received_lbl
             // 
@@ -142,9 +141,9 @@
             this.factory_received_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.factory_received_lbl.Location = new System.Drawing.Point(226, 261);
             this.factory_received_lbl.Name = "factory_received_lbl";
-            this.factory_received_lbl.Size = new System.Drawing.Size(100, 15);
+            this.factory_received_lbl.Size = new System.Drawing.Size(96, 15);
             this.factory_received_lbl.TabIndex = 85;
-            this.factory_received_lbl.Text = "Factory Received";
+            this.factory_received_lbl.Text = "Nơi Chuyển Tới:";
             // 
             // factory_received_cmb
             // 
@@ -164,9 +163,9 @@
             this.factory_tranfer_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.factory_tranfer_lbl.Location = new System.Drawing.Point(19, 261);
             this.factory_tranfer_lbl.Name = "factory_tranfer_lbl";
-            this.factory_tranfer_lbl.Size = new System.Drawing.Size(88, 15);
+            this.factory_tranfer_lbl.Size = new System.Drawing.Size(90, 15);
             this.factory_tranfer_lbl.TabIndex = 87;
-            this.factory_tranfer_lbl.Text = "Factory Tranfer";
+            this.factory_tranfer_lbl.Text = "Nơi Chuyển Đi:";
             // 
             // factory_tranfer_cmb
             // 
@@ -198,9 +197,9 @@
             this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.rfid_lbl.Location = new System.Drawing.Point(19, 148);
             this.rfid_lbl.Name = "rfid_lbl";
-            this.rfid_lbl.Size = new System.Drawing.Size(83, 15);
+            this.rfid_lbl.Size = new System.Drawing.Size(56, 15);
             this.rfid_lbl.TabIndex = 101;
-            this.rfid_lbl.Text = "RFID Number";
+            this.rfid_lbl.Text = "Số RFID:";
             // 
             // code_name_txt
             // 
@@ -221,9 +220,9 @@
             this.code_name_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.code_name_lbl.Location = new System.Drawing.Point(787, 261);
             this.code_name_lbl.Name = "code_name_lbl";
-            this.code_name_lbl.Size = new System.Drawing.Size(77, 15);
+            this.code_name_lbl.Size = new System.Drawing.Size(56, 15);
             this.code_name_lbl.TabIndex = 103;
-            this.code_name_lbl.Text = "Code Name:";
+            this.code_name_lbl.Text = "Số Lệnh:";
             // 
             // code_status_cmb
             // 
@@ -249,21 +248,21 @@
             this.code_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.code_status_lbl.Location = new System.Drawing.Point(596, 261);
             this.code_status_lbl.Name = "code_status_lbl";
-            this.code_status_lbl.Size = new System.Drawing.Size(75, 15);
+            this.code_status_lbl.Size = new System.Drawing.Size(100, 15);
             this.code_status_lbl.TabIndex = 85;
-            this.code_status_lbl.Text = "Code Status";
+            this.code_status_lbl.Text = "Trạng Thái Lệnh:";
             // 
             // dgv_maxcode
             // 
             this.dgv_maxcode.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_maxcode.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_maxcode.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_maxcode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_maxcode.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colBG,
@@ -271,24 +270,24 @@
             this.colT,
             this.colTH});
             this.dgv_maxcode.ControlId = null;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_maxcode.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_maxcode.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_maxcode.Location = new System.Drawing.Point(676, 148);
             this.dgv_maxcode.Name = "dgv_maxcode";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_maxcode.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_maxcode.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_maxcode.Size = new System.Drawing.Size(222, 48);
             this.dgv_maxcode.TabIndex = 104;
             // 
@@ -342,9 +341,9 @@
             this.status_machine_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.status_machine_lbl.Location = new System.Drawing.Point(434, 261);
             this.status_machine_lbl.Name = "status_machine_lbl";
-            this.status_machine_lbl.Size = new System.Drawing.Size(91, 15);
+            this.status_machine_lbl.Size = new System.Drawing.Size(69, 15);
             this.status_machine_lbl.TabIndex = 85;
-            this.status_machine_lbl.Text = "Status Machine";
+            this.status_machine_lbl.Text = "Tình Trạng:";
             // 
             // comments_lbl
             // 
@@ -354,9 +353,9 @@
             this.comments_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comments_lbl.Location = new System.Drawing.Point(20, 318);
             this.comments_lbl.Name = "comments_lbl";
-            this.comments_lbl.Size = new System.Drawing.Size(69, 15);
+            this.comments_lbl.Size = new System.Drawing.Size(55, 15);
             this.comments_lbl.TabIndex = 106;
-            this.comments_lbl.Text = "Comments";
+            this.comments_lbl.Text = "Ghi Chú:";
             // 
             // comments_txt
             // 
@@ -388,9 +387,9 @@
             this.reason_tranfer_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.reason_tranfer_lbl.Location = new System.Drawing.Point(328, 318);
             this.reason_tranfer_lbl.Name = "reason_tranfer_lbl";
-            this.reason_tranfer_lbl.Size = new System.Drawing.Size(89, 15);
+            this.reason_tranfer_lbl.Size = new System.Drawing.Size(86, 15);
             this.reason_tranfer_lbl.TabIndex = 106;
-            this.reason_tranfer_lbl.Text = "Reason tranfer";
+            this.reason_tranfer_lbl.Text = "Lý Do Chuyển:";
             // 
             // confirm_received_txt
             // 
@@ -411,9 +410,9 @@
             this.confirm_received_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.confirm_received_lbl.Location = new System.Drawing.Point(629, 318);
             this.confirm_received_lbl.Name = "confirm_received_lbl";
-            this.confirm_received_lbl.Size = new System.Drawing.Size(105, 15);
+            this.confirm_received_lbl.Size = new System.Drawing.Size(139, 15);
             this.confirm_received_lbl.TabIndex = 106;
-            this.confirm_received_lbl.Text = "Confirm Received";
+            this.confirm_received_lbl.Text = "Xác Nhận của Nơi Nhận";
             // 
             // machine_name_cmb
             // 
@@ -433,9 +432,9 @@
             this.machine_name_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.machine_name_lbl.Location = new System.Drawing.Point(225, 148);
             this.machine_name_lbl.Name = "machine_name_lbl";
-            this.machine_name_lbl.Size = new System.Drawing.Size(90, 15);
+            this.machine_name_lbl.Size = new System.Drawing.Size(55, 15);
             this.machine_name_lbl.TabIndex = 81;
-            this.machine_name_lbl.Text = "Machine Name";
+            this.machine_name_lbl.Text = "Tên Máy:";
             // 
             // machine_model_lbl
             // 
@@ -445,9 +444,9 @@
             this.machine_model_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.machine_model_lbl.Location = new System.Drawing.Point(225, 201);
             this.machine_model_lbl.Name = "machine_model_lbl";
-            this.machine_model_lbl.Size = new System.Drawing.Size(89, 15);
+            this.machine_model_lbl.Size = new System.Drawing.Size(52, 15);
             this.machine_model_lbl.TabIndex = 108;
-            this.machine_model_lbl.Text = "Machine Model";
+            this.machine_model_lbl.Text = "Ký Hiệu:";
             // 
             // machine_model_cmb
             // 

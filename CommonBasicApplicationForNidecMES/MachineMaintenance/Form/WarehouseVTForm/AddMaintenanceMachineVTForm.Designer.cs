@@ -44,11 +44,11 @@
             this.startday_lbl.ControlId = null;
             this.startday_lbl.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startday_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.startday_lbl.Location = new System.Drawing.Point(79, 153);
+            this.startday_lbl.Location = new System.Drawing.Point(24, 153);
             this.startday_lbl.Name = "startday_lbl";
-            this.startday_lbl.Size = new System.Drawing.Size(138, 32);
+            this.startday_lbl.Size = new System.Drawing.Size(193, 32);
             this.startday_lbl.TabIndex = 92;
-            this.startday_lbl.Text = "Start Day:";
+            this.startday_lbl.Text = "Ngày Bắt Đầu:";
             // 
             // month_repeat_lbl
             // 
@@ -56,11 +56,11 @@
             this.month_repeat_lbl.ControlId = null;
             this.month_repeat_lbl.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.month_repeat_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.month_repeat_lbl.Location = new System.Drawing.Point(22, 220);
+            this.month_repeat_lbl.Location = new System.Drawing.Point(33, 220);
             this.month_repeat_lbl.Name = "month_repeat_lbl";
-            this.month_repeat_lbl.Size = new System.Drawing.Size(195, 32);
+            this.month_repeat_lbl.Size = new System.Drawing.Size(184, 32);
             this.month_repeat_lbl.TabIndex = 93;
-            this.month_repeat_lbl.Text = "Month Repeat:";
+            this.month_repeat_lbl.Text = "Chu Kỳ Ngày:";
             // 
             // start_day_dtp
             // 

@@ -77,9 +77,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             mainternance_vt_dgv.Columns["col_machinecostvalue"].DataPropertyName = "MachineCostValue";
             mainternance_vt_dgv.Columns["col_datetime"].DataPropertyName = "RegistrationDateTime";
             //change header
-            mainternance_vt_dgv.Columns["col_machineqty"].HeaderText = "Qty";
-            mainternance_vt_dgv.Columns["col_factorycd"].HeaderText = "Factory";
-            mainternance_vt_dgv.Columns["col_machinecostvalue"].HeaderText = "Cost";
+            mainternance_vt_dgv.Columns["col_machineqty"].HeaderText = "Số Lượng";
+            mainternance_vt_dgv.Columns["col_factorycd"].HeaderText = "Nhà Máy";
+            mainternance_vt_dgv.Columns["col_machinecostvalue"].HeaderText = "Giá";
 
             mainternance_vt_dgv.Columns["col_checkstatus"].Visible = false;
 
@@ -172,9 +172,9 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
             mainternance_vt_dgv.Columns["col_datetime"].DataPropertyName = "RegistrationDateTime";
 
             //change header
-            mainternance_vt_dgv.Columns["col_machineqty"].HeaderText = "Month Repeat";
-            mainternance_vt_dgv.Columns["col_factorycd"].HeaderText = "Start Day";
-            mainternance_vt_dgv.Columns["col_machinecostvalue"].HeaderText = "User Add";
+            mainternance_vt_dgv.Columns["col_machineqty"].HeaderText = "Chu Kỳ(Ngày)";
+            mainternance_vt_dgv.Columns["col_factorycd"].HeaderText = "Ngày Bắt Đầu";
+            mainternance_vt_dgv.Columns["col_machinecostvalue"].HeaderText = "Người Thêm";
             //change status 
             mainternance_vt_dgv.Columns["col_checkstatus"].DataPropertyName = "CheckStatus";
             mainternance_vt_dgv.Columns["col_checkstatus"].Visible = true;
@@ -291,6 +291,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 }
 
             }
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

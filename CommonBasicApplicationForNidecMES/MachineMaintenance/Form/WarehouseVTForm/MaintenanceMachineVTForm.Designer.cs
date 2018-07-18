@@ -62,7 +62,7 @@
             this.col_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.update_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.buttonCommon3 = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.delete_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.search_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.searchstatus_cbm = new Com.Nidec.Mes.Framework.ComboBoxCommon();
@@ -79,9 +79,10 @@
             this.setting_gbc.Font = new System.Drawing.Font("Arial", 9F);
             this.setting_gbc.Location = new System.Drawing.Point(12, 199);
             this.setting_gbc.Name = "setting_gbc";
-            this.setting_gbc.Size = new System.Drawing.Size(214, 64);
+            this.setting_gbc.Size = new System.Drawing.Size(265, 64);
             this.setting_gbc.TabIndex = 60;
             this.setting_gbc.TabStop = false;
+            this.setting_gbc.Text = "Thêm Máy Vào Danh Sách Bảo Trì";
             // 
             // add_btn
             // 
@@ -89,11 +90,11 @@
             this.add_btn.ControlId = "";
             this.add_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.add_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.add_btn.Location = new System.Drawing.Point(114, 20);
+            this.add_btn.Location = new System.Drawing.Point(144, 20);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(88, 33);
             this.add_btn.TabIndex = 11;
-            this.add_btn.Text = "Add";
+            this.add_btn.Text = "Thêm";
             this.add_btn.UseVisualStyleBackColor = false;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
@@ -105,9 +106,9 @@
             this.search_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.search_btn.Location = new System.Drawing.Point(15, 20);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(80, 33);
+            this.search_btn.Size = new System.Drawing.Size(105, 33);
             this.search_btn.TabIndex = 10;
-            this.search_btn.Text = "Search";
+            this.search_btn.Text = "Tìm Kiếm";
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
@@ -119,9 +120,9 @@
             this.machine_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.machine_status_lbl.Location = new System.Drawing.Point(784, 154);
             this.machine_status_lbl.Name = "machine_status_lbl";
-            this.machine_status_lbl.Size = new System.Drawing.Size(91, 15);
+            this.machine_status_lbl.Size = new System.Drawing.Size(66, 15);
             this.machine_status_lbl.TabIndex = 97;
-            this.machine_status_lbl.Text = "Machine Status";
+            this.machine_status_lbl.Text = "Trạng Thái";
             // 
             // machine_status_cmb
             // 
@@ -141,9 +142,9 @@
             this.location_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.location_lbl.Location = new System.Drawing.Point(639, 154);
             this.location_lbl.Name = "location_lbl";
-            this.location_lbl.Size = new System.Drawing.Size(57, 15);
+            this.location_lbl.Size = new System.Drawing.Size(79, 15);
             this.location_lbl.TabIndex = 95;
-            this.location_lbl.Text = "Location:";
+            this.location_lbl.Text = "Chuyền/Vị Trí";
             // 
             // location_cmb
             // 
@@ -163,9 +164,9 @@
             this.supplier_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.supplier_lbl.Location = new System.Drawing.Point(457, 156);
             this.supplier_lbl.Name = "supplier_lbl";
-            this.supplier_lbl.Size = new System.Drawing.Size(56, 15);
+            this.supplier_lbl.Size = new System.Drawing.Size(69, 15);
             this.supplier_lbl.TabIndex = 91;
-            this.supplier_lbl.Text = "Suppiler:";
+            this.supplier_lbl.Text = "Nguồn Gốc";
             // 
             // model_lbl
             // 
@@ -175,9 +176,9 @@
             this.model_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.model_lbl.Location = new System.Drawing.Point(153, 154);
             this.model_lbl.Name = "model_lbl";
-            this.model_lbl.Size = new System.Drawing.Size(43, 15);
+            this.model_lbl.Size = new System.Drawing.Size(52, 15);
             this.model_lbl.TabIndex = 92;
-            this.model_lbl.Text = "Model:";
+            this.model_lbl.Text = "Ký Hiệu:";
             // 
             // serial_lbl
             // 
@@ -187,9 +188,9 @@
             this.serial_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.serial_lbl.Location = new System.Drawing.Point(308, 154);
             this.serial_lbl.Name = "serial_lbl";
-            this.serial_lbl.Size = new System.Drawing.Size(42, 15);
+            this.serial_lbl.Size = new System.Drawing.Size(46, 15);
             this.serial_lbl.TabIndex = 93;
-            this.serial_lbl.Text = "Serial:";
+            this.serial_lbl.Text = "Số Máy";
             // 
             // machine_supplier_cmb
             // 
@@ -241,9 +242,9 @@
             this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.rfid_lbl.Location = new System.Drawing.Point(14, 156);
             this.rfid_lbl.Name = "rfid_lbl";
-            this.rfid_lbl.Size = new System.Drawing.Size(93, 15);
+            this.rfid_lbl.Size = new System.Drawing.Size(56, 15);
             this.rfid_lbl.TabIndex = 86;
-            this.rfid_lbl.Text = "RFID Numbers:";
+            this.rfid_lbl.Text = "Số RFID:";
             // 
             // mainternance_vt_dgv
             // 
@@ -309,82 +310,83 @@
             // 
             // col_machineserial
             // 
-            this.col_machineserial.HeaderText = "Machine Serial";
+            this.col_machineserial.HeaderText = "Số Máy";
             this.col_machineserial.Name = "col_machineserial";
-            this.col_machineserial.Width = 113;
+            this.col_machineserial.Width = 71;
             // 
             // col_checkstatus
             // 
-            this.col_checkstatus.HeaderText = "Check Status";
+            this.col_checkstatus.HeaderText = "Bảo Trì Y/N";
             this.col_checkstatus.Name = "col_checkstatus";
-            this.col_checkstatus.Width = 86;
+            this.col_checkstatus.Width = 74;
             // 
             // col_machinename
             // 
-            this.col_machinename.HeaderText = "Machine Name";
+            this.col_machinename.HeaderText = "Tên Máy";
             this.col_machinename.Name = "col_machinename";
-            this.col_machinename.Width = 115;
+            this.col_machinename.Width = 77;
             // 
             // col_machinemodel
             // 
-            this.col_machinemodel.HeaderText = "Machine Model";
+            this.col_machinemodel.HeaderText = "Ký Hiệu";
             this.col_machinemodel.Name = "col_machinemodel";
-            this.col_machinemodel.Width = 114;
+            this.col_machinemodel.Width = 74;
             // 
             // col_machineqty
             // 
-            this.col_machineqty.HeaderText = "Machine Qty";
+            this.col_machineqty.HeaderText = "Số Lượng";
             this.col_machineqty.Name = "col_machineqty";
-            this.col_machineqty.Width = 98;
+            this.col_machineqty.Width = 87;
             // 
             // col_machinelocation
             // 
-            this.col_machinelocation.HeaderText = "Location";
+            this.col_machinelocation.HeaderText = "Vị Trí/Chuyền";
             this.col_machinelocation.Name = "col_machinelocation";
-            this.col_machinelocation.Width = 79;
+            this.col_machinelocation.Width = 104;
             // 
             // col_machinesupplier
             // 
-            this.col_machinesupplier.HeaderText = "Machine Supplier";
+            this.col_machinesupplier.HeaderText = "Nguồn Gốc";
             this.col_machinesupplier.Name = "col_machinesupplier";
-            this.col_machinesupplier.Width = 127;
+            this.col_machinesupplier.Width = 94;
             // 
             // col_machinestatus
             // 
-            this.col_machinestatus.HeaderText = "Status";
+            this.col_machinestatus.HeaderText = "Tình Trạng";
             this.col_machinestatus.Name = "col_machinestatus";
-            this.col_machinestatus.Width = 67;
+            this.col_machinestatus.Width = 91;
             // 
             // col_factorycd
             // 
-            this.col_factorycd.HeaderText = "Factory";
+            this.col_factorycd.HeaderText = "Nhà Máy";
             this.col_factorycd.Name = "col_factorycd";
-            this.col_factorycd.Width = 71;
+            this.col_factorycd.Width = 79;
             // 
             // col_machinecostvalue
             // 
-            this.col_machinecostvalue.HeaderText = "Cost";
+            this.col_machinecostvalue.HeaderText = "Giá";
             this.col_machinecostvalue.Name = "col_machinecostvalue";
-            this.col_machinecostvalue.Width = 58;
+            this.col_machinecostvalue.Width = 51;
             // 
             // col_datetime
             // 
-            this.col_datetime.HeaderText = "Date Time Add";
+            this.col_datetime.HeaderText = "Ngày Giờ";
             this.col_datetime.Name = "col_datetime";
-            this.col_datetime.Width = 112;
+            this.col_datetime.Width = 83;
             // 
             // groupBoxCommon1
             // 
             this.groupBoxCommon1.ControlId = null;
             this.groupBoxCommon1.Controls.Add(this.update_info_btn);
-            this.groupBoxCommon1.Controls.Add(this.buttonCommon3);
+            this.groupBoxCommon1.Controls.Add(this.delete_btn);
             this.groupBoxCommon1.Controls.Add(this.search_info_btn);
             this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F);
-            this.groupBoxCommon1.Location = new System.Drawing.Point(241, 199);
+            this.groupBoxCommon1.Location = new System.Drawing.Point(382, 203);
             this.groupBoxCommon1.Name = "groupBoxCommon1";
-            this.groupBoxCommon1.Size = new System.Drawing.Size(354, 64);
+            this.groupBoxCommon1.Size = new System.Drawing.Size(438, 64);
             this.groupBoxCommon1.TabIndex = 99;
             this.groupBoxCommon1.TabStop = false;
+            this.groupBoxCommon1.Text = "Bảo Trì Theo Chu Kỳ";
             // 
             // update_info_btn
             // 
@@ -392,26 +394,27 @@
             this.update_info_btn.ControlId = "";
             this.update_info_btn.Font = new System.Drawing.Font("Arial", 9F);
             this.update_info_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update_info_btn.Location = new System.Drawing.Point(124, 20);
+            this.update_info_btn.Location = new System.Drawing.Point(162, 20);
             this.update_info_btn.Name = "update_info_btn";
-            this.update_info_btn.Size = new System.Drawing.Size(84, 33);
+            this.update_info_btn.Size = new System.Drawing.Size(124, 33);
             this.update_info_btn.TabIndex = 11;
-            this.update_info_btn.Text = "Update";
+            this.update_info_btn.Text = "Chỉnh Sửa/Bảo Trì";
             this.update_info_btn.UseVisualStyleBackColor = false;
             this.update_info_btn.Click += new System.EventHandler(this.update_info_btn_Click);
             // 
-            // buttonCommon3
+            // delete_btn
             // 
-            this.buttonCommon3.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonCommon3.ControlId = null;
-            this.buttonCommon3.Font = new System.Drawing.Font("Arial", 9F);
-            this.buttonCommon3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCommon3.Location = new System.Drawing.Point(236, 20);
-            this.buttonCommon3.Name = "buttonCommon3";
-            this.buttonCommon3.Size = new System.Drawing.Size(90, 33);
-            this.buttonCommon3.TabIndex = 10;
-            this.buttonCommon3.Text = "Delete";
-            this.buttonCommon3.UseVisualStyleBackColor = false;
+            this.delete_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.delete_btn.ControlId = null;
+            this.delete_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.delete_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.delete_btn.Location = new System.Drawing.Point(321, 20);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(90, 33);
+            this.delete_btn.TabIndex = 10;
+            this.delete_btn.Text = "Xóa";
+            this.delete_btn.UseVisualStyleBackColor = false;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // search_info_btn
             // 
@@ -421,9 +424,9 @@
             this.search_info_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.search_info_btn.Location = new System.Drawing.Point(15, 20);
             this.search_info_btn.Name = "search_info_btn";
-            this.search_info_btn.Size = new System.Drawing.Size(80, 33);
+            this.search_info_btn.Size = new System.Drawing.Size(119, 33);
             this.search_info_btn.TabIndex = 10;
-            this.search_info_btn.Text = "Search info";
+            this.search_info_btn.Text = "Tìm Kiếm-Bảo Trì";
             this.search_info_btn.UseVisualStyleBackColor = false;
             this.search_info_btn.Click += new System.EventHandler(this.search_info_btn_Click);
             // 
@@ -435,9 +438,9 @@
             this.labelCommon1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelCommon1.Location = new System.Drawing.Point(929, 153);
             this.labelCommon1.Name = "labelCommon1";
-            this.labelCommon1.Size = new System.Drawing.Size(46, 15);
+            this.labelCommon1.Size = new System.Drawing.Size(90, 15);
             this.labelCommon1.TabIndex = 101;
-            this.labelCommon1.Text = "Search";
+            this.labelCommon1.Text = "Loại Tìm Kiếm:";
             // 
             // searchstatus_cbm
             // 
@@ -521,8 +524,10 @@
         private Framework.DataGridViewCommon mainternance_vt_dgv;
         private Framework.GroupBoxCommon groupBoxCommon1;
         private Framework.ButtonCommon update_info_btn;
-        private Framework.ButtonCommon buttonCommon3;
+        private Framework.ButtonCommon delete_btn;
         private Framework.ButtonCommon search_info_btn;
+        private Framework.LabelCommon labelCommon1;
+        private Framework.ComboBoxCommon searchstatus_cbm;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rfid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machineserial;
@@ -536,7 +541,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factorycd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecostvalue;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_datetime;
-        private Framework.LabelCommon labelCommon1;
-        private Framework.ComboBoxCommon searchstatus_cbm;
     }
 }

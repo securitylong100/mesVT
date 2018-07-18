@@ -85,11 +85,11 @@
             this.rfid_lbl.ControlId = null;
             this.rfid_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rfid_lbl.Location = new System.Drawing.Point(21, 163);
+            this.rfid_lbl.Location = new System.Drawing.Point(41, 163);
             this.rfid_lbl.Name = "rfid_lbl";
-            this.rfid_lbl.Size = new System.Drawing.Size(86, 15);
+            this.rfid_lbl.Size = new System.Drawing.Size(56, 15);
             this.rfid_lbl.TabIndex = 73;
-            this.rfid_lbl.Text = "RFID Number:";
+            this.rfid_lbl.Text = "Số RFID:";
             // 
             // machine_serial_lbl
             // 
@@ -97,11 +97,11 @@
             this.machine_serial_lbl.ControlId = null;
             this.machine_serial_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.machine_serial_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.machine_serial_lbl.Location = new System.Drawing.Point(12, 203);
+            this.machine_serial_lbl.Location = new System.Drawing.Point(48, 200);
             this.machine_serial_lbl.Name = "machine_serial_lbl";
-            this.machine_serial_lbl.Size = new System.Drawing.Size(91, 15);
+            this.machine_serial_lbl.Size = new System.Drawing.Size(49, 15);
             this.machine_serial_lbl.TabIndex = 73;
-            this.machine_serial_lbl.Text = "Machine Serial:";
+            this.machine_serial_lbl.Text = "Số Máy:";
             // 
             // machine_serial_txt
             // 
@@ -122,16 +122,16 @@
             this.checktime_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.checktime_lbl.Location = new System.Drawing.Point(290, 163);
             this.checktime_lbl.Name = "checktime_lbl";
-            this.checktime_lbl.Size = new System.Drawing.Size(73, 15);
+            this.checktime_lbl.Size = new System.Drawing.Size(106, 15);
             this.checktime_lbl.TabIndex = 73;
-            this.checktime_lbl.Text = "Check Time";
+            this.checktime_lbl.Text = "Lần Kiểm Kê Thứ:";
             // 
             // checktime_txt
             // 
             this.checktime_txt.ControlId = null;
             this.checktime_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checktime_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
-            this.checktime_txt.Location = new System.Drawing.Point(372, 160);
+            this.checktime_txt.Location = new System.Drawing.Point(398, 160);
             this.checktime_txt.Name = "checktime_txt";
             this.checktime_txt.ReadOnly = true;
             this.checktime_txt.Size = new System.Drawing.Size(152, 21);
@@ -145,9 +145,9 @@
             this.comment_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comment_lbl.Location = new System.Drawing.Point(21, 238);
             this.comment_lbl.Name = "comment_lbl";
-            this.comment_lbl.Size = new System.Drawing.Size(62, 15);
+            this.comment_lbl.Size = new System.Drawing.Size(52, 15);
             this.comment_lbl.TabIndex = 73;
-            this.comment_lbl.Text = "Comment";
+            this.comment_lbl.Text = "Ghi Chú";
             // 
             // comment_txt
             // 

@@ -105,11 +105,11 @@
             this.rfid_lbl.ControlId = null;
             this.rfid_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rfid_lbl.Location = new System.Drawing.Point(21, 163);
+            this.rfid_lbl.Location = new System.Drawing.Point(55, 163);
             this.rfid_lbl.Name = "rfid_lbl";
-            this.rfid_lbl.Size = new System.Drawing.Size(86, 15);
+            this.rfid_lbl.Size = new System.Drawing.Size(56, 15);
             this.rfid_lbl.TabIndex = 73;
-            this.rfid_lbl.Text = "RFID Number:";
+            this.rfid_lbl.Text = "Số RFID:";
             // 
             // machine_cd_lbl
             // 
@@ -117,11 +117,11 @@
             this.machine_cd_lbl.ControlId = null;
             this.machine_cd_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.machine_cd_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.machine_cd_lbl.Location = new System.Drawing.Point(21, 203);
+            this.machine_cd_lbl.Location = new System.Drawing.Point(61, 200);
             this.machine_cd_lbl.Name = "machine_cd_lbl";
-            this.machine_cd_lbl.Size = new System.Drawing.Size(89, 15);
+            this.machine_cd_lbl.Size = new System.Drawing.Size(50, 15);
             this.machine_cd_lbl.TabIndex = 73;
-            this.machine_cd_lbl.Text = "Machine Code:";
+            this.machine_cd_lbl.Text = "Mã Máy:";
             // 
             // machine_cd_txt
             // 
@@ -140,11 +140,11 @@
             this.location_lbl.ControlId = null;
             this.location_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.location_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.location_lbl.Location = new System.Drawing.Point(438, 160);
+            this.location_lbl.Location = new System.Drawing.Point(407, 160);
             this.location_lbl.Name = "location_lbl";
-            this.location_lbl.Size = new System.Drawing.Size(57, 15);
+            this.location_lbl.Size = new System.Drawing.Size(82, 15);
             this.location_lbl.TabIndex = 73;
-            this.location_lbl.Text = "Location:";
+            this.location_lbl.Text = "Vị Trí/Chuyền:";
             // 
             // location_txt
             // 
@@ -162,11 +162,11 @@
             this.supplier_lbl.ControlId = null;
             this.supplier_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.supplier_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.supplier_lbl.Location = new System.Drawing.Point(433, 200);
+            this.supplier_lbl.Location = new System.Drawing.Point(417, 202);
             this.supplier_lbl.Name = "supplier_lbl";
-            this.supplier_lbl.Size = new System.Drawing.Size(56, 15);
+            this.supplier_lbl.Size = new System.Drawing.Size(72, 15);
             this.supplier_lbl.TabIndex = 73;
-            this.supplier_lbl.Text = "Supplier:";
+            this.supplier_lbl.Text = "Nguồn Gốc:";
             // 
             // machine_name_lbl
             // 
@@ -174,11 +174,11 @@
             this.machine_name_lbl.ControlId = null;
             this.machine_name_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.machine_name_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.machine_name_lbl.Location = new System.Drawing.Point(12, 283);
+            this.machine_name_lbl.Location = new System.Drawing.Point(56, 280);
             this.machine_name_lbl.Name = "machine_name_lbl";
-            this.machine_name_lbl.Size = new System.Drawing.Size(93, 15);
+            this.machine_name_lbl.Size = new System.Drawing.Size(55, 15);
             this.machine_name_lbl.TabIndex = 73;
-            this.machine_name_lbl.Text = "Machine Name:";
+            this.machine_name_lbl.Text = "Tên Máy:";
             // 
             // qty_lbl
             // 
@@ -186,11 +186,11 @@
             this.qty_lbl.ControlId = null;
             this.qty_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.qty_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.qty_lbl.Location = new System.Drawing.Point(462, 319);
+            this.qty_lbl.Location = new System.Drawing.Point(424, 319);
             this.qty_lbl.Name = "qty_lbl";
-            this.qty_lbl.Size = new System.Drawing.Size(27, 15);
+            this.qty_lbl.Size = new System.Drawing.Size(65, 15);
             this.qty_lbl.TabIndex = 73;
-            this.qty_lbl.Text = "Qty:";
+            this.qty_lbl.Text = "Số Lượng:";
             // 
             // qty_txt
             // 
@@ -209,11 +209,11 @@
             this.invoice_lbl.ControlId = null;
             this.invoice_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.invoice_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.invoice_lbl.Location = new System.Drawing.Point(441, 240);
+            this.invoice_lbl.Location = new System.Drawing.Point(405, 240);
             this.invoice_lbl.Name = "invoice_lbl";
-            this.invoice_lbl.Size = new System.Drawing.Size(48, 15);
+            this.invoice_lbl.Size = new System.Drawing.Size(84, 15);
             this.invoice_lbl.TabIndex = 73;
-            this.invoice_lbl.Text = "Invoice:";
+            this.invoice_lbl.Text = "Số Chứng Từ:";
             // 
             // invoice_txt
             // 
@@ -232,11 +232,11 @@
             this.cost_lbl.ControlId = null;
             this.cost_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.cost_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cost_lbl.Location = new System.Drawing.Point(420, 277);
+            this.cost_lbl.Location = new System.Drawing.Point(430, 277);
             this.cost_lbl.Name = "cost_lbl";
-            this.cost_lbl.Size = new System.Drawing.Size(69, 15);
+            this.cost_lbl.Size = new System.Drawing.Size(59, 15);
             this.cost_lbl.TabIndex = 73;
-            this.cost_lbl.Text = "Cost Value:";
+            this.cost_lbl.Text = "Giá (vnd):";
             // 
             // cost_txt
             // 
@@ -255,11 +255,11 @@
             this.serial_lbl.ControlId = null;
             this.serial_lbl.Font = new System.Drawing.Font("Arial", 9F);
             this.serial_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.serial_lbl.Location = new System.Drawing.Point(65, 357);
+            this.serial_lbl.Location = new System.Drawing.Point(62, 362);
             this.serial_lbl.Name = "serial_lbl";
-            this.serial_lbl.Size = new System.Drawing.Size(42, 15);
+            this.serial_lbl.Size = new System.Drawing.Size(49, 15);
             this.serial_lbl.TabIndex = 73;
-            this.serial_lbl.Text = "Serial:";
+            this.serial_lbl.Text = "Số Máy:";
             // 
             // type_lbl
             // 
@@ -269,9 +269,9 @@
             this.type_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.type_lbl.Location = new System.Drawing.Point(59, 238);
             this.type_lbl.Name = "type_lbl";
-            this.type_lbl.Size = new System.Drawing.Size(43, 15);
+            this.type_lbl.Size = new System.Drawing.Size(52, 15);
             this.type_lbl.TabIndex = 73;
-            this.type_lbl.Text = "Model:";
+            this.type_lbl.Text = "Ký Hiệu:";
             // 
             // serial_txt
             // 
@@ -314,9 +314,9 @@
             this.checktime_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.checktime_lbl.Location = new System.Drawing.Point(31, 322);
             this.checktime_lbl.Name = "checktime_lbl";
-            this.checktime_lbl.Size = new System.Drawing.Size(76, 15);
+            this.checktime_lbl.Size = new System.Drawing.Size(82, 15);
             this.checktime_lbl.TabIndex = 77;
-            this.checktime_lbl.Text = "Check Time:";
+            this.checktime_lbl.Text = "Kiểm Kê Thứ:";
             // 
             // labelCommon3
             // 

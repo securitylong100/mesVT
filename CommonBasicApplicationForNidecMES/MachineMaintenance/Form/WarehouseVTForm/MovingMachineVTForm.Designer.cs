@@ -96,9 +96,9 @@
             this.delete_all_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.delete_all_btn.Location = new System.Drawing.Point(425, 20);
             this.delete_all_btn.Name = "delete_all_btn";
-            this.delete_all_btn.Size = new System.Drawing.Size(90, 33);
+            this.delete_all_btn.Size = new System.Drawing.Size(91, 33);
             this.delete_all_btn.TabIndex = 12;
-            this.delete_all_btn.Text = "Delete All";
+            this.delete_all_btn.Text = "Xóa Mã Lệnh";
             this.delete_all_btn.UseVisualStyleBackColor = false;
             this.delete_all_btn.Click += new System.EventHandler(this.delete_all_btn_Click);
             // 
@@ -112,7 +112,7 @@
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(88, 33);
             this.add_btn.TabIndex = 11;
-            this.add_btn.Text = "Add";
+            this.add_btn.Text = "Thêm Mới";
             this.add_btn.UseVisualStyleBackColor = false;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
@@ -126,7 +126,7 @@
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(84, 33);
             this.update_btn.TabIndex = 11;
-            this.update_btn.Text = "Update";
+            this.update_btn.Text = "Chỉnh Sửa";
             this.update_btn.UseVisualStyleBackColor = false;
             this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
@@ -140,7 +140,7 @@
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(90, 33);
             this.delete_btn.TabIndex = 10;
-            this.delete_btn.Text = "Delete";
+            this.delete_btn.Text = "Xóa Dòng";
             this.delete_btn.UseVisualStyleBackColor = false;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
@@ -154,7 +154,7 @@
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(80, 33);
             this.search_btn.TabIndex = 10;
-            this.search_btn.Text = "Search";
+            this.search_btn.Text = "Tìm Kiếm";
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
@@ -168,7 +168,7 @@
             this.exportexcel_btn.Name = "exportexcel_btn";
             this.exportexcel_btn.Size = new System.Drawing.Size(91, 33);
             this.exportexcel_btn.TabIndex = 10;
-            this.exportexcel_btn.Text = "Export Excel";
+            this.exportexcel_btn.Text = "Xuất Excel";
             this.exportexcel_btn.UseVisualStyleBackColor = false;
             this.exportexcel_btn.Click += new System.EventHandler(this.exportexcel_btn_Click);
             // 
@@ -180,9 +180,9 @@
             this.rfid_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.rfid_lbl.Location = new System.Drawing.Point(15, 149);
             this.rfid_lbl.Name = "rfid_lbl";
-            this.rfid_lbl.Size = new System.Drawing.Size(93, 15);
+            this.rfid_lbl.Size = new System.Drawing.Size(56, 15);
             this.rfid_lbl.TabIndex = 58;
-            this.rfid_lbl.Text = "RFID Numbers:";
+            this.rfid_lbl.Text = "Số RFID:";
             // 
             // vt_search_moving_dgv
             // 
@@ -279,9 +279,9 @@
             this.machine_serial_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.machine_serial_lbl.Location = new System.Drawing.Point(149, 147);
             this.machine_serial_lbl.Name = "machine_serial_lbl";
-            this.machine_serial_lbl.Size = new System.Drawing.Size(88, 15);
+            this.machine_serial_lbl.Size = new System.Drawing.Size(49, 15);
             this.machine_serial_lbl.TabIndex = 81;
-            this.machine_serial_lbl.Text = "Machine Serial";
+            this.machine_serial_lbl.Text = "Số Máy:";
             // 
             // factory_received_lbl
             // 
@@ -291,9 +291,9 @@
             this.factory_received_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.factory_received_lbl.Location = new System.Drawing.Point(465, 147);
             this.factory_received_lbl.Name = "factory_received_lbl";
-            this.factory_received_lbl.Size = new System.Drawing.Size(100, 15);
+            this.factory_received_lbl.Size = new System.Drawing.Size(63, 15);
             this.factory_received_lbl.TabIndex = 85;
-            this.factory_received_lbl.Text = "Factory Received";
+            this.factory_received_lbl.Text = "Nơi Nhận:";
             // 
             // factory_received_cmb
             // 
@@ -313,9 +313,9 @@
             this.factory_tranfer_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.factory_tranfer_lbl.Location = new System.Drawing.Point(288, 147);
             this.factory_tranfer_lbl.Name = "factory_tranfer_lbl";
-            this.factory_tranfer_lbl.Size = new System.Drawing.Size(88, 15);
+            this.factory_tranfer_lbl.Size = new System.Drawing.Size(90, 15);
             this.factory_tranfer_lbl.TabIndex = 87;
-            this.factory_tranfer_lbl.Text = "Factory Tranfer";
+            this.factory_tranfer_lbl.Text = "Nơi Chuyển Đi:";
             // 
             // factory_tranfer_cmb
             // 
@@ -335,9 +335,9 @@
             this.code_name_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.code_name_lbl.Location = new System.Drawing.Point(778, 147);
             this.code_name_lbl.Name = "code_name_lbl";
-            this.code_name_lbl.Size = new System.Drawing.Size(77, 15);
+            this.code_name_lbl.Size = new System.Drawing.Size(56, 15);
             this.code_name_lbl.TabIndex = 107;
-            this.code_name_lbl.Text = "Code Name:";
+            this.code_name_lbl.Text = "Số Lệnh:";
             // 
             // code_status_lbl
             // 
@@ -347,9 +347,9 @@
             this.code_status_lbl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.code_status_lbl.Location = new System.Drawing.Point(635, 147);
             this.code_status_lbl.Name = "code_status_lbl";
-            this.code_status_lbl.Size = new System.Drawing.Size(75, 15);
+            this.code_status_lbl.Size = new System.Drawing.Size(130, 15);
             this.code_status_lbl.TabIndex = 105;
-            this.code_status_lbl.Text = "Code Status";
+            this.code_status_lbl.Text = "Chọn Trạng Thái Lệnh";
             // 
             // code_status_cmb
             // 
@@ -393,106 +393,107 @@
             // col_machine_serial
             // 
             this.col_machine_serial.DataPropertyName = "MachineSerial";
-            this.col_machine_serial.HeaderText = "Machine Serial";
+            this.col_machine_serial.HeaderText = "Số Máy";
             this.col_machine_serial.Name = "col_machine_serial";
-            this.col_machine_serial.Width = 113;
+            this.col_machine_serial.Width = 71;
             // 
             // col_machine_model
             // 
             this.col_machine_model.DataPropertyName = "MachineModel";
-            this.col_machine_model.HeaderText = "Model";
+            this.col_machine_model.HeaderText = "Ký Hiệu";
             this.col_machine_model.Name = "col_machine_model";
-            this.col_machine_model.Width = 65;
+            this.col_machine_model.Width = 74;
             // 
             // col_machine_name
             // 
             this.col_machine_name.DataPropertyName = "MachineName";
-            this.col_machine_name.HeaderText = "Machine Name";
+            this.col_machine_name.HeaderText = "Tên Máy";
             this.col_machine_name.Name = "col_machine_name";
-            this.col_machine_name.Width = 115;
+            this.col_machine_name.Width = 77;
             // 
             // col_factory_tranfer_cd
             // 
             this.col_factory_tranfer_cd.DataPropertyName = "TranferFactoryName";
-            this.col_factory_tranfer_cd.HeaderText = "TranferFactoryCode";
+            this.col_factory_tranfer_cd.HeaderText = "Nơi Chuyển Đi";
             this.col_factory_tranfer_cd.Name = "col_factory_tranfer_cd";
-            this.col_factory_tranfer_cd.Width = 140;
+            this.col_factory_tranfer_cd.Width = 112;
             // 
             // col_factory_received_cd
             // 
             this.col_factory_received_cd.DataPropertyName = "ReceivedFactoryName";
-            this.col_factory_received_cd.HeaderText = "Received Factory";
+            this.col_factory_received_cd.HeaderText = "Nơi Nhận";
             this.col_factory_received_cd.Name = "col_factory_received_cd";
-            this.col_factory_received_cd.Width = 125;
+            this.col_factory_received_cd.Width = 85;
             // 
             // col_code_status
             // 
             this.col_code_status.DataPropertyName = "CodeStatus";
-            this.col_code_status.HeaderText = "Code Status";
+            this.col_code_status.HeaderText = "Trạng Thái Lệnh";
             this.col_code_status.Name = "col_code_status";
+            this.col_code_status.Width = 122;
             // 
             // col_code_name
             // 
             this.col_code_name.DataPropertyName = "CodeName";
-            this.col_code_name.HeaderText = "Code Name";
+            this.col_code_name.HeaderText = "Số Lệnh";
             this.col_code_name.Name = "col_code_name";
-            this.col_code_name.Width = 99;
+            this.col_code_name.Width = 78;
             // 
             // col_status_machine
             // 
             this.col_status_machine.DataPropertyName = "Status";
-            this.col_status_machine.HeaderText = "Status";
+            this.col_status_machine.HeaderText = "Tình Trạng";
             this.col_status_machine.Name = "col_status_machine";
-            this.col_status_machine.Width = 67;
+            this.col_status_machine.Width = 91;
             // 
             // col_comments_machine
             // 
             this.col_comments_machine.DataPropertyName = "CommentsMachine";
-            this.col_comments_machine.HeaderText = "Comments";
+            this.col_comments_machine.HeaderText = "Ghi Chú";
             this.col_comments_machine.Name = "col_comments_machine";
-            this.col_comments_machine.Width = 94;
+            this.col_comments_machine.Width = 77;
             // 
             // col_reason_tranfer
             // 
             this.col_reason_tranfer.DataPropertyName = "ReasonTranfer";
-            this.col_reason_tranfer.HeaderText = "Reason Tranfer";
+            this.col_reason_tranfer.HeaderText = "Lý Do Chuyển";
             this.col_reason_tranfer.Name = "col_reason_tranfer";
-            this.col_reason_tranfer.Width = 118;
+            this.col_reason_tranfer.Width = 108;
             // 
             // col_confirm_received
             // 
             this.col_confirm_received.DataPropertyName = "ConfirmReceived";
-            this.col_confirm_received.HeaderText = "Confirm Received";
+            this.col_confirm_received.HeaderText = "Xác Nhận Nơi Nhận";
             this.col_confirm_received.Name = "col_confirm_received";
-            this.col_confirm_received.Width = 130;
+            this.col_confirm_received.Width = 141;
             // 
             // col_machine_costvalue
             // 
             this.col_machine_costvalue.DataPropertyName = "MachineCostValue";
-            this.col_machine_costvalue.HeaderText = "Cost Value";
+            this.col_machine_costvalue.HeaderText = "Giá";
             this.col_machine_costvalue.Name = "col_machine_costvalue";
-            this.col_machine_costvalue.Width = 91;
+            this.col_machine_costvalue.Width = 51;
             // 
             // col_registration_user_cd
             // 
             this.col_registration_user_cd.DataPropertyName = "RegistrationUserCode";
-            this.col_registration_user_cd.HeaderText = "User Code";
+            this.col_registration_user_cd.HeaderText = "Người Thêm";
             this.col_registration_user_cd.Name = "col_registration_user_cd";
-            this.col_registration_user_cd.Width = 92;
+            this.col_registration_user_cd.Width = 102;
             // 
             // col_registration_date_time
             // 
             this.col_registration_date_time.DataPropertyName = "RegistrationDateTime";
-            this.col_registration_date_time.HeaderText = "Date Time";
+            this.col_registration_date_time.HeaderText = "Ngày Giờ";
             this.col_registration_date_time.Name = "col_registration_date_time";
-            this.col_registration_date_time.Width = 89;
+            this.col_registration_date_time.Width = 83;
             // 
             // col_factory_cd
             // 
             this.col_factory_cd.DataPropertyName = "FactoryCode";
-            this.col_factory_cd.HeaderText = "Factory Code";
+            this.col_factory_cd.HeaderText = "Nhà Máy";
             this.col_factory_cd.Name = "col_factory_cd";
-            this.col_factory_cd.Width = 104;
+            this.col_factory_cd.Width = 79;
             // 
             // MovingMachineVTForm
             // 

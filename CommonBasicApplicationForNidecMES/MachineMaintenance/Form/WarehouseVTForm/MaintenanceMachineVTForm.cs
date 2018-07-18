@@ -295,7 +295,32 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
+            if (mainternance_vt_dgv.Rows.Count > 0 && mainternance_vt_dgv.DataSource != null && searchstatus_cbm.Text == "Danh sách")
+            {
+                try
+                {
+                    if (MessageBox.Show("Bạn có chắc xóa thiết bị này !", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 
+                    {
+                        MaintenanceMachineVTVo selectedvo = (MaintenanceMachineVTVo)mainternance_vt_dgv.CurrentRow.DataBoundItem;
+                        MaintenanceMachineVTVo outVo = new MaintenanceMachineVTVo();
+                        outVo = (MaintenanceMachineVTVo)DefaultCbmInvoker.Invoke(new Cbm.DeleteMainternanceMachineVTCbm(), selectedvo);
+
+                        if (outVo.AffectedCount > 0)
+                        {
+                            messageData = new MessageData("mmce00001", Properties.Resources.mmce00001, "Số Máy" + " : " + machine_serial_cmb.Text);
+                            logger.Info(messageData);
+                            popUpMessage.Information(messageData, Text);
+                        }
+                        GridBind();
+                    }
+                }
+                catch (Framework.ApplicationException exception)
+                {
+                    popUpMessage.ApplicationError(exception.GetMessageData(), Text);
+                    logger.Error(exception.GetMessageData());
+                }
+            }
         }
     }
 }

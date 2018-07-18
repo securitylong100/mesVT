@@ -105,7 +105,6 @@ ALTER TABLE public.t_vt_moving
 
 
 
-
 -- Table: public.t_vt_maintenance
 
 -- DROP TABLE public.t_vt_maintenance;

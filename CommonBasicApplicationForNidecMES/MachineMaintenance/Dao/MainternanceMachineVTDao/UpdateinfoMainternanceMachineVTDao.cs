@@ -22,13 +22,14 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             registration_user_cd =:registration_user_cd,
             registration_date_time = now(),
            factory_cd =:factory_cd");
-            sql.Append(" where machine_serial =:machine_serial ");
+            sql.Append(" where maintenance_id =:maintenance_id ");
 
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sql.ToString());
 
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
+            sqlParameter.AddParameter("maintenance_id", inVo.MainternanceId);
             sqlParameter.AddParameter("machine_serial", inVo.MachineSerial);
             sqlParameter.AddParameter("machine_model", inVo.MachineModel);
             sqlParameter.AddParameter("start_day", inVo.StartDay);

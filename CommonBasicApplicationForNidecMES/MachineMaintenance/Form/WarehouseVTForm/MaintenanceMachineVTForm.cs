@@ -28,7 +28,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
         private void MaintenanceMachineVTForm_Load(object sender, EventArgs e)
         {
-
+            searchstatus_cbm.Text = "Danh sách";
             ValueObjectList<WarehouseVTVo> machineserial = (ValueObjectList<WarehouseVTVo>)DefaultCbmInvoker.Invoke(new GetMachineSerialCbm(), new WarehouseVTVo());
             machine_serial_cmb.DisplayMember = "MachineSerial";
             machine_serial_cmb.DataSource = machineserial.GetList();
@@ -248,7 +248,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                 TimeSpan ts = compareDateTime - NowDateTime;
 
                
-                if (compareDateTime < NowDateTime)
+                if (compareDateTime < NowDateTime && searchstatus_cbm.Text == "Danh sách")
                 {
                     TimeSpan timeDate = NowDateTime - startdatetime;
                     //double totalday = timeDate.TotalDays;

@@ -321,6 +321,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     logger.Error(exception.GetMessageData());
                 }
             }
+            if (mainternance_vt_dgv.Rows.Count > 0 && mainternance_vt_dgv.DataSource != null && searchstatus_cbm.Text != "Danh sách")
+            {
+                MessageBox.Show("Không thể xóa với loại tìm kiếm là LỊCH SỬ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

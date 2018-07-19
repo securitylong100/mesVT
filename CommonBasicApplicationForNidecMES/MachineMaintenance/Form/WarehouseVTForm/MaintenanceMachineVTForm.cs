@@ -184,6 +184,11 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
         private void search_info_btn_Click(object sender, EventArgs e)
         {
             PropertyDGV();
+            GridBind_mainternance();
+        }
+        void GridBind_mainternance()
+        {
+
             try
             {
                 MaintenanceMachineVTVo inVo = new MaintenanceMachineVTVo
@@ -312,7 +317,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                             logger.Info(messageData);
                             popUpMessage.Information(messageData, Text);
                         }
-                        GridBind();
+                        GridBind_mainternance();
                     }
                 }
                 catch (Framework.ApplicationException exception)

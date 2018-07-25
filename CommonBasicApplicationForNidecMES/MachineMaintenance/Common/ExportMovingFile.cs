@@ -30,27 +30,27 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 #region codeName
                 if (codestatus == "Bàn Giao")
                 {
-                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "BG/CĐ";
+                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "BG/CĐ_"+ UserData.GetUserData().FactoryCode;
                     xlWorkSheet.Cells[6, 6] = "X";
-                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_BG_";
+                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_BG_" + UserData.GetUserData().FactoryCode + "_";
                 }
                 if (codestatus == "Mượn")
                 {
-                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "M/CĐ";
+                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "M/CĐ_" + UserData.GetUserData().FactoryCode;
                     xlWorkSheet.Cells[6, 14] = "X";
-                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_M_";
+                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_M_" + UserData.GetUserData().FactoryCode + "_";
                 }
                 if (codestatus == "Trả")
                 {
-                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "T/CĐ";
+                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "T/CĐ_" + UserData.GetUserData().FactoryCode;
                     xlWorkSheet.Cells[6, 22] = "X";
-                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_T_";
+                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_T_" + UserData.GetUserData().FactoryCode + "_";
                 }
                 if (codestatus == "Thuê")
                 {
-                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "TH/CĐ";
+                    xlWorkSheet.Cells[2, 3] = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "TH/CĐ_" + UserData.GetUserData().FactoryCode;
                     xlWorkSheet.Cells[6, 30] = "X";
-                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_TH_";
+                    partname = dgv.Rows[0].Cells["col_code_name"].Value.ToString() + "_TH_" + UserData.GetUserData().FactoryCode + "_";
                 }
                 #endregion
                 #region factory and reason

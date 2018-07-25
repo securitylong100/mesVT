@@ -175,8 +175,8 @@
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.ok_btn);
             this.Name = "AddCommentDatalostVT";
-            this.Text = "Data Lost";
-            this.TitleText = "Machine Lost Data";
+            this.Text = "Kiểm Kê";
+            this.TitleText = "Máy Thiếu Dữ Liệu";
             this.Load += new System.EventHandler(this.AddNewMachineVT_Load);
             this.Controls.SetChildIndex(this.ok_btn, 0);
             this.Controls.SetChildIndex(this.exit_btn, 0);

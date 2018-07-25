@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.setting_gbc = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.add_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.search_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
@@ -66,9 +66,15 @@
             this.search_info_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.searchstatus_cbm = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.linksave_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.exportexcel_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).BeginInit();
             this.groupBoxCommon1.SuspendLayout();
+            this.groupBoxCommon2.SuspendLayout();
             this.SuspendLayout();
             // 
             // setting_gbc
@@ -250,14 +256,14 @@
             // 
             this.mainternance_vt_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.mainternance_vt_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mainternance_vt_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mainternance_vt_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.mainternance_vt_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_machineid,
             this.col_rfid,
@@ -273,26 +279,26 @@
             this.col_machinecostvalue,
             this.col_datetime});
             this.mainternance_vt_dgv.ControlId = null;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mainternance_vt_dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mainternance_vt_dgv.DefaultCellStyle = dataGridViewCellStyle11;
             this.mainternance_vt_dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mainternance_vt_dgv.Location = new System.Drawing.Point(0, 269);
             this.mainternance_vt_dgv.Name = "mainternance_vt_dgv";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mainternance_vt_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.mainternance_vt_dgv.Size = new System.Drawing.Size(1277, 430);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(232)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mainternance_vt_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.mainternance_vt_dgv.Size = new System.Drawing.Size(1280, 430);
             this.mainternance_vt_dgv.TabIndex = 98;
             // 
             // col_machineid
@@ -381,7 +387,7 @@
             this.groupBoxCommon1.Controls.Add(this.delete_btn);
             this.groupBoxCommon1.Controls.Add(this.search_info_btn);
             this.groupBoxCommon1.Font = new System.Drawing.Font("Arial", 9F);
-            this.groupBoxCommon1.Location = new System.Drawing.Point(382, 203);
+            this.groupBoxCommon1.Location = new System.Drawing.Point(294, 199);
             this.groupBoxCommon1.Name = "groupBoxCommon1";
             this.groupBoxCommon1.Size = new System.Drawing.Size(438, 64);
             this.groupBoxCommon1.TabIndex = 99;
@@ -455,10 +461,78 @@
             this.searchstatus_cbm.Size = new System.Drawing.Size(121, 23);
             this.searchstatus_cbm.TabIndex = 100;
             // 
+            // groupBoxCommon2
+            // 
+            this.groupBoxCommon2.ControlId = null;
+            this.groupBoxCommon2.Controls.Add(this.exportcsv_btn);
+            this.groupBoxCommon2.Controls.Add(this.linksave_txt);
+            this.groupBoxCommon2.Controls.Add(this.browser_btn);
+            this.groupBoxCommon2.Controls.Add(this.exportexcel_btn);
+            this.groupBoxCommon2.Font = new System.Drawing.Font("Arial", 9F);
+            this.groupBoxCommon2.Location = new System.Drawing.Point(762, 199);
+            this.groupBoxCommon2.Name = "groupBoxCommon2";
+            this.groupBoxCommon2.Size = new System.Drawing.Size(506, 64);
+            this.groupBoxCommon2.TabIndex = 102;
+            this.groupBoxCommon2.TabStop = false;
+            this.groupBoxCommon2.Text = "Xuất File";
+            // 
+            // exportcsv_btn
+            // 
+            this.exportcsv_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.exportcsv_btn.ControlId = null;
+            this.exportcsv_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.exportcsv_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.exportcsv_btn.Location = new System.Drawing.Point(403, 25);
+            this.exportcsv_btn.Name = "exportcsv_btn";
+            this.exportcsv_btn.Size = new System.Drawing.Size(91, 33);
+            this.exportcsv_btn.TabIndex = 60;
+            this.exportcsv_btn.Text = "Xuất .csv";
+            this.exportcsv_btn.UseVisualStyleBackColor = false;
+            this.exportcsv_btn.Click += new System.EventHandler(this.exportcsv_btn_Click);
+            // 
+            // linksave_txt
+            // 
+            this.linksave_txt.ControlId = null;
+            this.linksave_txt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linksave_txt.InputType = Com.Nidec.Mes.Framework.TextBoxCommon.InputTypeList.All;
+            this.linksave_txt.Location = new System.Drawing.Point(94, 31);
+            this.linksave_txt.Name = "linksave_txt";
+            this.linksave_txt.Size = new System.Drawing.Size(202, 21);
+            this.linksave_txt.TabIndex = 59;
+            // 
+            // browser_btn
+            // 
+            this.browser_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.browser_btn.ControlId = null;
+            this.browser_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.browser_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.browser_btn.Location = new System.Drawing.Point(6, 25);
+            this.browser_btn.Name = "browser_btn";
+            this.browser_btn.Size = new System.Drawing.Size(82, 33);
+            this.browser_btn.TabIndex = 57;
+            this.browser_btn.Text = "Đường dẫn:";
+            this.browser_btn.UseVisualStyleBackColor = false;
+            this.browser_btn.Click += new System.EventHandler(this.browser_btn_Click);
+            // 
+            // exportexcel_btn
+            // 
+            this.exportexcel_btn.BackColor = System.Drawing.SystemColors.Control;
+            this.exportexcel_btn.ControlId = null;
+            this.exportexcel_btn.Font = new System.Drawing.Font("Arial", 9F);
+            this.exportexcel_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.exportexcel_btn.Location = new System.Drawing.Point(302, 25);
+            this.exportexcel_btn.Name = "exportexcel_btn";
+            this.exportexcel_btn.Size = new System.Drawing.Size(73, 33);
+            this.exportexcel_btn.TabIndex = 58;
+            this.exportexcel_btn.Text = "Xuất Excel";
+            this.exportexcel_btn.UseVisualStyleBackColor = false;
+            this.exportexcel_btn.Click += new System.EventHandler(this.exportexcel_btn_Click);
+            // 
             // MaintenanceMachineVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1277, 699);
+            this.ClientSize = new System.Drawing.Size(1280, 699);
+            this.Controls.Add(this.groupBoxCommon2);
             this.Controls.Add(this.labelCommon1);
             this.Controls.Add(this.searchstatus_cbm);
             this.Controls.Add(this.groupBoxCommon1);
@@ -477,8 +551,8 @@
             this.Controls.Add(this.setting_gbc);
             this.Controls.Add(this.mainternance_vt_dgv);
             this.Name = "MaintenanceMachineVTForm";
-            this.Text = "Equipments Management";
-            this.TitleText = "Maintenance Machine Form";
+            this.Text = "Bảo Trì";
+            this.TitleText = "Danh Sách Bảo Trì";
             this.Load += new System.EventHandler(this.MaintenanceMachineVTForm_Load);
             this.Controls.SetChildIndex(this.mainternance_vt_dgv, 0);
             this.Controls.SetChildIndex(this.setting_gbc, 0);
@@ -497,9 +571,12 @@
             this.Controls.SetChildIndex(this.groupBoxCommon1, 0);
             this.Controls.SetChildIndex(this.searchstatus_cbm, 0);
             this.Controls.SetChildIndex(this.labelCommon1, 0);
+            this.Controls.SetChildIndex(this.groupBoxCommon2, 0);
             this.setting_gbc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainternance_vt_dgv)).EndInit();
             this.groupBoxCommon1.ResumeLayout(false);
+            this.groupBoxCommon2.ResumeLayout(false);
+            this.groupBoxCommon2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,5 +618,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_factorycd;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_machinecostvalue;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_datetime;
+        private Framework.GroupBoxCommon groupBoxCommon2;
+        private Framework.ButtonCommon exportcsv_btn;
+        private Framework.TextBoxCommon linksave_txt;
+        private Framework.ButtonCommon browser_btn;
+        private Framework.ButtonCommon exportexcel_btn;
     }
 }

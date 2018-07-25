@@ -443,8 +443,8 @@
             this.Controls.Add(this.exit_btn);
             this.Controls.Add(this.ok_btn);
             this.Name = "AddNewMachineVT";
-            this.Text = "Add New Machine";
-            this.TitleText = "Add New Machine";
+            this.Text = "Trang Chính";
+            this.TitleText = "Thêm Máy Mới";
             this.Load += new System.EventHandler(this.AddNewMachineVT_Load);
             this.Controls.SetChildIndex(this.ok_btn, 0);
             this.Controls.SetChildIndex(this.exit_btn, 0);

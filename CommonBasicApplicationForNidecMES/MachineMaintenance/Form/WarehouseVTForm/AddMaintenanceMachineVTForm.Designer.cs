@@ -134,8 +134,8 @@
             this.Controls.Add(this.startday_lbl);
             this.Controls.Add(this.month_repeat_lbl);
             this.Name = "AddMaintenanceMachineVTForm";
-            this.Text = "Add Plan Day";
-            this.TitleText = "Add Plan Day";
+            this.Text = "Bảo Trì";
+            this.TitleText = "Mẫu Thêm Kế Hoạch";
             this.Load += new System.EventHandler(this.AddMaintenanceMachineVTForm_Load);
             this.Controls.SetChildIndex(this.month_repeat_lbl, 0);
             this.Controls.SetChildIndex(this.startday_lbl, 0);

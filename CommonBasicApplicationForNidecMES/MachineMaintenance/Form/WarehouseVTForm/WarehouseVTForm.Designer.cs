@@ -41,20 +41,6 @@
             this.browser_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
             this.rfid_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.warehouse_vt_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
-            this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
-            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
-            this.mac_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.machine_model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.machine_supplier_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.supplier_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.location_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.location_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
-            this.machine_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
-            this.machine_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.col_machineid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rfid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +57,20 @@
             this.col_machineinvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_machinecostvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckTime_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBoxCommon2 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
+            this.exportcsv_btn = new Com.Nidec.Mes.Framework.ButtonCommon();
+            this.rfid_txt = new Com.Nidec.Mes.Framework.TextBoxCommon();
+            this.mac_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_serial_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.serial_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_model_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.model_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_supplier_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.supplier_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.location_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.location_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
+            this.machine_status_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
+            this.machine_status_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -250,6 +250,119 @@
             this.warehouse_vt_dgv.Size = new System.Drawing.Size(1175, 426);
             this.warehouse_vt_dgv.TabIndex = 75;
             // 
+            // col_machineid
+            // 
+            this.col_machineid.DataPropertyName = "MachineId";
+            this.col_machineid.HeaderText = "Machine ID";
+            this.col_machineid.Name = "col_machineid";
+            this.col_machineid.Visible = false;
+            this.col_machineid.Width = 93;
+            // 
+            // col_rfid
+            // 
+            this.col_rfid.DataPropertyName = "RFId";
+            this.col_rfid.HeaderText = "RFID ";
+            this.col_rfid.Name = "col_rfid";
+            this.col_rfid.Width = 63;
+            // 
+            // col_machinecode
+            // 
+            this.col_machinecode.DataPropertyName = "MachineCode";
+            this.col_machinecode.HeaderText = "Mã Máy";
+            this.col_machinecode.Name = "col_machinecode";
+            this.col_machinecode.Width = 72;
+            // 
+            // col_machinename
+            // 
+            this.col_machinename.DataPropertyName = "MachineName";
+            this.col_machinename.HeaderText = "Tên Máy";
+            this.col_machinename.Name = "col_machinename";
+            this.col_machinename.Width = 77;
+            // 
+            // col_usercode
+            // 
+            this.col_usercode.DataPropertyName = "RegistrationUserCode";
+            this.col_usercode.HeaderText = "Người Thêm";
+            this.col_usercode.Name = "col_usercode";
+            this.col_usercode.Width = 102;
+            // 
+            // col_datetime
+            // 
+            this.col_datetime.DataPropertyName = "RegistrationDateTime";
+            this.col_datetime.HeaderText = "Ngày Giờ Thêm";
+            this.col_datetime.Name = "col_datetime";
+            this.col_datetime.Width = 118;
+            // 
+            // col_machineqty
+            // 
+            this.col_machineqty.DataPropertyName = "MachineQty";
+            this.col_machineqty.HeaderText = "Số Lượng";
+            this.col_machineqty.Name = "col_machineqty";
+            this.col_machineqty.Width = 87;
+            // 
+            // col_machineserial
+            // 
+            this.col_machineserial.DataPropertyName = "MachineSerial";
+            this.col_machineserial.HeaderText = "Số Máy";
+            this.col_machineserial.Name = "col_machineserial";
+            this.col_machineserial.Width = 71;
+            // 
+            // col_machinemodel
+            // 
+            this.col_machinemodel.DataPropertyName = "MachineModel";
+            this.col_machinemodel.HeaderText = "Ký Hiệu";
+            this.col_machinemodel.Name = "col_machinemodel";
+            this.col_machinemodel.Width = 74;
+            // 
+            // col_machinelocation
+            // 
+            this.col_machinelocation.DataPropertyName = "MachineLocation";
+            this.col_machinelocation.HeaderText = "Chuyền";
+            this.col_machinelocation.Name = "col_machinelocation";
+            this.col_machinelocation.Width = 74;
+            // 
+            // col_machinesupplier
+            // 
+            this.col_machinesupplier.DataPropertyName = "MachineSupplier";
+            this.col_machinesupplier.HeaderText = "Nguồn Gốc";
+            this.col_machinesupplier.Name = "col_machinesupplier";
+            this.col_machinesupplier.Width = 94;
+            // 
+            // col_machinestatus
+            // 
+            this.col_machinestatus.DataPropertyName = "MachineStatus";
+            this.col_machinestatus.HeaderText = "Trạng Thái Máy";
+            this.col_machinestatus.Name = "col_machinestatus";
+            this.col_machinestatus.Width = 115;
+            // 
+            // colfactorycd
+            // 
+            this.colfactorycd.DataPropertyName = "FactoryCode";
+            this.colfactorycd.HeaderText = "Nhà Máy";
+            this.colfactorycd.Name = "colfactorycd";
+            this.colfactorycd.Width = 79;
+            // 
+            // col_machineinvoice
+            // 
+            this.col_machineinvoice.DataPropertyName = "MachineInvoice";
+            this.col_machineinvoice.HeaderText = "Số Chứng Từ";
+            this.col_machineinvoice.Name = "col_machineinvoice";
+            this.col_machineinvoice.Width = 106;
+            // 
+            // col_machinecostvalue
+            // 
+            this.col_machinecostvalue.DataPropertyName = "MachineCostValue";
+            this.col_machinecostvalue.HeaderText = "Giá";
+            this.col_machinecostvalue.Name = "col_machinecostvalue";
+            this.col_machinecostvalue.Width = 51;
+            // 
+            // colCheckTime_final
+            // 
+            this.colCheckTime_final.DataPropertyName = "TimeCheck";
+            this.colCheckTime_final.HeaderText = "Lần Kiểm Kê";
+            this.colCheckTime_final.Name = "colCheckTime_final";
+            this.colCheckTime_final.Width = 103;
+            // 
             // groupBoxCommon2
             // 
             this.groupBoxCommon2.ControlId = null;
@@ -412,119 +525,6 @@
             this.machine_status_cmb.Size = new System.Drawing.Size(121, 23);
             this.machine_status_cmb.TabIndex = 84;
             // 
-            // col_machineid
-            // 
-            this.col_machineid.DataPropertyName = "MachineId";
-            this.col_machineid.HeaderText = "Machine ID";
-            this.col_machineid.Name = "col_machineid";
-            this.col_machineid.Visible = false;
-            this.col_machineid.Width = 93;
-            // 
-            // col_rfid
-            // 
-            this.col_rfid.DataPropertyName = "RFId";
-            this.col_rfid.HeaderText = "RFID ";
-            this.col_rfid.Name = "col_rfid";
-            this.col_rfid.Width = 63;
-            // 
-            // col_machinecode
-            // 
-            this.col_machinecode.DataPropertyName = "MachineCode";
-            this.col_machinecode.HeaderText = "Mã Máy";
-            this.col_machinecode.Name = "col_machinecode";
-            this.col_machinecode.Width = 72;
-            // 
-            // col_machinename
-            // 
-            this.col_machinename.DataPropertyName = "MachineName";
-            this.col_machinename.HeaderText = "Tên Máy";
-            this.col_machinename.Name = "col_machinename";
-            this.col_machinename.Width = 77;
-            // 
-            // col_usercode
-            // 
-            this.col_usercode.DataPropertyName = "RegistrationUserCode";
-            this.col_usercode.HeaderText = "Người Thêm";
-            this.col_usercode.Name = "col_usercode";
-            this.col_usercode.Width = 102;
-            // 
-            // col_datetime
-            // 
-            this.col_datetime.DataPropertyName = "RegistrationDateTime";
-            this.col_datetime.HeaderText = "Ngày Giờ Thêm";
-            this.col_datetime.Name = "col_datetime";
-            this.col_datetime.Width = 118;
-            // 
-            // col_machineqty
-            // 
-            this.col_machineqty.DataPropertyName = "MachineQty";
-            this.col_machineqty.HeaderText = "Số Lượng";
-            this.col_machineqty.Name = "col_machineqty";
-            this.col_machineqty.Width = 87;
-            // 
-            // col_machineserial
-            // 
-            this.col_machineserial.DataPropertyName = "MachineSerial";
-            this.col_machineserial.HeaderText = "Số Máy";
-            this.col_machineserial.Name = "col_machineserial";
-            this.col_machineserial.Width = 71;
-            // 
-            // col_machinemodel
-            // 
-            this.col_machinemodel.DataPropertyName = "MachineModel";
-            this.col_machinemodel.HeaderText = "Ký Hiệu";
-            this.col_machinemodel.Name = "col_machinemodel";
-            this.col_machinemodel.Width = 74;
-            // 
-            // col_machinelocation
-            // 
-            this.col_machinelocation.DataPropertyName = "MachineLocation";
-            this.col_machinelocation.HeaderText = "Chuyền";
-            this.col_machinelocation.Name = "col_machinelocation";
-            this.col_machinelocation.Width = 74;
-            // 
-            // col_machinesupplier
-            // 
-            this.col_machinesupplier.DataPropertyName = "MachineSupplier";
-            this.col_machinesupplier.HeaderText = "Nguồn Gốc";
-            this.col_machinesupplier.Name = "col_machinesupplier";
-            this.col_machinesupplier.Width = 94;
-            // 
-            // col_machinestatus
-            // 
-            this.col_machinestatus.DataPropertyName = "MachineStatus";
-            this.col_machinestatus.HeaderText = "Trạng Thái Máy";
-            this.col_machinestatus.Name = "col_machinestatus";
-            this.col_machinestatus.Width = 115;
-            // 
-            // colfactorycd
-            // 
-            this.colfactorycd.DataPropertyName = "FactoryCode";
-            this.colfactorycd.HeaderText = "Nhà Máy";
-            this.colfactorycd.Name = "colfactorycd";
-            this.colfactorycd.Width = 79;
-            // 
-            // col_machineinvoice
-            // 
-            this.col_machineinvoice.DataPropertyName = "MachineInvoice";
-            this.col_machineinvoice.HeaderText = "Số Chứng Từ";
-            this.col_machineinvoice.Name = "col_machineinvoice";
-            this.col_machineinvoice.Width = 106;
-            // 
-            // col_machinecostvalue
-            // 
-            this.col_machinecostvalue.DataPropertyName = "MachineCostValue";
-            this.col_machinecostvalue.HeaderText = "Giá";
-            this.col_machinecostvalue.Name = "col_machinecostvalue";
-            this.col_machinecostvalue.Width = 51;
-            // 
-            // colCheckTime_final
-            // 
-            this.colCheckTime_final.DataPropertyName = "TimeCheck";
-            this.colCheckTime_final.HeaderText = "Lần Kiểm Kê";
-            this.colCheckTime_final.Name = "colCheckTime_final";
-            this.colCheckTime_final.Width = 103;
-            // 
             // WarehouseVTForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,8 +546,8 @@
             this.Controls.Add(this.rfid_lbl);
             this.Controls.Add(this.warehouse_vt_dgv);
             this.Name = "WarehouseVTForm";
-            this.Text = "WareHouse System";
-            this.TitleText = "WareHouse System";
+            this.Text = "Trang Chính";
+            this.TitleText = "Danh Sách Chính";
             this.Load += new System.EventHandler(this.WarehouseVTForm_Load);
             this.Controls.SetChildIndex(this.warehouse_vt_dgv, 0);
             this.Controls.SetChildIndex(this.rfid_lbl, 0);

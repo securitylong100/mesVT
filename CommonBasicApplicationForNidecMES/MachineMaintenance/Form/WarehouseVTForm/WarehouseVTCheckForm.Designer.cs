@@ -72,6 +72,13 @@
             this.mac_cmb = new Com.Nidec.Mes.Framework.ComboBoxCommon();
             this.labelCommon7 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.warehouse_list_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
+            this.col_checkid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRFIdWarehouseList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMachineSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChecktime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValueCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxCommon1 = new Com.Nidec.Mes.Framework.GroupBoxCommon();
             this.valueNodata_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
             this.valueFalse_lbl = new Com.Nidec.Mes.Framework.LabelCommon();
@@ -87,19 +94,12 @@
             this.labelCommon1 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.labelCommon3 = new Com.Nidec.Mes.Framework.LabelCommon();
             this.datalost_dgv = new Com.Nidec.Mes.Framework.DataGridViewCommon();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.col_checkid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRFIdWarehouseList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMachineSerial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChecktime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValueCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colDatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDatalostId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRFId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMachine_Serial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckTimes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.setting_gbc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warehouse_vt_dgv)).BeginInit();
             this.groupBoxCommon2.SuspendLayout();
@@ -556,6 +556,63 @@
             this.warehouse_list_dgv.Size = new System.Drawing.Size(1017, 151);
             this.warehouse_list_dgv.TabIndex = 77;
             // 
+            // col_checkid
+            // 
+            this.col_checkid.DataPropertyName = "CheckId";
+            this.col_checkid.HeaderText = "Id Check";
+            this.col_checkid.Name = "col_checkid";
+            this.col_checkid.ReadOnly = true;
+            this.col_checkid.Visible = false;
+            this.col_checkid.Width = 80;
+            // 
+            // colRFIdWarehouseList
+            // 
+            this.colRFIdWarehouseList.DataPropertyName = "RFId";
+            this.colRFIdWarehouseList.HeaderText = "RFId";
+            this.colRFIdWarehouseList.Name = "colRFIdWarehouseList";
+            this.colRFIdWarehouseList.ReadOnly = true;
+            this.colRFIdWarehouseList.Width = 58;
+            // 
+            // colMachineSerial
+            // 
+            this.colMachineSerial.DataPropertyName = "MachineSerial";
+            this.colMachineSerial.HeaderText = "Số Máy";
+            this.colMachineSerial.Name = "colMachineSerial";
+            this.colMachineSerial.ReadOnly = true;
+            this.colMachineSerial.Width = 71;
+            // 
+            // colUser
+            // 
+            this.colUser.DataPropertyName = "RegistrationUserCode";
+            this.colUser.HeaderText = "Người Thêm";
+            this.colUser.Name = "colUser";
+            this.colUser.ReadOnly = true;
+            this.colUser.Width = 102;
+            // 
+            // colChecktime
+            // 
+            this.colChecktime.DataPropertyName = "CheckTime";
+            this.colChecktime.HeaderText = "Lần Kiểm Kê Thứ";
+            this.colChecktime.Name = "colChecktime";
+            this.colChecktime.ReadOnly = true;
+            this.colChecktime.Width = 128;
+            // 
+            // colValueCheck
+            // 
+            this.colValueCheck.DataPropertyName = "ValueCheck";
+            this.colValueCheck.HeaderText = "";
+            this.colValueCheck.Name = "colValueCheck";
+            this.colValueCheck.ReadOnly = true;
+            this.colValueCheck.Width = 21;
+            // 
+            // colDatetime
+            // 
+            this.colDatetime.DataPropertyName = "RegistrationDateTime";
+            this.colDatetime.HeaderText = "Ngày Giờ";
+            this.colDatetime.Name = "colDatetime";
+            this.colDatetime.ReadOnly = true;
+            this.colDatetime.Width = 83;
+            // 
             // groupBoxCommon1
             // 
             this.groupBoxCommon1.ControlId = null;
@@ -788,67 +845,6 @@
             this.datalost_dgv.Size = new System.Drawing.Size(1017, 429);
             this.datalost_dgv.TabIndex = 85;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // col_checkid
-            // 
-            this.col_checkid.DataPropertyName = "CheckId";
-            this.col_checkid.HeaderText = "Id Check";
-            this.col_checkid.Name = "col_checkid";
-            this.col_checkid.ReadOnly = true;
-            this.col_checkid.Visible = false;
-            this.col_checkid.Width = 80;
-            // 
-            // colRFIdWarehouseList
-            // 
-            this.colRFIdWarehouseList.DataPropertyName = "RFId";
-            this.colRFIdWarehouseList.HeaderText = "RFId";
-            this.colRFIdWarehouseList.Name = "colRFIdWarehouseList";
-            this.colRFIdWarehouseList.ReadOnly = true;
-            this.colRFIdWarehouseList.Width = 58;
-            // 
-            // colMachineSerial
-            // 
-            this.colMachineSerial.DataPropertyName = "MachineSerial";
-            this.colMachineSerial.HeaderText = "Số Máy";
-            this.colMachineSerial.Name = "colMachineSerial";
-            this.colMachineSerial.ReadOnly = true;
-            this.colMachineSerial.Width = 71;
-            // 
-            // colUser
-            // 
-            this.colUser.DataPropertyName = "RegistrationUserCode";
-            this.colUser.HeaderText = "Người Thêm";
-            this.colUser.Name = "colUser";
-            this.colUser.ReadOnly = true;
-            this.colUser.Width = 102;
-            // 
-            // colChecktime
-            // 
-            this.colChecktime.DataPropertyName = "CheckTime";
-            this.colChecktime.HeaderText = "Lần Kiểm Kê Thứ";
-            this.colChecktime.Name = "colChecktime";
-            this.colChecktime.ReadOnly = true;
-            this.colChecktime.Width = 128;
-            // 
-            // colValueCheck
-            // 
-            this.colValueCheck.DataPropertyName = "ValueCheck";
-            this.colValueCheck.HeaderText = "";
-            this.colValueCheck.Name = "colValueCheck";
-            this.colValueCheck.ReadOnly = true;
-            this.colValueCheck.Width = 21;
-            // 
-            // colDatetime
-            // 
-            this.colDatetime.DataPropertyName = "RegistrationDateTime";
-            this.colDatetime.HeaderText = "Ngày Giờ";
-            this.colDatetime.Name = "colDatetime";
-            this.colDatetime.ReadOnly = true;
-            this.colDatetime.Width = 83;
-            // 
             // colDatalostId
             // 
             this.colDatalostId.DataPropertyName = "DatalostId";
@@ -889,6 +885,10 @@
             this.colComent.ReadOnly = true;
             this.colComent.Width = 77;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // WarehouseVTCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -900,8 +900,8 @@
             this.Controls.Add(this.warehouse_list_dgv);
             this.Controls.Add(this.datalost_dgv);
             this.Name = "WarehouseVTCheckForm";
-            this.Text = "Check Equipments";
-            this.TitleText = "Check Equipments";
+            this.Text = "Kiểm Kê";
+            this.TitleText = "Trang Chính Kiểm Kê";
             this.Load += new System.EventHandler(this.WarehouseVTForm_Load);
             this.Controls.SetChildIndex(this.datalost_dgv, 0);
             this.Controls.SetChildIndex(this.warehouse_list_dgv, 0);
@@ -919,6 +919,7 @@
             this.groupBoxCommon1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datalost_dgv)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

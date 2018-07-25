@@ -332,5 +332,37 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
 
             }
         }
+
+  
+        private string directorySave = "";
+        private void browser_btn_Click(object sender, EventArgs e)
+        {
+
+            FolderBrowserDialog fl = new FolderBrowserDialog();
+            fl.SelectedPath = "d:\\";
+            fl.ShowNewFolderButton = true;
+            if (fl.ShowDialog() == DialogResult.OK)
+            {
+                linksave_txt.Text = fl.SelectedPath;
+                directorySave = linksave_txt.Text;
+            }
+        }
+
+        private void exportexcel_btn_Click(object sender, EventArgs e)
+        {
+            string datetime = DateTime.Now.ToString("yyMMdd_HHmm");
+
+            Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.Excel_Class exportexcel = new Common.Excel_Class();
+            exportexcel.exportexcel(ref mainternance_vt_dgv, linksave_txt.Text, this.TitleText + "_" + datetime);
+        }
+
+        private void exportcsv_btn_Click(object sender, EventArgs e)
+        {
+
+            string datetime = DateTime.Now.ToString("yyMMdd_HHmm");
+
+            Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common.csvclass exportcsv = new Common.csvclass();
+            exportcsv.exportcsv(ref mainternance_vt_dgv, linksave_txt.Text, this.TitleText + "_" + datetime);
+        }
     }
 }

@@ -79,9 +79,13 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Common
                 #endregion
                 #region confirm received and register date time format form
                 xlWorkSheet.Cells[44, 2] = dgv.Rows[0].Cells["col_confirm_received"].Value.ToString();
-                xlWorkSheet.Cells[47, 24] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(8, 2); //day
-                xlWorkSheet.Cells[47, 29] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(5, 2); //month
-                xlWorkSheet.Cells[47, 33] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(0, 4); //year
+                //xlWorkSheet.Cells[47, 24] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(8, 2); //day
+                //xlWorkSheet.Cells[47, 29] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(5, 2); //month
+                //xlWorkSheet.Cells[47, 33] = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Substring(0, 4); //year
+                string[] arrListStr = dgv.Rows[0].Cells["col_registration_date_time"].Value.ToString().Split('/');
+                xlWorkSheet.Cells[47, 24] = arrListStr[0]; //day
+                xlWorkSheet.Cells[47, 29] = arrListStr[1]; //month
+                xlWorkSheet.Cells[47, 33] = arrListStr[2].Substring(0,4) ; //year
                 #endregion
 
                 xlWorkBook.SaveAs("D:\\VT CP\\Moving_" + codestatus+"_" +partname+ datetime + ".xlsx", Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue,

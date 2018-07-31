@@ -41,7 +41,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
           :reason_tranfer,
             :confirm_received,
          :registration_user_cd,
-          now(),
+          :registration_date_time,
             :factory_cd)");
 
             //create command
@@ -62,7 +62,8 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Dao
             sqlParameter.AddParameter("confirm_received", inVo.ConfirmReceived);
             sqlParameter.AddParameter("registration_user_cd", UserData.GetUserData().UserCode);
             sqlParameter.AddParameter("factory_cd", UserData.GetUserData().FactoryCode);
-          
+            sqlParameter.AddParameter("registration_date_time", inVo.RegistrationDateTime);
+
 
             //execute SQL
 

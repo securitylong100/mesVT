@@ -220,6 +220,7 @@ namespace Com.Nidec.Mes.Common.Basic.MachineMaintenance.Form
                     TCode = T_code_value,
                     THCode = Th_code_value,
                     MCode = M_code_value,
+                    RegistrationDateTime = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                 };
                 try
                 {
